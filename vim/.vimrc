@@ -28,6 +28,7 @@ Bundle "scrooloose/nerdtree"
 Bundle "altercation/vim-colors-solarized"
 Bundle "kien/ctrlp.vim"
 Bundle "scrooloose/syntastic"
+Bundle "bling/vim-airline"
 
 call vundle#end()
 filetype plugin indent on
@@ -56,3 +57,7 @@ let NerdTreeShowHidden=1
 " http://stackoverflow.com/questions/327411/how-do-you-prefer-to-switch-between-buffers-in-vim
 map <C-Tab> :bnext <cr>
 map <C-S-Tab> :bprevious <cr>
+
+" Status Line
+let g:airline_theme = 'solarized'
+let g:airline_powerline_fonts = 1
