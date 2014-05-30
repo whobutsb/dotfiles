@@ -101,3 +101,7 @@ alias .6='cd ../../../../../../'            # Go back 6 directory levels
 #   #   ------------------------------------------
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
 
+#S3CMD Configurations
+alias s3cc='s3cmd -c ~/.s3cfg-customchannels'
+alias s3sb='s3cmd -c ~/.s3cfg-personal'
+
