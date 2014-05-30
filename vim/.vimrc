@@ -35,6 +35,7 @@ filetype plugin indent on
 " theme 
 set background=dark
 colorscheme solarized
+let g:solarized_termcolors=256
 
 " Default Tabs & Spaces
 set tabstop=4 " a tab is four spaces
@@ -49,3 +50,9 @@ abbr accross across
 
 " NERDTree 
 nnoremap <leader>t :NERDTreeToggle<cr>
+let NerdTreeShowHidden=1
+
+" Switch between buffers in the same window
+" http://stackoverflow.com/questions/327411/how-do-you-prefer-to-switch-between-buffers-in-vim
+map <C-Tab> :bnext <cr>
+map <C-S-Tab> :bprevious <cr>
