@@ -51,7 +51,8 @@ abbr accross across
 
 " NERDTree 
 nnoremap <leader>t :NERDTreeToggle<cr>
-let NerdTreeShowHidden=1
+let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks=1
 
 " Switch between buffers in the same window
 " http://stackoverflow.com/questions/327411/how-do-you-prefer-to-switch-between-buffers-in-vim
@@ -61,3 +62,11 @@ map <C-S-Tab> :bprevious <cr>
 " Status Line
 let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 1
+
+" tab navigation 
+ nnoremap <C-S-tab> :tabprevious<CR>
+ nnoremap <C-tab>   :tabnext<CR>
+ nnoremap <C-t>     :tabnew<CR>
+ nnoremap tj :tabnext<CR>
+ nnoremap tk :tabprev<CR>
+ 

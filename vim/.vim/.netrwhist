@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/stevebarbera/Library/Application Support/Yojimbo/Database.bbyojimbostorage'
 let g:netrw_dirhist_2='/Users/stevebarbera/Sites/Maestro/app/config'
 let g:netrw_dirhist_3='/Users/stevebarbera/Sites/Maestro/app'
 let g:netrw_dirhist_4='/Users/stevebarbera/Desktop/maestro'
 let g:netrw_dirhist_5='/Users/stevebarbera/Sites/Maestro'
 let g:netrw_dirhist_6='/Users/stevebarbera/.vim'
+let g:netrw_dirhist_7='/Users/stevebarbera/.local'
+let g:netrw_dirhist_8='/Users/stevebarbera/.cups'

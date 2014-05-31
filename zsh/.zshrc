@@ -51,14 +51,6 @@ alias remote_ip="curl ifconfig.me/ip"
 #Get the computer internal ip address
 alias local_ip="ipconfig getifaddr en0; ipconfig getifaddr en1"
 
-#Update all of the SSH Config files in to one ssh config file
-alias ssh_config="cat ~/.ssh/config_files/* > ~/.ssh/config"
-
-#RBENV Settings
-#rbenv shims and autocompletion
-#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-#eval "$(rbenv init -)"
-
 #Helps with the slow tab completion of git repos
 __git_files () { 
     _wanted files expl 'local files' _files  }
@@ -105,3 +97,22 @@ alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\
 alias s3cc='s3cmd -c ~/.s3cfg-customchannels'
 alias s3sb='s3cmd -c ~/.s3cfg-personal'
 
+# Opens the github page for the current git repository in your browser
+# # git@github.com:jasonneylon/dotfiles.git
+# # https://github.com/jasonneylon/dotfiles/
+function gh() {
+  giturl=$(git config --get remote.origin.url)
+  if [ "$giturl" == "" ]
+    then
+     echo "Not a git repository or no remote.origin.url set"
+     exit 1;
+  fi
+ 
+  giturl=${giturl/git\@github\.com\:/https://github.com/}
+  giturl=${giturl/\.git/\/tree/}
+  branch="$(git symbolic-ref HEAD 2>/dev/null)" ||
+  branch="(unnamed branch)"     # detached HEAD
+  branch=${branch##refs/heads/}
+  giturl=$giturl$branch
+  open $giturl
+}

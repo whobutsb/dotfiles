@@ -13,7 +13,6 @@
 	trustExitCode = true
 [mergetool]
 	keepBackup = true
-
-
+	
 [color]
 		ui = true
