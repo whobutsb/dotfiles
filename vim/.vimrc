@@ -81,6 +81,7 @@ Bundle "altercation/vim-colors-solarized"
 Bundle "kien/ctrlp.vim"
 Bundle "scrooloose/syntastic"
 Bundle "bling/vim-airline"
+Bundle "majutsushi/tagbar"
 
 call vundle#end()
 filetype plugin indent on     " Enable automatic settings based on file type
@@ -125,3 +126,9 @@ let g:airline_powerline_fonts = 1
  nnoremap tj :tabnext<CR>
  nnoremap tk :tabprev<CR>
  
+ " PHP Syntax Highlighting
+ let php_sql_query=1
+ let php_htmlInStrings=1
+
+" Tagbar
+nmap <f8> :TagbarToggle<CR>
