@@ -6,46 +6,68 @@ set encoding=utf-8
 
 " Options
 set hidden                    " Edit multiple unsaved files at the same time
-set confirm 				  " Prompt to save unsaved changes when exits
+set confirm                   " Prompt to save unsaved changes when exits
 set viminfo='1000,f1,<500,:100,/100,h   "Keep various historires between edits
 
 " Search Options
-set hlsearch 					" highlight search terms 
-set ignorecase					" Do case insensitive matching
-set incsearch 					" highlight matches as you type
-set smartcase 					" ignore case if search patten is all lowercase, case sensitive otherwise
+set hlsearch            " highlight search terms 
+set ignorecase          " Do case insensitive matching
+set incsearch           " highlight matches as you type
+set smartcase           " ignore case if search patten is all lowercase, case sensitive otherwise
 
 " Insert (Edit) Options
 set backspace=indent,eol,start  " Better handling of backspace key
-set autoindent					" Sane indenting
-set nostartofline				" Emulat typical editor navigation behaviour
-set nopaste						" Start in normal (non-paste) mode
-set smartindent
+set autoindent                  " Sane indenting
+set nostartofline               " Emulate typical editor navigation behaviour
+set nopaste                     " Start in normal (non-paste) mode
+set smartindent                 " Smarter indenting
+set formatoptions=tcqr          " Smart Comments
 
+-
 " Status / Command Line Options
-set wildmenu					" Better commandline completion
+set wildmenu                    " Better commandline completion
 set wildmode=longest:full,full  " Expand match on first Tab complete
-set showcmd						" show (partial) command in status line
-set laststatus=2				" Always show a status line
-set cmdheight=2					" Prevent "Press Enter" messages
-set statusline=%f%m%r%h%w\ [%n:%{&ff}/%Y]%=[0x\%04.4B][%03v][%p%%\ line\ %l\ of\ %L]
+set showcmd                     " show (partial) command in status line
+set showmode                    " show current mode we're in
+set laststatus=2                " Always show a status line
+set cmdheight=2                 " Prevent "Press Enter" messages
+" set statusline=%f%m%r%h%w\ [%n:%{&ff}/%Y]%=[0x\%04.4B][%03v][%p%%\ line\ %l\ of\ %L]
+
+" Status Line
+augroup ft_statuslinecolor
+    au!
+    au InsertEnter * hi StatusLine ctermfg=196 guifg=#FF3145
+    au InsertLeave * hi StatusLine ctermfg=130 guifg=#CD5907
+augroup END
+set statusline=%f       " Path
+set statusline+=%m      " modified flag
+set statusline+=%r      " readonly flag
+set statusline+=w       " preview window flag
+set statusline+=\       " space
+set statusline+=%=      " right align
+" Line and column position and counts
+set statusline+=\ (line\ %l\/%L,\ col\ %03c)
 
 " Interface Options
-set number 						" show line numbers
-set visualbell					" Flash the screen instead of beeping on errors
-set mouse=a						" enable mouse usage (all modes) in terminals
-set wrap 						" wrap lines
-set showmatch 					" set show matching parenthesis
+set guifont=Source\ Code\ Pro\ 14
+set t_Co=256                    " Lotso colors
+set number                      " show line numbers
+set visualbell                  " Flash the screen instead of beeping on errors
+set mouse=a                     " enable mouse usage (all modes) in terminals
+set wrap                        " wrap lines
+set showmatch                   " set show matching parenthesis
 set title
 set ruler
 set cursorline
+set expandtab                   " Expand tabs to spaces
+" set list                        " Show invisible characters
 " Quickly time out on keycodes but never time out on mappings 
 set notimeout ttimeout ttimeoutlen=200
 
 " Indentation Options
-set tabstop=8			" NEVER change this!
-set shiftwidth=4		" number of spaces
-set softtabstop=4		" ...each indent level 
+set tabstop=8                   " NEVER change this!
+set shiftwidth=4                " number of spaces
+set softtabstop=4               " ...each indent level 
 
 " start vundler
 filetype off
@@ -68,8 +90,11 @@ set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
 
-" Default Tabs & Spaces
-set tabstop=4 " a tab is four spaces
+" Disable Background Color Erase (BCE) so that color shemes
+" work properly when Vim is used inside tmux and GNU scree.
+if &term =~ '256color'
+	set t_ut=
+endif
 
 " ctrlp.vim settings
 let g:ctrlp_map = '<c-p>'
