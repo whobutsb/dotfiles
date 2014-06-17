@@ -66,8 +66,8 @@ set notimeout ttimeout ttimeoutlen=200
 
 " Indentation Options
 set tabstop=8                   " NEVER change this!
-set shiftwidth=2                " number of spaces
-set softtabstop=2               " ...each indent level 
+set shiftwidth=4                " number of spaces
+set softtabstop=4               " ...each indent level 
 
 " start vundler
 filetype off
@@ -82,6 +82,9 @@ Bundle "kien/ctrlp.vim"
 Bundle "scrooloose/syntastic"
 Bundle "bling/vim-airline"
 Bundle "majutsushi/tagbar"
+Bundle "shawncplus/phpcomplete.vim"
+Bundle "xsbeats/vim-blade"
+Bundle "jelera/vim-javascript-syntax"
 
 call vundle#end()
 filetype plugin indent on     " Enable automatic settings based on file type
