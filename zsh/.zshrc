@@ -42,3 +42,6 @@ for file in ~/dotfiles/{exports,aliases,functions}; do
 done
 unset file
 
+#Source Private Files
+source ~/.private_aliases
+

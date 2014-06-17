@@ -76,6 +76,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
  	
  	alias chrome="open -a google\ chrome"
 	alias f="open -a Finder"
+	alias yo="open -a Yojimbo"
 
   	# Show and hide files in Finder
     alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES; killall -HUP Finder"
