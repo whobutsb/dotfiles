@@ -1,5 +1,15 @@
 dotfiles
 ========
 
-A repo to hold the files that configure my system to the way I like it. 
+#Install Instructions
 
+Clone the dotfiles
+    
+    git clone https://github.com/whobutsb/dotfiles ~/dotfiles
+
+Run the bootstrap.rb
+
+    cd ~/dotfiles
+    chmod +x bootstrap.rb
+    ./bootstrap.rb
+    
