@@ -1,4 +1,115 @@
-# Bash / Linux Notes
+# My Notes
+
+General notes and gems of information. 
+
+## UNIX
+
+### Searching
+
+**Find**
+
+- Find stuff in the Filesystem
+- Usually located in `/usr/bin/find`
+- Searches recursively below specified search path
+
+        find <search_path> [options]
+
+*Command Examples:*
+
+Find a file naem 'cats.txt' below curent directory
+
+    find . -name 'cats.txt'
+
+Find all files below current directory 
+
+    find . -type f
+
+Find all directories below current directory 
+
+    find . -type d
+
+Find all .txt files
+
+    find . -type f -name "*.txt"
+
+Case insensitive file name
+
+    find . -iname "CaTs.txt"
+
+Join find options with `-and` ex: find php files that start with cat
+
+    find . -iname "*.php" -and -iname "cat*"
+
+Files modified less than a day ago
+
+    find . -type f -mtime -1
+
+Directories modified more than 10 days ago
+
+    find . -type d -mtime +10
+
+All files greater than 100MB
+
+    find . -type f -size +100M
+
+All files smaller than 10KB
+
+    find . -type f -size -10K
+
+Remove all zip files bigger than 100MB
+
+    find . -name "*.zip" -size +100M -exec rm -i "{}" \; 
+
+**Grep**
+
+Grep (g/re/p) stands for global regular-expression print. Its name is derived from a command in "ed" a UNix line-editor built in 1971. 
+
+- use `i` for case insenstive search 
+- use `v` to negate
+- use `P` to use Perl-Compatible Regular Expressions
+- use `c` to count matches 
+
+*Grep Examples*
+
+Find out if Apache is running 
+
+    ps aux | grep -i [apache|httpd]
+
+Find out how many instances of ices are running (wc -l counts lines)
+
+    ps aux | grep -i ices | grep -v grep | wc -l
+
+Find text 'get_user' in all files below current dir with line numbers
+
+    grep -HiERn 'get_user' . 
+
+Same as above, don't include .svn directory
+
+    grep -HiERn 'get_user' . | grep -v '.svn'
+
+How man processors does a system have
+
+    grep -c CPU /proc/cpuinfo
+
+**Ack**
+
+Ack searches files below the current directory recursively.  It's ideal for use with code since it automatically excludes any .svn, .git directories from its search. 
+
+Ack is not a gnu utility and therefore is not included by default on most unix-like systems. To install 
+
+    apt-get install ack-grep || yum install ack 
+
+*Ack Examples*
+
+Search for a pattern in all files reursively 
+
+    ack <pattern>
+
+Search php files for things
+
+    ack --php <pattern>
+
+
 
 ## Users
 
