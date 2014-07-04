@@ -85,6 +85,8 @@ Bundle "majutsushi/tagbar"
 Bundle "shawncplus/phpcomplete.vim"
 Bundle "xsbeats/vim-blade"
 Bundle "jelera/vim-javascript-syntax"
+Bundle "ervandew/supertab"
+Bundle "plasticboy/vim-markdown"
 
 
 call vundle#end()
