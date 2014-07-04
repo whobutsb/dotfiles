@@ -71,7 +71,7 @@ set softtabstop=4               " ...each indent level
 
 " start vundler
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " core plugins
@@ -85,6 +85,7 @@ Bundle "majutsushi/tagbar"
 Bundle "shawncplus/phpcomplete.vim"
 Bundle "xsbeats/vim-blade"
 Bundle "jelera/vim-javascript-syntax"
+
 
 call vundle#end()
 filetype plugin indent on     " Enable automatic settings based on file type
