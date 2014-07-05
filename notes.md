@@ -4,6 +4,41 @@ General notes and gems of information.
 
 ## UNIX
 
+### File System
+
+**File Size** 
+
+command estimates file space usage
+
+    du
+
+
+Human readable flag
+
+    du -h 
+
+see grand total displayed.
+
+    du -ch
+
+`-s` flag to display only grand total /disk spzce used for specific directories
+
+    du -sh <directory>
+
+_Links_
+
+- [Linux Basics: How To Find Size of Directory Commands](http://www.unixmen.com/linux-basics-find-size-directory-commands/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+unixmenhowtos+%28Unixmen+Howtos+%26+Tutorials%29)
+
+***
+
+### Disk 
+
+See what is using Disk IO
+
+    sudo iotop --only
+
+___
+
 ### Searching
 
 **Find**
@@ -60,6 +95,8 @@ Remove all zip files bigger than 100MB
 
     find . -name "*.zip" -size +100M -exec rm -i "{}" \; 
 
+___
+
 **Grep**
 
 Grep (g/re/p) stands for global regular-expression print. Its name is derived from a command in "ed" a UNix line-editor built in 1971. 
@@ -91,6 +128,8 @@ How man processors does a system have
 
     grep -c CPU /proc/cpuinfo
 
+___
+
 **Ack**
 
 Ack searches files below the current directory recursively.  It's ideal for use with code since it automatically excludes any .svn, .git directories from its search. 
@@ -109,21 +148,23 @@ Search php files for things
 
     ack --php <pattern>
 
-
-
 ## Users
 
 **See who is logged in.** 
         
     who || w 
 
-http://www.cyberciti.biz/faq/how-can-i-find-out-who-is-logged-in/
+_Links_
+
+- [Cyberciti - FAQ: How can i find out who is logged in?](http://www.cyberciti.biz/faq/how-can-i-find-out-who-is-logged-in/)
 
 ## System
 
 ### Security & Setup
 
-[New Server Security Essentials](http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers)
+_Links_
+
+ - [New Server Security Essentials](http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers)
 
 ## SSH
 
@@ -137,6 +178,8 @@ http://www.cyberciti.biz/faq/how-can-i-find-out-who-is-logged-in/
 - `3306` - The local port to forward
 - `localhost:3306` - Within the remote server, waht address adn port to forward traffic to. Since the MySQL server is on the remote server, we're tunneling to the remote servers "localhost" on port 3306, which MySQL is listening to. 
 - `username@localhost` - The SSH username and host to connect to
+
+___
 
 ** Remote Port Forwarding **
 
@@ -162,15 +205,10 @@ We want our friends to see our website, which simply says "Hi!".  Let's use a re
 
 If our remote server's IP address was `123.123.123.123`, then our friends can access our website at `123.123.123.123:9000`, which will forward to our lcoal site at `localhost:8001`. 
 
-**Links**
-- http://blog.tjll.net/ssh-kung-fu/
-- http://serversforhackers.com/editions/2014/07/01/ssh-tricks/
+*Links*
 
-### Disk 
-
-**See what is using Disk IO**
-
-    sudo iotop --only
+- [SSH Kung-Fu](http://blog.tjll.net/ssh-kung-fu/)
+- [Servers For Hackers - SSH Tricks](http://serversforhackers.com/editions/2014/07/01/ssh-tricks/)
 
 ## MySQL
 
@@ -228,7 +266,11 @@ Show Indexes
 
     SHOW INDEX FROM `table`; 
 
-MySQL Replication things to know:
+___
+
+**MySQL Replication**
+
+things to know:
 
 - REPLICATION SETUP: http://plusbryan.com/mysql-replication-without-downtime
 - Trust Replication
