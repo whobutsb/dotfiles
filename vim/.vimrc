@@ -126,11 +126,19 @@ let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 1
 
 " tab navigation 
- nnoremap <C-S-tab> :tabprevious<CR>
- nnoremap <C-tab>   :tabnext<CR>
- nnoremap <C-t>     :tabnew<CR>
- nnoremap tj :tabnext<CR>
- nnoremap tk :tabprev<CR>
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprev<CR>
+
+" splits navigation 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow 
+set splitright 
  
  " PHP Syntax Highlighting
  let php_sql_query=1
@@ -138,3 +146,7 @@ let g:airline_powerline_fonts = 1
 
 " Tagbar
 nmap <f8> :TagbarToggle<CR>
+
+" Plasticboy Markdown 
+" https://github.com/plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled=1
