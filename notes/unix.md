@@ -1,10 +1,25 @@
-# My Notes
+# UNIX
 
 General notes and gems of information. 
 
-## UNIX
+<!-- MarkdownTOC depth=3 -->
 
-### File System
+- File System
+- Disk
+- Searching
+    - Find
+    - Grep
+    - Ack
+- Users
+- System
+    - Security & Setup
+- SSH
+    - SSH Tunneling
+
+<!-- /MarkdownTOC -->
+
+
+## File System
 
 **File Size** 
 
@@ -21,7 +36,7 @@ see grand total displayed.
 
     du -ch
 
-`-s` flag to display only grand total /disk spzce used for specific directories
+`-s` flag to display only grand total /disk spacee used for specific directories
 
     du -sh <directory>
 
@@ -31,7 +46,7 @@ _Links_
 
 ***
 
-### Disk 
+## Disk 
 
 See what is using Disk IO
 
@@ -39,9 +54,9 @@ See what is using Disk IO
 
 ___
 
-### Searching
+## Searching
 
-**Find**
+### Find
 
 - Find stuff in the Filesystem
 - Usually located in `/usr/bin/find`
@@ -97,7 +112,7 @@ Remove all zip files bigger than 100MB
 
 ___
 
-**Grep**
+### Grep
 
 Grep (g/re/p) stands for global regular-expression print. Its name is derived from a command in "ed" a UNix line-editor built in 1971. 
 
@@ -130,7 +145,7 @@ How man processors does a system have
 
 ___
 
-**Ack**
+### Ack
 
 Ack searches files below the current directory recursively.  It's ideal for use with code since it automatically excludes any .svn, .git directories from its search. 
 
@@ -209,81 +224,4 @@ If our remote server's IP address was `123.123.123.123`, then our friends can ac
 
 - [SSH Kung-Fu](http://blog.tjll.net/ssh-kung-fu/)
 - [Servers For Hackers - SSH Tricks](http://serversforhackers.com/editions/2014/07/01/ssh-tricks/)
-
-## MySQL
-
-Watch the process list
-
-    watch 'mysql -e "show proesslist;"'
-
-Add User to db
-
-    GRANT USAGE ON *.* TO '<user>'@'%' IDENTIFIED BY '<password>'; 
-
-Grant user Access
-
-    GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE ON <database>.* TO '<user>'@'%';
-
-Delete User
-
-    DROP USER '<user>'@'%'; 
-    FLUSH PRIVILEGES; 
-
-Find User Privileges
-
-    SHOW GRANTS for '<username>'; 
-    -- or
-    SHOW GRANTS FOR CURRENT_USER;
-
-Revoke User Privileges 
-
-    REVOKE INSERT ON *.* FROM '<username>'@'%'; 
-
-Rename User
-    
-    RENAME USER 'jeffrey'@'localhost' TO 'jeff'@'127.0.0.1';
-
-Set Password
-
-    SET PASSWORD FOR 'bob'@'%.example.org' = PASSWORD('cleartext password');
-
-
-Update Password
-
-    UPDATE mysql.user SET Password=PASSWORD('cleartext password')  WHERE User='bob' AND Host='%.example.org';
-    FLUSH PRIVILEGES;
-
-MySQLDump a Single Database
-
-    mysqldump --compress -h localhost -u [username] -p --quick --single-transaction [db_name] > [dumpfile]
-
-MySQLDump Databases
-
-    -- Note to use --add-drop-database You must use --databases
-    mysqldump -h localhost -u [username] -p --add-drop-database --skip-comments --routines --compress --quick --single-transaction --databases [db_name] > [dumpfile]
-
-Show Indexes
-
-    SHOW INDEX FROM `table`; 
-
-___
-
-**MySQL Replication**
-
-things to know:
-
-- REPLICATION SETUP: http://plusbryan.com/mysql-replication-without-downtime
-- Trust Replication
-- Monitor Seconds_Behind_Master
-- Monitor Exec_Master_Log_Pos
-- Run SHOW PROCESSLIST;—take note of the SQL thread to see if it is processing - long running queries.
-- Keep an eye on master_db_host:/var/log/mysql/slow.log—this is a log of the - longest-running mysql queries—try to optimize 'em
-- SHOW PROCESSLIST; (or SHOW FULL PROCESSLIST;) on the Slave:
-    - there should be two DB Connections whose user name is system user
-    - One of those DB Connections will have the current SQL statement being - processed by replication.
-    - As long as a different SQL statement is visible each time you run SHOW - PROCESSLIST;, you can trust mysql is still replicating properly.
-
-MySQL Replication Last_Error: Duplicate Key Entry
-
-    stop slave; set global mysql_slave_skip_counter = 1; start slave; -- repeat :)
 
