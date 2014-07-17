@@ -207,6 +207,8 @@ Search php files for things
 
 ## Users
 
+- `useradd <username>` - adds a new user 
+
 **See who is logged in.** 
         
     who || w 
@@ -227,7 +229,7 @@ _Links_
 
 ### SSH Tunneling
 
-** Local Port Forwarding **
+**Local Port Forwarding**
 
 `ssh -L 3306:localhost:3306 username@hostname`
 
@@ -238,7 +240,7 @@ _Links_
 
 ___
 
-** Remote Port Forwarding **
+**Remote Port Forwarding**
 
 Remote Port Forwarding is good if you need to share your local computer with others who are outside of your network. 
 
