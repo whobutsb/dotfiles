@@ -53,7 +53,7 @@ Everything is a file in linux.
 - `/usr` - programs, libraries, for all system users
 - `/usr/bin` - programs installed for all users by linux, ie: `/usr/bin/find`
 - `/usr/local` - sysadmins download and install things here. 
-- `usr/sbin` - system binaries
+- `/usr/sbin` - system binaries
 - `/var` - data that changes frequently.  usually webserver pages.
 
 **File Size** 
