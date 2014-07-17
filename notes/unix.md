@@ -27,7 +27,6 @@ command estimates file space usage
 
     du
 
-
 Human readable flag
 
     du -h 
@@ -45,6 +44,14 @@ _Links_
 - [Linux Basics: How To Find Size of Directory Commands](http://www.unixmen.com/linux-basics-find-size-directory-commands/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+unixmenhowtos+%28Unixmen+Howtos+%26+Tutorials%29)
 
 ***
+
+## Dates and Time
+
+convert unix date into human readable
+
+    date -d @<unix-time>
+
+
 
 ## Disk 
 
