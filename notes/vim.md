@@ -71,6 +71,12 @@ Remapping for moving around the buffers
 
 Two types of VIm verbs.  Some of them act on a single character, the others act on a motion or text object. 
 
+### Operators
+
+- `c` - change
+- `d` - delete
+- `y` -rcopy to register
+
 ### Single character verbs
 
 - `x` - Delete character under the cursor
@@ -90,12 +96,26 @@ Two types of VIm verbs.  Some of them act on a single character, the others act 
 - `f.` - go to next occurence of `.` on the current line
 - `F.` - go to the previous occurence of `.` on the current line
 - `^` - go to beginning of the line
+- `b` - back one word
 
 __Power__
 
 - `d$` - delete to the end of the line
 - `cf)` - change though the next closing parentheses
 - `yG` - copy everything through the end of the file 
+
+### Repeating
+
+- `.` - repeat the last normal mode command
+- `n` - repeat the last search
+- `;` - repeat the last character-wise search
+- `//` - repeat the last search
+- `@:` - repeast the last ex-mode command
+- `@@` - repeat the last macro used
+
+## Find and Replace
+
+- `:%s/find text/replacement text/g`  
 
 _Links_
 
