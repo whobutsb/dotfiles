@@ -2,6 +2,18 @@
 
 General notes and gems of information. 
 
+## Unix Philosphy
+
+> Write programs that do one thing and do it well.
+> Write programs to work together.
+> Write Programs to handle text streams, because that is a universal interface. 
+
+-- Douglas Mcllroy
+
+> "Unix is simple.  It just takes a genius to understand its simplicity."
+
+-- Dennis Ritchie
+
 <!-- MarkdownTOC depth=3 -->
 
 - File System
@@ -20,6 +32,29 @@ General notes and gems of information.
 
 
 ## File System
+
+Everything is a file in linux. 
+
+- `/` - root of the filesystem
+- `/bin` - system binaries (programs)
+- `/boot` - boot loader 
+- `/dev` - system devices
+- `/etc` - system configuration 
+- `/home` - user configuration files, users can usually only write files in their home directory
+- `/lib` - shared library files used by system binaries
+- `/media` - removable media (CDs, USB drives)
+- `/mnt` - temp filesystems (USB drives, hard drives, ebs volumes)
+- `/opt` - optional software, libreoffice
+- `/proc` - provices kernel information.  `/proc/cpuinfo` the number of cores on your system
+- `/root` - home directory for root user
+- `/srv` - media served by the system.  apache, nginx pages could be served from here
+- `/sbin` - sysadmin binaries.  `/sbin/ifconfig` give you ip information
+- `/tmp` - temporary storage
+- `/usr` - programs, libraries, for all system users
+- `/usr/bin` - programs installed for all users by linux, ie: `/usr/bin/find`
+- `/usr/local` - sysadmins download and install things here. 
+- `usr/sbin` - system binaries
+- `/var` - data that changes frequently.  usually webserver pages.
 
 **File Size** 
 
