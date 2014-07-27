@@ -9,6 +9,9 @@ set hidden                    " Edit multiple unsaved files at the same time
 set confirm                   " Prompt to save unsaved changes when exits
 set viminfo='1000,f1,<500,:100,/100,h   "Keep various historires between edits
 
+" Spellcheck
+set spell spelllang=en_us
+
 " Search Options
 set hlsearch            " highlight search terms 
 set ignorecase          " Do case insensitive matching
@@ -87,8 +90,7 @@ Bundle "xsbeats/vim-blade"
 Bundle "jelera/vim-javascript-syntax"
 Bundle "ervandew/supertab"
 Bundle "plasticboy/vim-markdown"
-Bundle "Shougo/neocomplete"            " https://github.com/Shougo/neocomplete.vim 
-
+Bundle "Shougo/neocomplete"          
 
 call vundle#end()
 filetype plugin indent on     " Enable automatic settings based on file type
@@ -147,6 +149,9 @@ set splitright
 
 " Tagbar
 nmap <f8> :TagbarToggle<CR>
+
+" Remap ESCAPE to jj
+inoremap jj <ESC>
 
 " Plasticboy Markdown 
 " https://github.com/plasticboy/vim-markdown

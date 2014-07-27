@@ -12,8 +12,8 @@ Notes and thoughts on the dark arts of Vim.
 
 - `]]` - go to next header
 - `[[` - go to previous header
-- `][` - go to next sibiling header 
-- `[]` - go to prvious sibling header 
+- `][` - go to next sibling header 
+- `[]` - go to previous sibling header 
 - `]c` - go to current header
 - `]u` - got to parent header
 - `:Toc` - create a vertical split of table of contents 
@@ -26,11 +26,16 @@ _Links_
 
 ## Splits / Buffers
 
-- `Ctrl+b` - move text up the window 
-- `Ctrl+f` - move text down the window
+- `Ctrl+b` - page up
+- `Ctrl+f` - page down
+- `Ctrl+u` - move up half a screen
+- `Ctrl+d` - move down half a screen 
 - `H` - move to the top of the screen 
 - `M` - move to the middle of the screen 
 - `L` - move to the bottom of the screen 
+- `gg` - go to the top of the file
+- `G` - go to the bottom of the file
+
 
 Buffers are Vim's term for a "block of text stored in memory".
 
@@ -92,17 +97,39 @@ Two types of VIm verbs.  Some of them act on a single character, the others act 
 ###  Motions
 
 - `$` - go to end of line
+- `0` - move to the beginning of the line
+- `w` - move forward one word
+- `b` - move back one word
+- `e` - move back one word
+- `)` - move forward one sentence
+- `}` - move foward one paragraph
 - `G` - go to end of file
 - `f.` - go to next occurence of `.` on the current line
 - `F.` - go to the previous occurence of `.` on the current line
 - `^` - go to beginning of the line
-- `b` - back one word
 
 __Power__
 
 - `d$` - delete to the end of the line
 - `cf)` - change though the next closing parentheses
 - `yG` - copy everything through the end of the file 
+
+### Undo and Redo
+
+- `u` - undo your last action
+- `CTRL+r` - redo last action
+
+### Spell Check
+
+Set the spell check in the `~/.vimrc`
+
+    set spell spelllang=en_us
+
+- `]s` - go to next misspelled word
+- `[s` - go to last misspelled word
+- `z=` - get some suggestions on the word
+- `zg` - mark the misspelled word as correct
+- `zw` - mark a good word as misspeleed
 
 ### Repeating
 
@@ -120,3 +147,4 @@ __Power__
 _Links_
 
 - [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
+- [A Vim Primer](http://danielmiessler.com/study/vim/)
