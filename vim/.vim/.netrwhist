@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/stevebarbera/Sites/Maestro/app/routes'
 let g:netrw_dirhist_2='/Users/stevebarbera/Documents/VisionLink/hooks/.git'
 let g:netrw_dirhist_3='/Users/stevebarbera/Documents/VisionLink/hooks/bin'
 let g:netrw_dirhist_4='/Users/stevebarbera/Sites/Maestro/app'
 let g:netrw_dirhist_5='/Users/stevebarbera/Sites/Maestro/vagrant'
 let g:netrw_dirhist_6='/Users/stevebarbera/dotfiles/vim/.vim/bundle/Vundle.vim'
+let g:netrw_dirhist_7='/Users/stevebarbera/Desktop/weather/.git'
