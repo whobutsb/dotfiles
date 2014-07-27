@@ -87,6 +87,7 @@ Bundle "xsbeats/vim-blade"
 Bundle "jelera/vim-javascript-syntax"
 Bundle "ervandew/supertab"
 Bundle "plasticboy/vim-markdown"
+Bundle "Shougo/neocomplete"            " https://github.com/Shougo/neocomplete.vim 
 
 
 call vundle#end()
