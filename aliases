@@ -20,20 +20,21 @@ alias tlog="tail -f /var/log/syslog"
 # File size
 alias fs="stat -f \"%z bytes\""
 
-#S3CMD Configurations
+# S3CMD Configurations
 alias s3cc='s3cmd -c ~/.s3cfg-customchannels'
 alias s3sb='s3cmd -c ~/.s3cfg-personal'
 
-#Reload the Source
+# Reload the Source
 alias reload_source="source ~/.zshrc && echo 'Source Reloaded'"
 
-## ZSH
+# ZSH
 alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 
-## Random Aliases
+# Random Aliases
 # Star Wars...just because
 alias star_wars="telnet towel.blinkenlights.nl"
+alias speedtest="wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip"
 
 ## Networking
 #Get computers remote IP address
@@ -76,6 +77,7 @@ alias mysql.dir="cd /usr/local/Cellar/mysql/5.6.16"
 if [ "$(uname -s)" = "Darwin" ]; then 
  	
  	alias chrome="open -a google\ chrome"
+        alias firefox="/Applications/FireFox.app/Contents/MacOS/firefox-bin --ProfileManager"
 	alias f="open -a Finder"
 	alias yo="open -a Yojimbo"
 

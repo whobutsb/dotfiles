@@ -1,5 +1,17 @@
 # MySQL
 
+Add a `.my.cnf` file to the home directory to be able to autoload mysql 
+Sample format: 
+
+    [client]
+    user="<username>"
+    pass="<password>"
+    default-character-set=utf8
+
+    [mysql]
+    default-character-set=utf8
+    prompt=\\u@\\h [\\d]>\\_
+
 Watch the process list
 
     watch 'mysql -e "show proesslist;"'
