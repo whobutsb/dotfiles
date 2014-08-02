@@ -78,7 +78,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " core plugins
-Bundle "gmark/vundle"
+Bundle "gmarik/Vundle.vim"
 Bundle "scrooloose/nerdtree"
 Bundle "altercation/vim-colors-solarized"
 Bundle "kien/ctrlp.vim"
@@ -119,11 +119,6 @@ nnoremap <leader>t :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 
-" Switch between buffers in the same window
-" http://stackoverflow.com/questions/327411/how-do-you-prefer-to-switch-between-buffers-in-vim
-map <C-Tab> :bnext <cr>
-map <C-S-Tab> :bprevious <cr>
-
 " Status Line
 let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 1
@@ -134,6 +129,7 @@ nnoremap <C-tab>   :tabnext<CR>
 nnoremap <C-t>     :tabnew<CR>
 nnoremap tj :tabnext<CR>
 nnoremap tk :tabprev<CR>
+
 
 " splits navigation 
 nnoremap <C-J> <C-W><C-J>
@@ -155,4 +151,5 @@ inoremap jj <ESC>
 
 " Plasticboy Markdown 
 " https://github.com/plasticboy/vim-markdown
-let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_folding_disabled = 1
+

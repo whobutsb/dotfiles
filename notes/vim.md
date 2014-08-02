@@ -24,7 +24,9 @@ _Links_
 
 - [plasticboy/vim-markdown](https://github.com/plasticboy/vim-markdown)
 
-## Splits / Buffers
+## Splits / Buffers / Tabs
+
+*Movement around the page* 
 
 - `Ctrl+b` - page up
 - `Ctrl+f` - page down
@@ -37,6 +39,8 @@ _Links_
 - `G` - go to the bottom of the file
 
 
+*Buffers*
+
 Buffers are Vim's term for a "block of text stored in memory".
 
 - `:e <filename>` - opens a new buffer with the contents of the file
@@ -45,15 +49,22 @@ Buffers are Vim's term for a "block of text stored in memory".
 - `:b <buffer-number>` - switch to a specific buffer 
 - `:bn` - next buffer
 - `:bp` - previous buffer
+- `:bd` - close buffer
 
-### Jumplist 
+*Tabs* 
 
-Allows you to jump back and forth in where you were in the file. 
+- `:tabedit <filename>` - edit a specified file in a new tab
+- `:tabfind <filename>` - open a new tab with filename given, searching the 'path' to find it
+- `:tabclose` - close current tab
+- `:tabonly` - close all other tabs
+- `gt` - next tab
+- -`Gt` - previous tab
 
-- `Ctrl+o` - allows you to jump back to your last jump location 
-- `Ctrl+i` - jump forward to the next location 
+__Links__
 
-### Splits
+- [Using tab pages - Vim Wiki](http://vim.wikia.com/wiki/Using_tab_pages)
+
+*Splits*
 
 Create a vertical split using `:vsp` and horizontal `:sp`. 
 
@@ -71,6 +82,13 @@ Remapping for moving around the buffers
     nnoremap <C-K> <C-W><C-K>    " CTRL+k move up a split
     nnoremap <C-L> <C-W><C-L>    " CTRL+l move right a split
     nnoremap <C-H> <C-W><C-H>    " CTRL-h move left a split
+
+### Jumplist
+
+Allows you to jump back and forth in where you were in the file.
+
+- `Ctrl+o` - allows you to jump back to your last jump location 
+- `Ctrl+i` - jump forward to the next location
 
 ## Vim Verbs
 
@@ -144,7 +162,19 @@ Set the spell check in the `~/.vimrc`
 
 - `:%s/find text/replacement text/g`  
 
-_Links_
+## Mappings Keys
+
+Get a list of the current keys mappings
+
+    :map 
+    :map!
+
+- `:verbose map <key>` - determine the script or plugin that defines a map for a key sequence
+
+WIP - http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
+
+
+_General Vim Links_
 
 - [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
 - [A Vim Primer](http://danielmiessler.com/study/vim/)
