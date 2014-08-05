@@ -39,3 +39,4 @@ __Links__
 __Links__
 
 - [Shortcuts to move faster on the command line](http://teohm.com/blog/2012/01/04/shortcuts-to-move-faster-in-bash-command-line/)
+- [Get faster in bash](http://is.muni.cz/www/xsiska2/2014/08/01/get-faster-in-bash.html)j

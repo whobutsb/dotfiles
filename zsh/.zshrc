@@ -37,7 +37,7 @@ plugins=(git sublime)
 # Files to Source
 source $ZSH/oh-my-zsh.sh
 
-for file in ~/dotfiles/{exports,aliases,functions}; do
+for file in ~/dotfiles/{exports,aliases,my_functions}; do
     [ -r "$file" ] && . "$file"
 done
 unset file

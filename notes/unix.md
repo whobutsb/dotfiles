@@ -152,6 +152,13 @@ Remove all zip files bigger than 100MB
 
     find . -name "*.zip" -size +100M -exec rm -i "{}" \; 
 
+Find and delete files older than 10 days
+
+    find ~/the_directory -mtime +10 -type f -delete
+
+- `-mtime +10` - older than 10 days
+- `-type f` - only files
+
 ___
 
 ### Grep
@@ -225,6 +232,15 @@ _Links_
 
  - [New Server Security Essentials](http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers)
 
+### Firewalls
+
+#### UFW (Uncomplicated Firewall)
+
+__Links__
+
+- [Ubuntu UFW Guide](https://help.ubuntu.com/community/UFW)
+- [Firewalls Guide](http://www.toolsforitservices.com/firewall-tutorials-setup-everyones-favorite-excuse-things-working/)
+
 ## SSH
 
 ### SSH Tunneling
@@ -269,4 +285,6 @@ If our remote server's IP address was `123.123.123.123`, then our friends can ac
 - [SSH Kung-Fu](http://blog.tjll.net/ssh-kung-fu/)
 - [Servers For Hackers - SSH Tricks](http://serversforhackers.com/editions/2014/07/01/ssh-tricks/)
 
+__General Links__
 
+- [The Bash Guide](http://guide.bash.academy/)

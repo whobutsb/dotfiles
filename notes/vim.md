@@ -178,3 +178,4 @@ _General Vim Links_
 
 - [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
 - [A Vim Primer](http://danielmiessler.com/study/vim/)
+- [emzap79 Quick Reference Card](https://github.com/emzap79/QRCs/blob/master/qrcVim.pdf)

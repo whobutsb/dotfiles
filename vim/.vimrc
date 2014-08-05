@@ -1,3 +1,6 @@
+" .vimrc
+" Author: Steve Barbera
+
 let mapleader=','
 
 set nocompatible              " Use Vim mode, not vi mode
@@ -91,14 +94,16 @@ Bundle "jelera/vim-javascript-syntax"
 Bundle "ervandew/supertab"
 Bundle "plasticboy/vim-markdown"
 Bundle "Shougo/neocomplete"          
+Bundle "lsdr/monokai"
+Bundle "rking/ag.vim"
 
 call vundle#end()
 filetype plugin indent on     " Enable automatic settings based on file type
 
-" theme 
-set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
+" using monokai theme 
+ set background=dark
+" colorscheme solarized
+" let g:solarized_termcolors=256
 
 " Disable Background Color Erase (BCE) so that color shemes
 " work properly when Vim is used inside tmux and GNU scree.
@@ -130,7 +135,6 @@ nnoremap <C-t>     :tabnew<CR>
 nnoremap tj :tabnext<CR>
 nnoremap tk :tabprev<CR>
 
-
 " splits navigation 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -138,6 +142,11 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 set splitbelow 
 set splitright 
+
+" In line copy and paste to system clipboard
+" http://vim.wikia.com/wiki/In_line_copy_and_paste_to_system_clipboard
+vmap <C-c> y:call system("pbcopy", getreg("\""))<CR> 
+nmap <C-v>:call setreg("\"",system("pbpaste"))<CR>p
  
  " PHP Syntax Highlighting
  let php_sql_query=1
