@@ -32,7 +32,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git sublime)
+plugins=(git sublime virtualbox)
 
 # Files to Source
 source $ZSH/oh-my-zsh.sh
@@ -41,6 +41,16 @@ for file in ~/dotfiles/{exports,aliases,my_functions}; do
     [ -r "$file" ] && . "$file"
 done
 unset file
+
+COMPLETION_WAITING_DOTS="true"
+
+# Antigen 
+ANTIGEN=$HOME/dotfiles/zsh/antigen
+
+source $ANTIGEN/antigen.zsh
+# antigen-use oh-my-zsh
+antigen bundle $HOME/dotfiles/zsh/custom/plugins/virtualbox 
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 #Source Private Files
 source ~/.private_aliases
