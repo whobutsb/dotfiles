@@ -13,7 +13,7 @@ set confirm                   " Prompt to save unsaved changes when exits
 set viminfo='1000,f1,<500,:100,/100,h   "Keep various historires between edits
 
 " Spellcheck
-set spell spelllang=en_us
+" set spell spelllang=en_us
 
 " Search Options
 set hlsearch            " highlight search terms 

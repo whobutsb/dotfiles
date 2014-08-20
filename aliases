@@ -79,7 +79,7 @@ if [ "$(uname -s)" = "Darwin" ]; then
  	alias chrome="open -a google\ chrome"
         alias firefox="/Applications/FireFox.app/Contents/MacOS/firefox-bin --ProfileManager"
 	alias f="open -a Finder"
-	alias yo="open -a Yojimbo"
+	# alias yo="open -a Yojimbo"
 
   	# Show and hide files in Finder
     alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES; killall -HUP Finder"

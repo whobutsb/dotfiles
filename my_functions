@@ -1,3 +1,5 @@
+#!/bin/sh
+
 #Helps with the slow tab completion of git repos
 __git_files () { 
     _wanted files expl 'local files' _files  }
@@ -13,4 +15,10 @@ alias .6='cd ../../../../../../'            # Go back 6 directory levels
 
 git_page(){
     open -a /Applications/Google\ Chrome.app/ http://www.github.com/$1
+}
+
+# Searches in the current director for a file 
+# Usage: fname steve
+function fname(){
+    find . -iname "*$@*"
 }
