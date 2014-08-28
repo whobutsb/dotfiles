@@ -359,8 +359,6 @@ noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=lin
 
 
 
-
-
 let g:javascript_enable_domhtmlcss = 1
 
 
