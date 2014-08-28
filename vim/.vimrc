@@ -141,6 +141,7 @@ let no_buffers_menu=1
 highlight BadWhitespace ctermbg=red guibg=red
 colorscheme molokai
 
+set mouse=a
 set mousemodel=popup
 set t_Co=256
 set nocursorline
