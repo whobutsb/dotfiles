@@ -71,6 +71,7 @@ NeoBundle "scrooloose/syntastic"
 
 "" Markdown Bundle
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'nelstrom/vim-markdown-preview'
 
 
 call neobundle#end()
@@ -299,7 +300,7 @@ set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$'
 let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
-let g:ctrlp_use_caching = 0
+let g:ctrlp_use_caching = 1
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_map = ',e'
@@ -355,7 +356,17 @@ vmap > >gv
 
 "" Open current line on GitHub
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
+
 "" Custom configs
+
+"" Markdown Preview
+map <leader>p :Mm<CR>
+
+"" Vim Markdown
+"" disable folding
+let g:vim_markdown_folding_disabled=1
+"" set initial foldlevel
+"" let g:vim_markdown_initial_foldlevel=1
 
 
 
