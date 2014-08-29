@@ -61,10 +61,8 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'gorodinskiy/vim-coloresque'
 NeoBundle 'tpope/vim-haml'
 
-
 "" PHP Bundle
 NeoBundle 'arnaud-lb/vim-php-namespace'
-
 
 "" Javascript Bundle
 NeoBundle "scrooloose/syntastic"
@@ -144,7 +142,7 @@ colorscheme molokai
 set mouse=a
 set mousemodel=popup
 set t_Co=256
-set nocursorline
+set cursorline
 set guioptions=egmrti
 set gfn=Monospace\ 8
 
@@ -218,6 +216,9 @@ let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 30
 
+" Add <leader> t to open NerdTree
+nnoremap <leader>t :NERDTreeToggle<cr>
+
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
@@ -272,6 +273,9 @@ set autoread
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
+"" Remap ESC to jj
+inoremap jj <ESC>
+
 "" Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
@@ -372,10 +376,7 @@ let g:vim_markdown_folding_disabled=1
 "" set initial foldlevel
 "" let g:vim_markdown_initial_foldlevel=1
 
-
-
 let g:javascript_enable_domhtmlcss = 1
-
 
 "" Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))

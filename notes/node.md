@@ -10,6 +10,9 @@ Used for writing applications for the desktop.
 
 ### Links
 
+#### Articles 
+
+- [Debugging in Node](http://fullstackforum.com/software/2014/08/28/debugging-in-nodejs-part-1-the-basics/)
 
 #### Books
 
