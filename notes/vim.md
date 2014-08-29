@@ -162,6 +162,17 @@ Set the spell check in the `~/.vimrc`
 
 - `:%s/find text/replacement text/g`  
 
+## Key Commands 
+
+- `<ESC>` - Escape Key
+- `<C-G>` - CTRL-G
+- `<Up>` - cursor up key
+- `<C-LeftMouse>` - Control- left mouse click
+- `<S-F11>` - Shifted functon key 11
+- `<M-a>` - Meta- a ('a' with bit 8 set)
+- `<M-A>` - Meta- A ('A' with bit 8 set)
+- `<t_kd>` - "kd" termcap entry (cursor down key)
+
 ## Mappings Keys
 
 Get a list of the current keys mappings
