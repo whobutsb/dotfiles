@@ -12,7 +12,9 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="dst"
+ZSH_THEME="tjkirch"
+
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
@@ -52,7 +54,16 @@ antigen bundle $HOME/dotfiles/zsh/custom/plugins/virtualbox
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle sublime
 antigen bundle git
+antigen bundle vi-mode
 
 
 #Source Private Files
 source $HOME/.private_aliases
+
+## Vim Mapping in ZSH
+# http://dougblack.io/words/zsh-vi-mode.html
+# https://github.com/hchbaw/opp.zsh
+# Vi mode
+# bindkey -v
+# # Kill lag when switch from normal to visual modes
+export KEYTIMEOUT=1

@@ -16,3 +16,10 @@
 	
 [color]
 	ui = true
+
+[diff]
+	tool = vimdiff
+	prompt = false
+
+[alias]
+	d = difftool
