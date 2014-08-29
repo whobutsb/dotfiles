@@ -19,7 +19,9 @@
 
 [diff]
 	tool = vimdiff
-	prompt = false
 
 [alias]
 	d = difftool
+
+[difftool]
+	prompt = false
