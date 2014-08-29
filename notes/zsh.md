@@ -6,7 +6,7 @@
 
 ## Shortcuts & Aliaes
 
-*OSX Plugin*
+**OSX Plugin**
 
 - `tab` - open the current directory in a new tab
 - `pfd` - return the path of the frontmost Finder window
@@ -16,3 +16,4 @@
 - `quick-look` - Quick Look a specfied file
 - `man-preview` - open a specified man page in Preview
 - `trash` - move a specified file to the Trash
+

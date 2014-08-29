@@ -54,8 +54,10 @@ antigen bundle $HOME/dotfiles/zsh/custom/plugins/virtualbox
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle sublime
 antigen bundle git
+antigen bundle osx
+antigen bundle vagrant
+antigen bundle web-search
 antigen bundle vi-mode
-
 
 #Source Private Files
 source $HOME/.private_aliases

@@ -4,6 +4,9 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+# Google Websearch
+alias goog="google"
+
 ## SSH/SCP
 alias go="ssh"
 alias get="scp"
@@ -87,3 +90,4 @@ if [ "$(uname -s)" = "Darwin" ]; then
 fi
 
 # Git
+
