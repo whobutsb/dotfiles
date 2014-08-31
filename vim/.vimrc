@@ -54,6 +54,7 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'tomasr/molokai'
 
 "" Custom bundles
+NeoBundle 'kshenoy/vim-signature'
 
 "" HTML Bundle
 NeoBundle 'amirh/HTML-AutoCloseTag'
@@ -293,6 +294,9 @@ noremap <Leader>gr :Gremove<CR>
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
+
+"" Marks
+nnoremap <leader>m :marks<CR>
 
 "" Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>

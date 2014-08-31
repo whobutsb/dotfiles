@@ -7,6 +7,12 @@ Notes and thoughts on the dark arts of Vim.
 - `m{a-zA-Z}` - Set Mark {a-zA-Z} at cursor position. 
 - `` `{a-zA-Z} `` - Move to mark 
 - `:marks ` - List all the current marks (not a motion command)
+- `,m` - lists the marks
+- `m,` - place next available mark
+- `m.` - if no mark on line, place the next available mark. Otherwise, remove (first) existing mark.
+- `m-` - Delete all marks from teh current line
+- `m<Space>` - delete all marks from the current buffer
+- `'?` - open location list and display local marks'?` - open location list and display local marks
 
 ## Markdown Options
 
@@ -189,4 +195,3 @@ _General Vim Links_
 
 - [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
 - [A Vim Primer](http://danielmiessler.com/study/vim/)
-- [emzap79 Quick Reference Card](https://github.com/emzap79/QRCs/blob/master/qrcVim.pdf)
