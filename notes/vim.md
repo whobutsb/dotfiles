@@ -72,6 +72,8 @@ __Links__
 
 *Splits*
 
+- `ctrl+w q` - close split
+
 Create a vertical split using `:vsp` and horizontal `:sp`. 
 
     :vsp ~/.vimrc
@@ -190,8 +192,21 @@ Get a list of the current keys mappings
 
 WIP - http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
 
+## CTags
 
-_General Vim Links_
+Generating the CTags. Navigate to the project parent directory
+
+	ctags -f php.tags --languages=PHP -R
+
+Tell Vim to use the tag file: 
+
+	:set tags=~/path/to/php.tags
+
+## PHP Specific Vim Tips
+
+- `:php -l %` - lint the current php file
+
+## General Vim Links
 
 - [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
 - [A Vim Primer](http://danielmiessler.com/study/vim/)

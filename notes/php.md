@@ -1,7 +1,10 @@
-
 # PHP Notes
 
 Ideas, notes, and tuorials on php. 
+
+## Lint PHP file
+
+	php -l <filename>
 
 ## PHPUnit 
 

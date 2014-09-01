@@ -72,7 +72,6 @@ NeoBundle "scrooloose/syntastic"
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'nelstrom/vim-markdown-preview'
 
-
 call neobundle#end()
 
 " Required:
@@ -281,6 +280,11 @@ inoremap jj <ESC>
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
+nnoremap <C-J> <C-W><C-J>    " CTRL+j move down a split
+nnoremap <C-K> <C-W><C-K>    " CTRL+k move up a split
+nnoremap <C-L> <C-W><C-L>    " CTRL+l move right a split
+nnoremap <C-H> <C-W><C-H>    " CTRL-h move left a split
+
 "" Git
 noremap <Leader>ga :!git add .<CR>
 noremap <Leader>gc :!git commit -m '<C-R>="'"<CR>
@@ -367,7 +371,7 @@ vmap < <gv
 vmap > >gv
 
 "" Open current line on GitHub
-noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
+noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR>
 
 "" Custom configs
 
