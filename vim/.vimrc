@@ -46,6 +46,8 @@ NeoBundle 'Shougo/vimproc.vim', {
       \ }
 NeoBundle 'Shougo/vimshell.vim'
 
+NeoBundle 'majutsushi/tagbar'
+
 "" Snippets
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
@@ -55,6 +57,8 @@ NeoBundle 'tomasr/molokai'
 
 "" Custom bundles
 NeoBundle 'kshenoy/vim-signature'
+"" NeoBundle 'shougo/neocomplete'
+NeoBundle 'gregsexton/matchtag'
 
 "" HTML Bundle
 NeoBundle 'amirh/HTML-AutoCloseTag'
@@ -289,10 +293,11 @@ nnoremap <C-H> <C-W><C-H>    " CTRL-h move left a split
 noremap <Leader>ga :!git add .<CR>
 noremap <Leader>gc :!git commit -m '<C-R>="'"<CR>
 noremap <Leader>gsh :!git push<CR>
-noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gs :!git status<CR>
 noremap <Leader>gb :Gblame<CR>
-noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gd :!git d<CR>
 noremap <Leader>gr :Gremove<CR>
+noremap <Leader>gl :!git lg<CR>
 
 "" Tabs
 nnoremap <Tab> gt
@@ -378,6 +383,9 @@ noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=lin
 "" Markdown Preview
 map <leader>p :Mm<CR>
 
+"" Tagbar Toggle
+nmap <F8> :TagbarToggle<CR>
+
 "" Vim Markdown
 "" disable folding
 let g:vim_markdown_folding_disabled=1
@@ -385,6 +393,9 @@ let g:vim_markdown_folding_disabled=1
 "" let g:vim_markdown_initial_foldlevel=1
 
 let g:javascript_enable_domhtmlcss = 1
+
+"" NeoComplete Settings
+"" let g:neocomplete#enable_at_startup = 1
 
 "" Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))

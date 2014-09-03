@@ -12,7 +12,7 @@ Notes and thoughts on the dark arts of Vim.
 - `m.` - if no mark on line, place the next available mark. Otherwise, remove (first) existing mark.
 - `m-` - Delete all marks from teh current line
 - `m<Space>` - delete all marks from the current buffer
-- `'?` - open location list and display local marks'?` - open location list and display local marks
+- `'?` - open location list and display local marks
 
 ## Markdown Options
 
