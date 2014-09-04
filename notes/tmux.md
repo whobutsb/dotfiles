@@ -55,6 +55,10 @@ Tmux has a tabbed interface, but its calls its tabs "Windows".
 - `tmux info` - lists out every session, window, pane, its pid, etc.
 - `tmux source-file ~/.tmux.conf` - reloads the tmux config
 
+## Cheat Sheets
+
+- [Mohamed Alaa Cheatsheet](https://gist.github.com/MohamedAlaa/2961058)
+
 ## Links
 
 - [A TMUX Primer](http://danielmiessler.com/study/tmux/)
