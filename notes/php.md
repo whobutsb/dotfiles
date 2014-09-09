@@ -26,3 +26,4 @@ Testing private methods with PHPUnit
 _Links_
 
 - [PointNull.com](http://pointnull.com/testing-private-methods-with-phpunit/)
+- [Awesome PHP](https://github.com/ziadoz/awesome-php/blob/master/README.md)
