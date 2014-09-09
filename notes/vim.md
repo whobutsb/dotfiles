@@ -93,9 +93,7 @@ Remapping for moving around the buffers
 
 ### Jumplist
 
-Allows you to jump back and forth in where you were in the file.
-
-- `Ctrl+o` - allows you to jump back to your last jump location 
+Allows you to jump back and forth in where you were in the file.  - `Ctrl+o` - allows you to jump back to your last jump location 
 - `Ctrl+i` - jump forward to the next location
 
 ## Vim Verbs
@@ -134,11 +132,36 @@ Two types of VIm verbs.  Some of them act on a single character, the others act 
 - `F.` - go to the previous occurence of `.` on the current line
 - `^` - go to beginning of the line
 
-__Power__
+#### Words
+
+-`aw` - a word (includes surrounding white space)
+- `iw` - inner word (does not include surrounding white space)
+
+#### Sentences
+
+- `as` - a sentence
+- `is` inner sentence
+
+#### Paragraphs
+
+- `ap` - a paragraph
+- `ip` - inner paragraph
+
+#### Tags
+
+- `at` - a tag block
+- `it` - inner tag block
+
+#### Power
 
 - `d$` - delete to the end of the line
 - `cf)` - change though the next closing parentheses
 - `yG` - copy everything through the end of the file 
+- `cit` - change inside a tag
+
+__Links__
+
+- [Vim Text Objects: The Definitive Guide](http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/)
 
 ### Undo and Redo
 
@@ -160,8 +183,7 @@ Set the spell check in the `~/.vimrc`
 ### Repeating
 
 - `.` - repeat the last normal mode command
-- `n` - repeat the last search
-- `;` - repeat the last character-wise search
+- `n` - repeat the last search - `;` - repeat the last character-wise search
 - `//` - repeat the last search
 - `@:` - repeast the last ex-mode command
 - `@@` - repeat the last macro used
@@ -191,6 +213,14 @@ Get a list of the current keys mappings
 - `:verbose map <key>` - determine the script or plugin that defines a map for a key sequence
 
 WIP - http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
+
+## Filetypes
+
+Set the filetype for a file
+
+	:set filetype=php
+	"" or
+	:set ft=php
 
 ## CTags
 
