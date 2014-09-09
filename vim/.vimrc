@@ -49,14 +49,16 @@ NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'majutsushi/tagbar'
 
 "" Snippets
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
+"" https://github.com/msanders/snipmate.vim
+"" http://www.bestofvim.com/plugin/snipmate/
+NeoBundle 'msanders/snipmate.vim'
 
 "" Color
 NeoBundle 'tomasr/molokai'
 
 "" Custom bundles
 NeoBundle 'kshenoy/vim-signature'
+
 "" NeoBundle 'shougo/neocomplete'
 NeoBundle 'gregsexton/matchtag'
 
@@ -75,6 +77,10 @@ NeoBundle "scrooloose/syntastic"
 "" Markdown Bundle
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'nelstrom/vim-markdown-preview'
+NeoBundle 'nelstrom/vim-markdown-folding'
+
+"" Blade Bundles
+NeoBundle 'xsbeats/vim-blade'
 
 call neobundle#end()
 
@@ -328,10 +334,6 @@ let g:ctrlp_map = ',e'
 let g:ctrlp_open_new_file = 'r'
 
 " snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
 
 " syntastic
 let g:syntastic_always_populate_loc_list=1
@@ -353,6 +355,16 @@ noremap YY "+y<CR>
 noremap P "+gP<CR>
 noremap XX "+x<CR>
 
+"" Code Folding
+set foldmethod=indent	" fold based on indent
+set foldnestmax=10		" deepest fold is 10 levels
+set nofoldenable		" dont fold by default
+set foldlevel=1
+
+"" Space to toggle folds
+nnoremap <Space> za
+vnoremap <Space> za
+
 if has('macunix')
   " pbcopy for OSX copy/paste
   vmap <C-x> :!pbcopy<CR>
@@ -360,9 +372,7 @@ if has('macunix')
 endif
 
 "" Buffer nav
-noremap ,z :bp<CR>
 noremap ,q :bp<CR>
-noremap ,x :bn<CR>
 noremap ,w :bn<CR>
 
 "" Close buffer

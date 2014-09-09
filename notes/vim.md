@@ -56,6 +56,7 @@ Buffers are Vim's term for a "block of text stored in memory".
 - `:bn` - next buffer
 - `:bp` - previous buffer
 - `:bd` - close buffer
+- `:bd!` - close buffer without saving
 
 *Tabs* 
 
@@ -191,6 +192,20 @@ Set the spell check in the `~/.vimrc`
 ## Find and Replace
 
 - `:%s/find text/replacement text/g`  
+
+## Code Folding
+
+- `zi` - switch folding on and off
+- `za` - toggle current fold open/closed
+- `zc` - close the current fold
+- `zR` - open all folds
+- `zM` - close all folds
+- `zv` - expand folds to reveal cursor
+
+### Navigating
+
+- `zj` - move down to the top of next fold
+- `zk` - move up to bottom of previous fold
 
 ## Key Commands 
 
