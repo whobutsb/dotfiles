@@ -17,3 +17,10 @@ Run the bootstrap.rb
     chmod +x bootstrap.rb
     ./bootstrap.rb
     
+# iTerm2 notes
+
+The caps lock key has been remapped to be ctrl
+
+## Links
+
+### [A Modern Space Cadet - Steve Losh](http://stevelosh.com/blog/2012/10/a-modern-space-cadet/)

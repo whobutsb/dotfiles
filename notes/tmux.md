@@ -42,6 +42,8 @@ Tmux has a tabbed interface, but its calls its tabs "Windows".
 - `prefix + x` - kill window
 - `prefix + w` - list windows
 
+Moving windows to a new position.  `move-window | movew [-s src-window] [-t dest-window]`. Example of moving a window from position 3 to 9.  `movew -s 3 -t 9`.
+
 Shortcuts
 
 - `c` - new window
@@ -62,6 +64,10 @@ Shortcuts
 - `prefix |` - max / un-max pane
 - `prefix o` - swap panes
 
+## Vi scroll mode
+
+`prefix + Esc` brings you in to copy mode, where you can use `v` for visual selection and `y` to copy.  To paste use: `prefix + p`.
+
 ## Helpful Commands
 
 - `tmux list-keys` - lists every bound keys
@@ -79,3 +85,5 @@ Shortcuts
 - [Tmux: A Simple Start](http://www.sitepoint.com/tmux-a-simple-start/)
 - [Knowledge Nuggest From My Tmux.conf](http://www.tylercipriani.com/2013/09/12/important-lines-in-my-tmux.html)
 - [A tmux Crash Course](http://robots.thoughtbot.com/a-tmux-crash-course)
+- [Hawk Host Blog Tmux Part 1](http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/)
+- [Hawk Host Blog Tmux Part 2](http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2/)j

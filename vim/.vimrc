@@ -312,6 +312,7 @@ noremap <Leader>gl :!git lg<CR>
 "" Tabs
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
+"" Shift Tab creates a new tab
 nnoremap <silent> <S-t> :tabnew<CR>
 
 "" Marks

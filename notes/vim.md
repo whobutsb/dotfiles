@@ -43,6 +43,9 @@ _Links_
 - `L` - move to the bottom of the screen 
 - `gg` - go to the top of the file
 - `G` - go to the bottom of the file
+- `zz` - move the current line to the middle of the screen
+- `zt` - move the current line to the top of the screen
+- `zb` - move the current line to the bottom of the screen
 
 
 *Buffers*
