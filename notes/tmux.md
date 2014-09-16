@@ -50,9 +50,11 @@ Shortcuts
 - `f` - find window
 - `&` - kill window
 - `.` - move window
+- `,` - rename window
 
 ## Panes
 
+- `prefix x` - kill pane
 - `prefix %` - vertical split
 - `prefix "` - horizontal split
 - `prefix {` - switch pane position
