@@ -25,6 +25,9 @@ Notes and thoughts on the dark arts of Vim.
 - `:Toc` - create a vertical split of table of contents 
 - `:Toch` - create a horizontal split of the TOC 
 - `:Toct` - create a new tab with TOC
+- `,p` - preview the markdown file in the browser
+
+After previewing the file the vim buffer will disappear.  Need to use `:redraw!` to fix the screen. Fixed in my config with appending the command .vimrc :D.
 
 _Links_
 
@@ -253,6 +256,14 @@ Tell Vim to use the tag file:
 ## PHP Specific Vim Tips
 
 - `:php -l %` - lint the current php file
+
+## Finding Help in the VimDoc
+
+- `:` -  is used for command line/ex-mode commands (`:help :help`)
+- `'` - is used for options (`:help 'incsearch'`)
+- No prefix for normal mode commands (`:help CTRL-]`)
+- `i_` - for insert mode (`:help i_CTRL-[`)
+- `v_` - for visual mode (`:help v_CTRL-]`)
 
 ## General Vim Links
 

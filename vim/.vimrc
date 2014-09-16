@@ -396,7 +396,7 @@ noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=lin
 "" Custom configs
 
 "" Markdown Preview
-map <leader>p :Mm<CR>
+map <leader>p :Mm<CR>:redraw!<CR>
 
 "" Tagbar Toggle
 nmap <F8> :TagbarToggle<CR>
