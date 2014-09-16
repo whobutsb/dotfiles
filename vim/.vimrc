@@ -48,6 +48,10 @@ NeoBundle 'Shougo/vimshell.vim'
 
 NeoBundle 'majutsushi/tagbar'
 
+"" https://github.com/xolox/vim-session
+NeoBundle 'xolox/vim-session'
+NeoBundle 'xolox/vim-misc'
+
 "" Snippets
 "" https://github.com/msanders/snipmate.vim
 "" http://www.bestofvim.com/plugin/snipmate/
