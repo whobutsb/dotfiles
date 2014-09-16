@@ -224,6 +224,12 @@ _Links_
 
 - [Cyberciti - FAQ: How can i find out who is logged in?](http://www.cyberciti.biz/faq/how-can-i-find-out-who-is-logged-in/)
 
+## Networking
+
+Check to see if the host and port can be connected to. 
+
+	nc -vz <hostname> -w 1 <port>
+
 ## System
 
 ### Security & Setup

@@ -13,6 +13,8 @@ One day I will learn and use this TMUX, for now here are my notes.
 
 ## Usage
 
+Default Prefix `CTRL+b` 
+
 Note: In Tyler's [config](https://github.com/thcipriani/dotfiles/blob/master/tmux.conf) he has his prefix set up to be ctrl+f. 
 
 - `prefix :` - enter command mode for tmux
@@ -30,7 +32,7 @@ Sessions are useful for completely seperating work environments.
 - `tmux detach (prefix+d)` - detach the current attached session
 - `tmux rename-session -t [current-name] [new-name] (prefix+$)` - rename a session 
 
-## Windows
+## Windows (tabs)
 
 Tmux has a tabbed interface, but its calls its tabs "Windows".
 
@@ -40,6 +42,15 @@ Tmux has a tabbed interface, but its calls its tabs "Windows".
 - `prefix + x` - kill window
 - `prefix + w` - list windows
 
+Shortcuts
+
+- `c` - new window
+- `,` - name window
+- `w` - list windows
+- `f` - find window
+- `&` - kill window
+- `.` - move window
+
 ## Panes
 
 - `prefix %` - vertical split
@@ -47,6 +58,7 @@ Tmux has a tabbed interface, but its calls its tabs "Windows".
 - `prefix {` - switch pane position
 - `prefix #}` - switch windows
 - `prefix |` - max / un-max pane
+- `prefix o` - swap panes
 
 ## Helpful Commands
 
