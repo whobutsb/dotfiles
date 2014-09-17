@@ -46,6 +46,7 @@ NeoBundle 'Shougo/vimproc.vim', {
       \ }
 NeoBundle 'Shougo/vimshell.vim'
 
+
 NeoBundle 'majutsushi/tagbar'
 
 "" https://github.com/xolox/vim-session
@@ -339,6 +340,7 @@ let g:ctrlp_map = ',e'
 let g:ctrlp_open_new_file = 'r'
 
 " snippets
+let g:snips_author='Steve Barbera'
 
 " syntastic
 let g:syntastic_always_populate_loc_list=1

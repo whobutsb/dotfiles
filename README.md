@@ -5,7 +5,7 @@ Preferences and Configurations for my environment
 
 Heavily influenced by [Tyler Cipriani's Dotfiles](https://github.com/thcipriani/dotfiles)
 
-#Install Instructions
+# Install Instructions
 
 Clone the dotfiles
     
