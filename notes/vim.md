@@ -243,6 +243,22 @@ Set the filetype for a file
 	"" or
 	:set ft=php
 
+Set multiple file types with: 
+
+	:set ft=html.php
+
+this activates teh snippets for both HTML and PHP for the current file.
+
+## Snippets
+
+Using the plugin [snipmate](https://github.com/msanders/snipmate.vim).  More
+info here:
+[http://www.bestofvim.com/plugin/snipmate/](http://www.bestofvim.com/plugin/snipmate/)
+Help file can be found at `:h snipMate.txt`.
+
+Snippets can be defined in two places: `snippets/<filetype>/<trigger>.snippet`
+or `snippets/<filetype>.snippets`
+
 ## CTags
 
 Generating the CTags. Navigate to the project parent directory
