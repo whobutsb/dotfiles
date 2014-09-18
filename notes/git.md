@@ -20,7 +20,30 @@ Discard all local changes in your working copy.  Resetting your project complete
 
 `--ammend` lets you fix (only) the very last commit very easily.  Since this rewrites history never ammend commits that have already been pushed to a remote repo.
 
+## Git Hooks
 
+- `prepare-commit-msg` - fires before the commit message prompt. 
+- `pre-commit` - fires before the `git commit`
+- `post-commit` - fires after the `git commit`
+- `pre-checkout` - fires before changing branches
+- `post-checkout` - fires after changing branches
+- `post-merge` - fires after merging branches
+- `pre-push` - fires before code is pushed to a remote
+
+**Extending Hooks**
+
+Hooks can be extended like so: `{pre,post}-$EVENT` within the `.git/hooks` directory.  
+
+**Example usage**
+
+Automatically run composer after checking out
+
+	# .git/hooks/post-checkout
+	composer install > /dev/null &
+
+
+
+[ThoughtBot - Use Git Hooks to Automate Necessary but annoying tasks](http://robots.thoughtbot.com/use-git-hooks-to-automate-annoying-tasks)
 
 __Links__
 
