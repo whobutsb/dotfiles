@@ -2,6 +2,24 @@
 
 Notes and thoughts on the dark arts of Vim.
 
+## Visual Mode
+
+- `v` - enter visual mode characterwise
+- `V` - enter visual mode linewise
+- `CTRL-V` - enter visual mode blockwise
+
+_tip_: `o` switches cursor to the other corner. huge!
+
+- `I<text><Esc>` - insert text before block on every line
+
+## Abbreviations
+
+Write them on the fly!
+
+	:ab temlpate template
+
+every time temlpate is spelled it will automatically be fixed
+
 ## Marks
 
 - `m{a-zA-Z}` - Set Mark {a-zA-Z} at cursor position. 
@@ -259,6 +277,8 @@ Help file can be found at `:h snipMate.txt`.
 Snippets can be defined in two places: `snippets/<filetype>/<trigger>.snippet`
 or `snippets/<filetype>.snippets`
 
+Reload a snippet on the fly with: `:call ReloadAllSnippets()`
+
 ## CTags
 
 Generating the CTags. Navigate to the project parent directory
@@ -285,3 +305,4 @@ Tell Vim to use the tag file:
 
 - [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
 - [A Vim Primer](http://danielmiessler.com/study/vim/)
+- [Vim for (PHP) Programmers](http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation?next_slideshow=1)
