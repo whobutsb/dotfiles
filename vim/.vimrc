@@ -288,6 +288,9 @@ set autoread
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
+"" Get rid of Ex mode, its dumb and i dont need it
+nnoremap Q <nop>
+
 "" Remap ESC to jj
 inoremap jj <ESC>
 
