@@ -85,7 +85,7 @@ NeoBundle 'nelstrom/vim-markdown-preview'
 NeoBundle 'nelstrom/vim-markdown-folding'
 
 "" Blade Bundles
-NeoBundle 'xsbeats/vim-blade'
+NeoBundle 'johnhamelink/blade.vim'
 
 call neobundle#end()
 
