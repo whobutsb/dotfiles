@@ -249,6 +249,10 @@ __Links__
 
 ## SSH
 
+### Add Public Key to remote server
+
+		cat <ssh-key.pub> | ssh <user>@<ip-address> "cat >> ~/.ssh/authorized_keys"
+
 ### SSH Tunneling
 
 **Local Port Forwarding**

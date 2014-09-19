@@ -51,6 +51,22 @@ _Links_
 
 - [plasticboy/vim-markdown](https://github.com/plasticboy/vim-markdown)
 
+## Windows
+
+A window is a viewport on to a buffer.
+
+- `<C-w>s` - split the current window horizontally
+- `<C-w>v` - split the current window vertically
+- `<C-w>w` - cycle between open windows
+- `<C-w>c` - close the active window
+- `<C-w>o` - keep only the active window, closing all others
+- `<C-w>=` - equalize width and height of all windows
+- `<C-w>_` - maximize height of the active window
+- `<C-w>|` - maximize width of the active window
+- `[N]<C-w>_` - set active window height to [N] rows
+- `[N]<C-w>|` - set active window width to [N] columns
+- `<C-w>T` - Move the current window into its own tab
+
 ## Splits / Buffers / Tabs
 
 *Movement around the page* 
