@@ -51,6 +51,21 @@ _Links_
 
 - [plasticboy/vim-markdown](https://github.com/plasticboy/vim-markdown)
 
+## Page Movement
+
+- `Ctrl+b` - page up
+- `Ctrl+f` - page down
+- `Ctrl+u` - move up half a screen
+- `Ctrl+d` - move down half a screen 
+- `H` - move to the top of the screen 
+- `M` - move to the middle of the screen 
+- `L` - move to the bottom of the screen 
+- `gg` - go to the top of the file
+- `G` - go to the bottom of the file
+- `zz` - move the current line to the middle of the screen
+- `zt` - move the current line to the top of the screen
+- `zb` - move the current line to the bottom of the screen
+
 ## Windows
 
 A window is a viewport on to a buffer.
@@ -67,25 +82,7 @@ A window is a viewport on to a buffer.
 - `[N]<C-w>|` - set active window width to [N] columns
 - `<C-w>T` - Move the current window into its own tab
 
-## Splits / Buffers / Tabs
-
-*Movement around the page* 
-
-- `Ctrl+b` - page up
-- `Ctrl+f` - page down
-- `Ctrl+u` - move up half a screen
-- `Ctrl+d` - move down half a screen 
-- `H` - move to the top of the screen 
-- `M` - move to the middle of the screen 
-- `L` - move to the bottom of the screen 
-- `gg` - go to the top of the file
-- `G` - go to the bottom of the file
-- `zz` - move the current line to the middle of the screen
-- `zt` - move the current line to the top of the screen
-- `zb` - move the current line to the bottom of the screen
-
-
-*Buffers*
+## Buffers
 
 Buffers are Vim's term for a "block of text stored in memory".
 
@@ -98,7 +95,7 @@ Buffers are Vim's term for a "block of text stored in memory".
 - `:bd` - close buffer
 - `:bd!` - close buffer without saving
 
-*Tabs* 
+## Tabs
 
 - `:tabedit <filename>` - edit a specified file in a new tab
 - `:tabfind <filename>` - open a new tab with filename given, searching the 'path' to find it

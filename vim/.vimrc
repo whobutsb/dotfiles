@@ -87,6 +87,10 @@ NeoBundle 'nelstrom/vim-markdown-folding'
 "" Blade Bundles
 NeoBundle 'johnhamelink/blade.vim'
 
+" Vim Start Screen 
+" https://github.com/mhinz/vim-startify
+NeoBundle 'mhinz/vim-startify'
+
 call neobundle#end()
 
 " Required:
@@ -330,6 +334,9 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+"" Save the page with ctrl+s
+noremap <Leader>s :w<CR>
 
 "" ctrlp.vim
 set wildmode=list:longest,list:full
