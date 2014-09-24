@@ -2,16 +2,6 @@
 
 Notes and thoughts on the dark arts of Vim.
 
-## Visual Mode
-
-- `v` - enter visual mode characterwise
-- `V` - enter visual mode linewise
-- `CTRL-V` - enter visual mode blockwise
-
-_tip_: `o` switches cursor to the other corner. huge!
-
-- `I<text><Esc>` - insert text before block on every line
-
 ## Abbreviations
 
 Write them on the fly!
@@ -19,6 +9,94 @@ Write them on the fly!
 	:ab temlpate template
 
 every time temlpate is spelled it will automatically be fixed
+
+
+## Buffers
+
+Buffers are Vim's term for a "block of text stored in memory".
+
+- `:e <filename>` - opens a new buffer with the contents of the file
+- `:w <filename>` - save a buffer to a new location 
+- `:ls` - lists the open buffers and buffer numbers
+- `:b <buffer-number>` - switch to a specific buffer 
+- `:bn` - next buffer
+- `:bp` - previous buffer
+- `:bd` - close buffer
+- `:bd!` - close buffer without saving
+
+## Code Folding
+
+- `zi` - switch folding on and off
+- `za` - toggle current fold open/closed
+- `zc` - close the current fold
+- `zR` - open all folds
+- `zM` - close all folds
+- `zv` - expand folds to reveal cursor
+
+### Navigating
+
+- `zj` - move down to the top of next fold
+- `zk` - move up to bottom of previous fold
+
+## CTags
+
+Generating the CTags. Navigate to the project parent directory
+
+	ctags -f php.tags --languages=PHP -R
+
+Tell Vim to use the tag file: 
+
+	:set tags=~/path/to/php.tags
+
+## Filetypes
+
+Set the filetype for a file
+
+	:set filetype=php
+	"" or
+	:set ft=php
+
+Set multiple file types with: 
+
+	:set ft=html.php
+
+this activates teh snippets for both HTML and PHP for the current file.
+
+
+## General Vim Links
+
+- [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
+- [A Vim Primer](http://danielmiessler.com/study/vim/)
+- [Vim for (PHP) Programmers](http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation?next_slideshow=1)
+## Help in VimDoc
+
+- `:` -  is used for command line/ex-mode commands (`:help :help`)
+- `'` - is used for options (`:help 'incsearch'`)
+- No prefix for normal mode commands (`:help CTRL-]`)
+- `i_` - for insert mode (`:help i_CTRL-[`)
+- `v_` - for visual mode (`:help v_CTRL-]`)
+
+## Key Commands 
+
+- `<ESC>` - Escape Key
+- `<C-G>` - CTRL-G
+- `<Up>` - cursor up key
+- `<C-LeftMouse>` - Control- left mouse click
+- `<S-F11>` - Shifted functon key 11
+- `<M-a>` - Meta- a ('a' with bit 8 set)
+- `<M-A>` - Meta- A ('A' with bit 8 set)
+- `<t_kd>` - "kd" termcap entry (cursor down key)
+
+## Mappings Keys
+
+Get a list of the current keys mappings
+
+    :map 
+    :map!
+
+- `:verbose map <key>` - determine the script or plugin that defines a map for a key sequence
+
+WIP - http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
 
 ## Marks
 
@@ -53,6 +131,7 @@ _Links_
 
 ## Page Movement
 
+
 - `Ctrl+b` - page up
 - `Ctrl+f` - page down
 - `Ctrl+u` - move up half a screen
@@ -66,34 +145,21 @@ _Links_
 - `zt` - move the current line to the top of the screen
 - `zb` - move the current line to the bottom of the screen
 
-## Windows
+## PHP Specific Vim Tips
 
-A window is a viewport on to a buffer.
+- `:php -l %` - lint the current php file
 
-- `<C-w>s` - split the current window horizontally
-- `<C-w>v` - split the current window vertically
-- `<C-w>w` - cycle between open windows
-- `<C-w>c` - close the active window
-- `<C-w>o` - keep only the active window, closing all others
-- `<C-w>=` - equalize width and height of all windows
-- `<C-w>_` - maximize height of the active window
-- `<C-w>|` - maximize width of the active window
-- `[N]<C-w>_` - set active window height to [N] rows
-- `[N]<C-w>|` - set active window width to [N] columns
-- `<C-w>T` - Move the current window into its own tab
+## Snippets
 
-## Buffers
+Using the plugin [snipmate](https://github.com/msanders/snipmate.vim).  More
+info here:
+[http://www.bestofvim.com/plugin/snipmate/](http://www.bestofvim.com/plugin/snipmate/)
+Help file can be found at `:h snipMate.txt`.
 
-Buffers are Vim's term for a "block of text stored in memory".
+Snippets can be defined in two places: `snippets/<filetype>/<trigger>.snippet`
+or `snippets/<filetype>.snippets`
 
-- `:e <filename>` - opens a new buffer with the contents of the file
-- `:w <filename>` - save a buffer to a new location 
-- `:ls` - lists the open buffers and buffer numbers
-- `:b <buffer-number>` - switch to a specific buffer 
-- `:bn` - next buffer
-- `:bp` - previous buffer
-- `:bd` - close buffer
-- `:bd!` - close buffer without saving
+Reload a snippet on the fly with: `:call ReloadAllSnippets()`
 
 ## Tabs
 
@@ -226,96 +292,29 @@ Set the spell check in the `~/.vimrc`
 - `@:` - repeast the last ex-mode command
 - `@@` - repeat the last macro used
 
-## Find and Replace
+## Visual Mode
 
-- `:%s/find text/replacement text/g`  
+- `v` - enter visual mode characterwise
+- `V` - enter visual mode linewise
+- `CTRL-V` - enter visual mode blockwise
 
-## Code Folding
+_tip_: `o` switches cursor to the other corner. huge!
 
-- `zi` - switch folding on and off
-- `za` - toggle current fold open/closed
-- `zc` - close the current fold
-- `zR` - open all folds
-- `zM` - close all folds
-- `zv` - expand folds to reveal cursor
+- `I<text><Esc>` - insert text before block on every line
 
-### Navigating
+## Windows
 
-- `zj` - move down to the top of next fold
-- `zk` - move up to bottom of previous fold
+A window is a viewport on to a buffer.
 
-## Key Commands 
+- `<C-w>s` - split the current window horizontally
+- `<C-w>v` - split the current window vertically
+- `<C-w>w` - cycle between open windows
+- `<C-w>c` - close the active window
+- `<C-w>o` - keep only the active window, closing all others
+- `<C-w>=` - equalize width and height of all windows
+- `<C-w>_` - maximize height of the active window
+- `<C-w>|` - maximize width of the active window
+- `[N]<C-w>_` - set active window height to [N] rows
+- `[N]<C-w>|` - set active window width to [N] columns
+- `<C-w>T` - Move the current window into its own tab
 
-- `<ESC>` - Escape Key
-- `<C-G>` - CTRL-G
-- `<Up>` - cursor up key
-- `<C-LeftMouse>` - Control- left mouse click
-- `<S-F11>` - Shifted functon key 11
-- `<M-a>` - Meta- a ('a' with bit 8 set)
-- `<M-A>` - Meta- A ('A' with bit 8 set)
-- `<t_kd>` - "kd" termcap entry (cursor down key)
-
-## Mappings Keys
-
-Get a list of the current keys mappings
-
-    :map 
-    :map!
-
-- `:verbose map <key>` - determine the script or plugin that defines a map for a key sequence
-
-WIP - http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
-
-## Filetypes
-
-Set the filetype for a file
-
-	:set filetype=php
-	"" or
-	:set ft=php
-
-Set multiple file types with: 
-
-	:set ft=html.php
-
-this activates teh snippets for both HTML and PHP for the current file.
-
-## Snippets
-
-Using the plugin [snipmate](https://github.com/msanders/snipmate.vim).  More
-info here:
-[http://www.bestofvim.com/plugin/snipmate/](http://www.bestofvim.com/plugin/snipmate/)
-Help file can be found at `:h snipMate.txt`.
-
-Snippets can be defined in two places: `snippets/<filetype>/<trigger>.snippet`
-or `snippets/<filetype>.snippets`
-
-Reload a snippet on the fly with: `:call ReloadAllSnippets()`
-
-## CTags
-
-Generating the CTags. Navigate to the project parent directory
-
-	ctags -f php.tags --languages=PHP -R
-
-Tell Vim to use the tag file: 
-
-	:set tags=~/path/to/php.tags
-
-## PHP Specific Vim Tips
-
-- `:php -l %` - lint the current php file
-
-## Finding Help in the VimDoc
-
-- `:` -  is used for command line/ex-mode commands (`:help :help`)
-- `'` - is used for options (`:help 'incsearch'`)
-- No prefix for normal mode commands (`:help CTRL-]`)
-- `i_` - for insert mode (`:help i_CTRL-[`)
-- `v_` - for visual mode (`:help v_CTRL-]`)
-
-## General Vim Links
-
-- [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
-- [A Vim Primer](http://danielmiessler.com/study/vim/)
-- [Vim for (PHP) Programmers](http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation?next_slideshow=1)
