@@ -7,29 +7,10 @@ General notes and gems of information.
 > Write programs that do one thing and do it well.
 > Write programs to work together.
 > Write Programs to handle text streams, because that is a universal interface. 
-
--- Douglas Mcllroy
+> -- Douglas Mcllroy
 
 > "Unix is simple.  It just takes a genius to understand its simplicity."
-
--- Dennis Ritchie
-
-<!-- MarkdownTOC depth=3 -->
-
-- File System
-- Disk
-- Searching
-    - Find
-    - Grep
-    - Ack
-- Users
-- System
-    - Security & Setup
-- SSH
-    - SSH Tunneling
-
-<!-- /MarkdownTOC -->
-
+> -- Dennis Ritchie
 
 ## File System
 

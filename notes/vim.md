@@ -149,6 +149,11 @@ _Links_
 
 - `:php -l %` - lint the current php file
 
+## Registers
+
+Registers are simply containers that hold text.  They can be used in the manner of a clipboard for cutting, copying, and pasting text, or they can be used to record a macro by saving a sequence of keystrokes.  
+
+
 ## Snippets
 
 Using the plugin [snipmate](https://github.com/msanders/snipmate.vim).  More
