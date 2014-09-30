@@ -53,7 +53,7 @@ NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'majutsushi/tagbar'
 
 "" https://github.com/xolox/vim-session
-NeoBundle 'xolox/vim-session'
+" NeoBundle 'xolox/vim-session'
 NeoBundle 'xolox/vim-misc'
 
 "" Snippets
@@ -93,6 +93,10 @@ NeoBundle 'johnhamelink/blade.vim'
 " Vim Start Screen 
 " https://github.com/mhinz/vim-startify
 NeoBundle 'mhinz/vim-startify'
+
+" Ag - The Silver Searcher
+" https://github.com/rking/ag.vim
+NeoBundle 'rking/ag.vim'
 
 call neobundle#end()
 
@@ -406,7 +410,7 @@ vmap < <gv
 vmap > >gv
 
 "" Open current line on GitHub
-noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR>
+" noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR>
 
 "" Custom configs
 
@@ -474,7 +478,7 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php setlocal omnifunc=phpcomplete#Complete
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_force_omni_patterns')

@@ -46,7 +46,14 @@ Generating the CTags. Navigate to the project parent directory
 
 Tell Vim to use the tag file: 
 
-	:set tags=~/path/to/php.tags
+	:set tags+=~/path/to/php.tags
+
+Search through the tags
+
+	:tag /pattern // :tag /some_cool_class
+
+- `CTRL-]` - jump to the definition 
+- `CTRL-T` - jump back to where you were before
 
 ## Filetypes
 
