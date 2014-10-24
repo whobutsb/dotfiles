@@ -36,6 +36,14 @@ __Links__
 - `Ctrl+w` - cut from cursor to previous whitespace
 
 
+## History Commands
+
+- `!!` - run the last command.  eg: `sudo !!` 
+- `!$` - returns the last argument used. : eg: `git diff [file] ... git add !$`
+- `!*` - returns all of the arguments previously used.  Useful if you screw up the command name
+- `!:<number>` - returns the previous argument number
+
+
 __Links__
 
 - [Shortcuts to move faster on the command line](http://teohm.com/blog/2012/01/04/shortcuts-to-move-faster-in-bash-command-line/)

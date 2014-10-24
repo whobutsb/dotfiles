@@ -11,6 +11,10 @@ Write them on the fly!
 every time temlpate is spelled it will automatically be fixed
 
 
+## Ag (The Silver Searcher)
+
+	:Ag [options] {pattern} [directory]
+
 ## Buffers
 
 Buffers are Vim's term for a "block of text stored in memory".
@@ -38,6 +42,14 @@ Buffers are Vim's term for a "block of text stored in memory".
 - `zj` - move down to the top of next fold
 - `zk` - move up to bottom of previous fold
 
+- `zf{motion}` - fold an area based on a motion. 
+
+If you get "Cannot create folw with the current foldmethod" then change the
+fold method type. 
+
+	:set foldmethod=manual
+	:help fold-methods
+
 ## CTags
 
 Generating the CTags. Navigate to the project parent directory
@@ -54,6 +66,19 @@ Search through the tags
 
 - `CTRL-]` - jump to the definition 
 - `CTRL-T` - jump back to where you were before
+
+## External Commands !
+
+Adding a dot in front of the commmand dumps the output on to the window. 
+
+	:.! ls 
+
+	:.! date " dumps the current date
+
+Open the terminal in the background 
+
+- `Ctrl-Z` - open the terminal 
+- `fg` - open vim back up
 
 ## Filetypes
 
@@ -211,6 +236,23 @@ Remapping for moving around the buffers
 
 Allows you to jump back and forth in where you were in the file.  - `Ctrl+o` - allows you to jump back to your last jump location 
 - `Ctrl+i` - jump forward to the next location
+
+## Tabularize
+
+Helps with aligning text in Vim. https://github.com/godlygeek/tabular
+
+Align a row of text with equals signs
+
+	" highlight selection with visual mode
+	" eg: 
+	" one = 1
+	" two = 2
+	" three = 3
+	:Tab[ularize] /=
+
+More Info: 
+
+[Vimcasts - aligning text with tabular](http://vimcasts.org/episodes/aligning-text-with-tabular-vim/)
 
 ## Vim Verbs
 

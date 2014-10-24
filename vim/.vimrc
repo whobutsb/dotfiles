@@ -2,19 +2,19 @@
 "" NeoBundle core
 "*****************************************************************************
 if has('vim_starting')
-  set nocompatible               " Be iMproved
+	set nocompatible               " Be iMproved
 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+	" Required:
+	set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
 
 if !filereadable(neobundle_readme)
-  echo "Installing NeoBundle..."
-  echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim/
+	echo "Installing NeoBundle..."
+	echo ""
+	silent !mkdir -p ~/.vim/bundle
+	silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
@@ -37,13 +37,13 @@ NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'vim-scripts/grep.vim'
 NeoBundle 'vim-scripts/CSApprox'
 NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
+			\ 'build' : {
+			\     'windows' : 'tools\\update-dll-mingw',
+			\     'cygwin' : 'make -f make_cygwin.mak',
+			\     'mac' : 'make -f make_mac.mak',
+			\     'unix' : 'make -f make_unix.mak',
+			\    },
+			\ }
 NeoBundle 'Shougo/vimshell.vim'
 
 " NeoCompleteCache
@@ -90,13 +90,25 @@ NeoBundle 'nelstrom/vim-markdown-folding'
 "" Blade Bundles
 NeoBundle 'johnhamelink/blade.vim'
 
-" Vim Start Screen 
+" Vim Start Screen
 " https://github.com/mhinz/vim-startify
 NeoBundle 'mhinz/vim-startify'
 
 " Ag - The Silver Searcher
 " https://github.com/rking/ag.vim
 NeoBundle 'rking/ag.vim'
+
+" Tabular
+" https://github.com/godlygeek/tabular
+NeoBundle 'godlygeek/tabular'
+
+" Surround Vim
+" https://github.com/tpope/vim-surround
+NeoBundle 'tpope/vim-surround'
+
+" JSHint
+" https://github.com/walm/jshint.vim
+NeoBundle 'walm/jshint.vim'
 
 call neobundle#end()
 
@@ -130,6 +142,7 @@ set expandtab
 
 "" Map leader to ,
 let mapleader=','
+"let mapleader="\<Space>"
 
 "" Enable hidden buffers
 set hidden
@@ -173,24 +186,24 @@ set guioptions=egmrti
 set gfn=Monospace\ 8
 
 if has("gui_running")
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
-  endif
+	if has("gui_mac") || has("gui_macvim")
+		set guifont=Menlo:h12
+		set transparency=7
+	endif
 else
-  let g:CSApprox_loaded = 1
+	let g:CSApprox_loaded = 1
 
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
-    endif
-  endif
+	if $COLORTERM == 'gnome-terminal'
+		set term=gnome-256color
+	else
+		if $TERM == 'xterm'
+			set term=xterm-256color
+		endif
+	endif
 endif
 
 if &term =~ '256color'
-  set t_ut=
+	set t_ut=
 endif
 
 "" Disable the blinking cursor.
@@ -263,15 +276,15 @@ nnoremap <silent> <leader>sh :VimShellCreate<CR>
 "" Functions
 "*****************************************************************************
 function s:setupWrapping()
-  set wrap
-  set wm=2
-  set textwidth=79
+	set wrap
+	set wm=2
+	set textwidth=79
 endfunction
 
 function TrimWhiteSpace()
-  let @*=line(".")
-  %s/\s*$//e
-  ''
+	let @*=line(".")
+	%s/\s*$//e
+	''
 endfunction
 
 "*****************************************************************************
@@ -291,7 +304,7 @@ au FileType make set noexpandtab
 autocmd BufNewFile,BufRead CMakeLists.txt setlocal ft=cmake
 
 if has("gui_running")
-  autocmd BufWritePre * :call TrimWhiteSpace()
+	autocmd BufWritePre * :call TrimWhiteSpace()
 endif
 
 set autoread
@@ -299,11 +312,16 @@ set autoread
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
+
 "" Get rid of Ex mode, its dumb and i dont need it
 nnoremap Q <nop>
 
-"" Remap ESC to jj
-inoremap jj <ESC>
+"" remap : to ;, make my life easier and open up more commands
+nnoremap ; :
+nnoremap : ;
+
+"" Remap ESC to jk
+inoremap jk <ESC>
 
 "" Split
 noremap <Leader>h :<C-u>split<CR>
@@ -390,9 +408,9 @@ nnoremap <Space> za
 vnoremap <Space> za
 
 if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
+	" pbcopy for OSX copy/paste
+	vmap <C-x> :!pbcopy<CR>
+	vmap <C-c> :w !pbcopy<CR><CR>
 endif
 
 "" Buffer nav
@@ -415,7 +433,7 @@ vmap > >gv
 "" Custom configs
 
 "" Markdown Preview
-map <leader>p :Mm<CR>:redraw!<CR>
+noremap <leader>p :Mm<CR>:redraw!<CR>
 
 "" Tagbar Toggle
 nmap <F8> :TagbarToggle<CR>
@@ -446,10 +464,10 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 
 " neocomplcache dictonary
 let g:neocomplcache_dictionary_filetype_lists = {
-	\ 'default' : '',
-	\ 'vimshell' : $HOME.'/.vimshell_hist',
-	\ 'scheme' : $HOME.'/.gosh_completions'
-	\ }
+			\ 'default' : '',
+			\ 'vimshell' : $HOME.'/.vimshell_hist',
+			\ 'scheme' : $HOME.'/.gosh_completions'
+			\ }
 
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
@@ -459,8 +477,8 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 " inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
 	return neocomplcache#smart_close_popup() . "\<CR>"
-    " For no inserting <CR> key.
-    "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+	" For no inserting <CR> key.
+	"return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 endfunction
 
 " <TAB>: completion
@@ -488,5 +506,11 @@ let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 
 "" Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
+	source ~/.vimrc.local
 endif
+
+" Tabularize Mappings
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
