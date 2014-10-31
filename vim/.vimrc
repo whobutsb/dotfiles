@@ -165,7 +165,7 @@ set noswapfile
 set fileformats=unix,dos,mac
 set backspace=indent,eol,start
 set showcmd
-set shell=/bin/sh
+set shell=/bin/zsh
 
 "*****************************************************************************
 "" Visual Settigns
@@ -181,7 +181,7 @@ colorscheme molokai
 set mouse=a
 set mousemodel=popup
 set t_Co=256
-set cursorline
+" set cursorline
 set guioptions=egmrti
 set gfn=Monospace\ 8
 
@@ -332,6 +332,12 @@ nnoremap <C-K> <C-W><C-K>    " CTRL+k move up a split
 nnoremap <C-L> <C-W><C-L>    " CTRL+l move right a split
 nnoremap <C-H> <C-W><C-H>    " CTRL-h move left a split
 
+" Use the arrow keys to resize the windows
+noremap <up>    <C-W>+
+noremap <down>  <C-W>-
+noremap <left>  3<C-W><
+noremap <right> 3<C-W>>
+
 "" Git
 noremap <Leader>ga :!git add .<CR>
 noremap <Leader>gc :!git commit -m '<C-R>="'"<CR>
@@ -432,9 +438,6 @@ vmap > >gv
 
 "" Custom configs
 
-"" Markdown Preview
-noremap <leader>p :Mm<CR>:redraw!<CR>
-
 "" Tagbar Toggle
 nmap <F8> :TagbarToggle<CR>
 
@@ -443,6 +446,12 @@ nmap <F8> :TagbarToggle<CR>
 let g:vim_markdown_folding_disabled=0
 "" set initial foldlevel
 "" let g:vim_markdown_initial_foldlevel=1
+
+"" Markdown Preview
+noremap <leader>p :Mm<CR>:redraw!<CR>
+
+" Markdown syntax highlighting and spell check for .md files
+autocmd BufNewFile,BufRead *.md set ft=markdown spell
 
 let g:javascript_enable_domhtmlcss = 1
 
