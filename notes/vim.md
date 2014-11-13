@@ -15,6 +15,10 @@ every time temlpate is spelled it will automatically be fixed
 
 	:Ag [options] {pattern} [directory]
 
+Example, search for something in a certain file type
+
+	:Ag --css ".widget"
+
 ## Buffers
 
 Buffers are Vim's term for a "block of text stored in memory".
@@ -44,7 +48,7 @@ Buffers are Vim's term for a "block of text stored in memory".
 
 - `zf{motion}` - fold an area based on a motion. 
 
-If you get "Cannot create folw with the current foldmethod" then change the
+If you get "Cannot create flow with the current foldmethod" then change the
 fold method type. 
 
 	:set foldmethod=manual
@@ -69,7 +73,7 @@ Search through the tags
 
 ## External Commands !
 
-Adding a dot in front of the commmand dumps the output on to the window. 
+Adding a dot in front of the command dumps the output on to the window. 
 
 	:.! ls 
 
@@ -95,11 +99,6 @@ Set multiple file types with:
 this activates teh snippets for both HTML and PHP for the current file.
 
 
-## General Vim Links
-
-- [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
-- [A Vim Primer](http://danielmiessler.com/study/vim/)
-- [Vim for (PHP) Programmers](http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation?next_slideshow=1)
 ## Help in VimDoc
 
 - `:` -  is used for command line/ex-mode commands (`:help :help`)
@@ -163,7 +162,6 @@ _Links_
 
 ## Page Movement
 
-
 - `Ctrl+b` - page up
 - `Ctrl+f` - page down
 - `Ctrl+u` - move up half a screen
@@ -185,6 +183,11 @@ _Links_
 
 Registers are simply containers that hold text.  They can be used in the manner of a clipboard for cutting, copying, and pasting text, or they can be used to record a macro by saving a sequence of keystrokes.  
 
+## Scripting
+
+__Links__
+
+- [Scripting the Vim Editor, Part 1: Variables, values, and expressions](http://www.ibm.com/developerworks/library/l-vim-script-1/)
 
 ## Snippets
 
@@ -223,6 +226,14 @@ You can specify the new split height by prefixing with a number:
 
     :10sp ~/.zshrc
 
+Split two vertically split windows to horizontally split
+
+	ctrl-W K 
+
+Horizontally to vertically
+
+	ctrl-W H
+
 __Split Navigation__
 
 Remapping for moving around the buffers
@@ -256,25 +267,25 @@ More Info:
 
 ## Vim Verbs
 
-Two types of VIm verbs.  Some of them act on a single character, the others act on a motion or text object. 
+Two types of vim verbs.  Some of them act on a single character, the others act on a motion or text object. 
 
 ### Operators
 
 - `c` - change
 - `d` - delete
-- `y` -rcopy to register
+- `y` - copy to register
 
 ### Single character verbs
 
 - `x` - Delete character under the cursor
 - `r` - Replace character under cursor with another character
-- `s` - Delete character under curosor and move to insert mode
+- `s` - Delete character under cursor and move to insert mode
 
 ### Multi-character verbs
 
 - `d` - Delete text specified by motion 
 - `c` - delete text specified by motion and go into insert mode
-- `y` - copy text specifed by motion
+- `y` - copy text specified by motion
 
 ###  Motions
 
@@ -284,10 +295,10 @@ Two types of VIm verbs.  Some of them act on a single character, the others act 
 - `b` - move back one word
 - `e` - move back one word
 - `)` - move forward one sentence
-- `}` - move foward one paragraph
+- `}` - move forward one paragraph
 - `G` - go to end of file
-- `f.` - go to next occurence of `.` on the current line
-- `F.` - go to the previous occurence of `.` on the current line
+- `f.` - go to next occurrence of `.` on the current line
+- `F.` - go to the previous occurrence of `.` on the current line
 - `^` - go to beginning of the line
 
 #### Words
@@ -332,25 +343,35 @@ Set the spell check in the `~/.vimrc`
 
     set spell spelllang=en_us
 
+Disable spell check 
+
+	set spell!
+
 - `]s` - go to next misspelled word
 - `[s` - go to last misspelled word
 - `z=` - get some suggestions on the word
 - `zg` - mark the misspelled word as correct
 - `zw` - mark a good word as misspeleed
 
+### Sorting
+
+High selection of parameters in a function and run 
+
+	:sort
+
 ### Repeating
 
 - `.` - repeat the last normal mode command
 - `n` - repeat the last search - `;` - repeat the last character-wise search
 - `//` - repeat the last search
-- `@:` - repeast the last ex-mode command
+] `@:` - repeat the last ex-mode command
 - `@@` - repeat the last macro used
 
 ## Visual Mode
 
-- `v` - enter visual mode characterwise
-- `V` - enter visual mode linewise
-- `CTRL-V` - enter visual mode blockwise
+- `v` - enter visual mode characterise
+- `V` - enter visual mode line wise
+- `CTRL-V` - enter visual mode block wise
 
 _tip_: `o` switches cursor to the other corner. huge!
 
@@ -372,3 +393,9 @@ A window is a viewport on to a buffer.
 - `[N]<C-w>|` - set active window width to [N] columns
 - `<C-w>T` - Move the current window into its own tab
 
+## Links 
+
+- [A Byte of Vim](http://files.swaroopch.com/vim/byte_of_vim_v051.pdf)
+- [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
+- [A Vim Primer](http://danielmiessler.com/study/vim/)
+- [Vim for (PHP) Programmers](http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation?next_slideshow=1)

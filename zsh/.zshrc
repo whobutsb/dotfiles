@@ -58,6 +58,7 @@ antigen bundle osx
 antigen bundle vagrant
 antigen bundle web-search
 antigen bundle vi-mode
+antigen bundle pass
 
 #Source Private Files
 source $HOME/.private_aliases

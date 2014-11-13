@@ -110,6 +110,10 @@ NeoBundle 'tpope/vim-surround'
 " https://github.com/walm/jshint.vim
 NeoBundle 'walm/jshint.vim'
 
+" Vim Easy-Motion
+" https://github.com/Lokaltog/vim-easymotion
+NeoBundle 'Lokaltog/vim-easymotion'
+
 call neobundle#end()
 
 " Required:
@@ -166,6 +170,7 @@ set fileformats=unix,dos,mac
 set backspace=indent,eol,start
 set showcmd
 set shell=/bin/zsh
+set history=1000 " remember more than 20 previous searches/command
 
 "*****************************************************************************
 "" Visual Settigns
@@ -247,6 +252,7 @@ cab Q q
 
 "" NERDTree configuration
 let NERDTreeChDirMode=2
+let NERDTreeHijackNetrw=1
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
@@ -410,8 +416,8 @@ set nofoldenable		" dont fold by default
 set foldlevel=1
 
 "" Space to toggle folds
-nnoremap <Space> za
-vnoremap <Space> za
+" nnoremap <Space> za
+" vnoremap <Space> za
 
 if has('macunix')
 	" pbcopy for OSX copy/paste
@@ -450,8 +456,11 @@ let g:vim_markdown_folding_disabled=0
 "" Markdown Preview
 noremap <leader>p :Mm<CR>:redraw!<CR>
 
+" Turn off spellcheck 
+set nospell
+
 " Markdown syntax highlighting and spell check for .md files
-autocmd BufNewFile,BufRead *.md set ft=markdown spell
+" autocmd BufNewFile,BufRead *.md set ft=markdown spell
 
 let g:javascript_enable_domhtmlcss = 1
 
@@ -523,3 +532,19 @@ vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
+
+" if silver surfer plugin is installed use 
+" this to search with CtrlP, much faster
+if executable('ag')
+	" Use ag in CtrlP
+	let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore-dir ".git" --stats -g  ""'
+	let g:ctrlp_use_caching=0
+endif
+
+" Easy Motion Configuration
+let g:EasyMotion_leader_key = '<Space>'
+let g:EasyMotion_smartcase = 1
+
+" Use Easy Motion for searches
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
