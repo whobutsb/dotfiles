@@ -1,5 +1,11 @@
 # ZSH notes
 
+## Tips 
+
+- Open command in the $EDITOR
+
+	CTRL+X CTRL+E
+
 ## Plugins
 
 - OSX
@@ -17,3 +23,6 @@
 - `man-preview` - open a specified man page in Preview
 - `trash` - move a specified file to the Trash
 
+__Links__
+
+- [My favorite Zsh features](http://code.joejag.com/2014/why-zsh.html)

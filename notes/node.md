@@ -22,4 +22,5 @@ Used for writing applications for the desktop.
 - [Node: Up and Running](http://chimera.labs.oreilly.com/books/1234000001808/index.html)
 - [Felix's Node.js Guide](http://nodeguide.com/)
 - [Bullet Proof Node.JS Coding](http://stella.laurenzo.org/2011/03/bulletproof-node-js-coding/)
+- [Learning Javascript Design Patterns](http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/#categoriesofdesignpatterns)
 
