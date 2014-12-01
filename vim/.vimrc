@@ -238,6 +238,12 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
 "*****************************************************************************
+"" Backups
+"*****************************************************************************
+
+" set backupdir=~/.vim/backup
+
+"*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
 "" no one is really happy until you have this shortcuts
