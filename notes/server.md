@@ -76,6 +76,25 @@ Ubuntu comes with `ufw`
 	ufw allow 443
 	ufw enable
 
+### IPTables
+
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT  # accept connections is in an ESTABLISHED or RELATED state
+iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP             # drop tcp connections with NONE flag explicitly set
+iptables -A INPUT -p tcp ! --syn -m state --state NEW -j DROP     # drop tcp connects with the SYN bit set not in a new connection state
+iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP              # drop tcp connections with no flags
+iptables -A INPUT -i lo -j ACCEPT                                 # accept connections on the loopback interface
+iptables -A INPUT -p tcp -m tcp --dport [whatever] -j ACCEPT      # accept connections to a specific port
+iptables -P OUTPUT ACCEPT                                         # default output policy, accept
+iptables -P INPUT DROP                                            # default input policy, drop
+iptables-save > /etc/iptables.up.rules                            # save iptables rules to file
+
+vi /etc/network/if-pre-up.d/iptables                              # create an ifup script to restore iptables
+
+#!/bin/sh
+	/sbin/iptables-restore < /etc/iptables/.up.rules
+	
+	chmod +x /etc/network/if-pre-up.d/iptables                       # make sure script is executable>
+
 ### Enable Automatic Security Updates
 
 	apt-get install unattended-upgrades
@@ -103,6 +122,10 @@ Monitors your logs and emails them to you.
 	vim /etc/cron.daily/001logwatch
 
 	/usr/sbin/logwatch --output mail --mailto <email@address> --detail high
+
+### Install Fail2Ban
+
+	sudo apt-get install fail2ban 
 
 ## Links
 

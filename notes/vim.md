@@ -75,25 +75,24 @@ Search through the tags
 
     Default Mapping      | Details
     ---------------------|----------------------------------------------
-    <Leader>f{char}      | Find {char} to the right. See |f|.
-    <Leader>F{char}      | Find {char} to the left. See |F|.
-    <Leader>t{char}      | Till before the {char} to the right. See |t|.
-    <Leader>T{char}      | Till after the {char} to the left. See |T|.
-    <Leader>w            | Beginning of word forward. See |w|.
-    <Leader>W            | Beginning of WORD forward. See |W|.
-    <Leader>b            | Beginning of word backward. See |b|.
-    <Leader>B            | Beginning of WORD backward. See |B|.
-    <Leader>e            | End of word forward. See |e|.
-    <Leader>E            | End of WORD forward. See |E|.
-    <Leader>ge           | End of word backward. See |ge|.
-    <Leader>gE           | End of WORD backward. See |gE|.
-    <Leader>j            | Line downward. See |j|.
-    <Leader>k            | Line upward. See |k|.
-    <Leader>n            | Jump to latest "/" or "?" forward. See |n|.
-    <Leader>N            | Jump to latest "/" or "?" backward. See |N|.
+    <Leader>f{char}      | Find {char} to the right.
+    <Leader>F{char}      | Find {char} to the left.
+    <Leader>t{char}      | Till before the {char} to the right.
+    <Leader>T{char}      | Till after the {char} to the left.
+    <Leader>w            | Beginning of word forward.
+    <Leader>W            | Beginning of WORD forward.
+    <Leader>b            | Beginning of word backward.
+    <Leader>B            | Beginning of WORD backward.
+    <Leader>e            | End of word forward.
+    <Leader>E            | End of WORD forward.
+    <Leader>ge           | End of word backward..
+    <Leader>gE           | End of WORD backward..
+    <Leader>j            | Line downward.
+    <Leader>k            | Line upward.
+    <Leader>n            | Jump to latest "/" or "?" forward.
+    <Leader>N            | Jump to latest "/" or "?" backward.
     <Leader>s            | Find(Search) {char} forward and backward.
-                         | See |f| and |F|.
-
+                         |
 ## External Commands !
 
 Adding a dot in front of the command dumps the output on to the window. 

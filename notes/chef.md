@@ -23,6 +23,10 @@ Downloading from cookbooks
 
 	knife cookbook site download [cookbook]
 
+Upload a cookbook to chef
+
+	knife cookbook upload mysql
+
 ### Vagrant Provisioning
 
 Vagrant Provisioning Configuration
@@ -31,9 +35,17 @@ Vagrant Provisioning Configuration
 		chef.chef_server_url = "https://api.opscode.com/organizations/customchannels"
 		chef.validation_key_path = "/Users/stevebarbera/Sites/Chef/.chef/customchannels-validator.pem"
 		chef.validation_client_name = "customchannels-validator"
+		chef.encrypted_data_bag_secret_key_path = "/Users/stevebarbera/.chef/encrypted_data_bag_secret"
 		chef.node_name = "vagrant-node"
 		chef.delete_node = true
 		chef.delete_client = true
+
+		chef.log_level = :debug
+
+		chef.environment = "dev"
+		chef.add_role("base")
+		chef.add_role("db_master")
+		chef.add_role("webserver")
 	end
 
 ### Recipes
@@ -107,6 +119,8 @@ Example file `cookbooks/mysql/recipes/server.rb`
 - [The Enviroment Cookbook Pattern](http://blog.vialstudios.com/the-environment-cookbook-pattern/)
 - [Writing Your First Chef Recipe](http://reiddraper.com/first-chef-recipe/)
 - [Provisioning a LAMP Stack](http://www.jasongrimes.org/2012/06/provisioning-a-lamp-stack-with-chef-vagrant-and-ec2-2-of-3/)
+- [Cooking Infrastructure by Chef](http://chef.leopard.in.ua/html/)
+- [Blank Chef Repo](https://github.com/opscode/chef-repo)
 
 ![Knife Cheat Sheet](http://docs.getchef.com/_images/qr_knife_web.png)
 

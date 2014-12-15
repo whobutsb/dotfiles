@@ -172,6 +172,8 @@ set showcmd
 set shell=/bin/zsh
 set history=1000 " remember more than 20 previous searches/command
 
+set clipboard=unnamed
+
 "*****************************************************************************
 "" Visual Settigns
 "*****************************************************************************
