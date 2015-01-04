@@ -239,6 +239,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
+
 "*****************************************************************************
 "" Backups
 "*****************************************************************************
@@ -261,7 +262,7 @@ cab Q q
 "" NERDTree configuration
 let NERDTreeChDirMode=2
 let NERDTreeHijackNetrw=1
-let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', '\.DS_Store']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
@@ -382,6 +383,9 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 "" Save the page with ctrl+s
 noremap <Leader>s :w<CR>
+
+" Force saving files that require root permission
+cmap w!! %!sudo tee > /dev/null %
 
 "" ctrlp.vim
 set wildmode=list:longest,list:full

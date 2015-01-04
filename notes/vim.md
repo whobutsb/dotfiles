@@ -13,11 +13,29 @@ every time temlpate is spelled it will automatically be fixed
 
 ## Ag (The Silver Searcher)
 
-	:Ag [options] {pattern} [directory]
+	:Ag [options] {pattern} [directory | file]
+
+`--help` - Get help
+
+Matching control 
+	
+`-w/--word-regexp` - force patten to match only whole words
+`-q/--literal` - quote all metacharacters in pattern, it is treated as a literal.
+
+File selectoin 
+
+`--ignore-dir=DIRNAME` - ignore directory
+`--type=TYPE` - specity the types of tiles to include
+`--type-set=[NAME]=.[ext],.[another-ext]` - add types
+`--help-type` - list types
 
 Example, search for something in a certain file type
 
 	:Ag --css ".widget"
+
+### Links 
+
+-[Using Grep and its alternatives for source code and fuzzy searches](https://coelhorjc.wordpress.com/2014/12/15/using-grep-and-its-alternatives-for-source-code-ackaggit-grepcgrepsgrepjqxgrep-and-fuzzy-searches-agreptre/)
 
 ## Buffers
 
@@ -146,10 +164,20 @@ Get a list of the current keys mappings
 
     :map 
     :map!
+	:nmap - Display normal mode maps
+	:imap - Display insert mode maps
+	:vmap - Display visual and select mode maps
 
 - `:verbose map <key>` - determine the script or plugin that defines a map for a key sequence
 
-WIP - http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
+Removing a key map
+
+	:unmap <key>
+	:unmap! <key>
+	
+### Links
+
+- (Mapping Keys in Vim - Wikia)[http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial]
 
 ## Marks
 
@@ -421,3 +449,4 @@ A window is a viewport on to a buffer.
 - [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
 - [A Vim Primer](http://danielmiessler.com/study/vim/)
 - [Vim for (PHP) Programmers](http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation?next_slideshow=1)
+- [OF Vim and Vigor](http://of-vim-and-vigor.blogspot.com/)
