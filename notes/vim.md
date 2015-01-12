@@ -138,6 +138,16 @@ Set multiple file types with:
 
 this activates teh snippets for both HTML and PHP for the current file.
 
+## Find and Replace
+
+Whole file find and replace, red -> green
+
+	:%s/red/green/g
+
+Visual selection find and replace
+
+	:'<,'>s/red/green/g
+
 
 ## Help in VimDoc
 
@@ -190,6 +200,8 @@ Removing a key map
 - `m-` - Delete all marks from teh current line
 - `m<Space>` - delete all marks from the current buffer
 - `'?` - open location list and display local marks
+- `]'` - jump to next mark 
+- `['` - jump to previous mark
 
 ## Markdown Options
 
@@ -250,6 +262,17 @@ Snippets can be defined in two places: `snippets/<filetype>/<trigger>.snippet`
 or `snippets/<filetype>.snippets`
 
 Reload a snippet on the fly with: `:call ReloadAllSnippets()`
+
+## Surround
+
+Tim Pope's Vim Surround [Vim-Surround](https://github.com/tpope/vim-surround) plugin.
+
+  Old text                  Command     New text ~
+  "Hello *world!"           ds"         Hello world!
+  [123+4*56]/2              cs])        (123+456)/2
+  "Look ma, I'm *HTML!"     cs"<q>      <q>Look ma, I'm HTML!</q>
+  if *x>3 {                 ysW(        if ( x>3 ) {
+  my $str = *whee!;         vllllS'     my $str = 'whee!';
 
 ## Tabs
 

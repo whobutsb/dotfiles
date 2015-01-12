@@ -48,13 +48,9 @@ NeoBundle 'Shougo/vimshell.vim'
 
 " NeoCompleteCache
 " https://github.com/Shougo/neocomplcache.vim
-NeoBundle 'Shougo/neocomplcache.vim'
+" NeoBundle 'Shougo/neocomplcache.vim'
 
 NeoBundle 'majutsushi/tagbar'
-
-"" https://github.com/xolox/vim-session
-" NeoBundle 'xolox/vim-session'
-NeoBundle 'xolox/vim-misc'
 
 "" Snippets
 "" https://github.com/msanders/snipmate.vim
@@ -68,7 +64,7 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'kshenoy/vim-signature'
 
 "" NeoBundle 'shougo/neocomplete'
-NeoBundle 'gregsexton/matchtag'
+" NeoBundle 'gregsexton/matchtag'
 
 "" HTML Bundle
 NeoBundle 'amirh/HTML-AutoCloseTag'
@@ -98,10 +94,6 @@ NeoBundle 'mhinz/vim-startify'
 " https://github.com/rking/ag.vim
 NeoBundle 'rking/ag.vim'
 
-" Tabular
-" https://github.com/godlygeek/tabular
-NeoBundle 'godlygeek/tabular'
-
 " Surround Vim
 " https://github.com/tpope/vim-surround
 NeoBundle 'tpope/vim-surround'
@@ -113,6 +105,10 @@ NeoBundle 'walm/jshint.vim'
 " Vim Easy-Motion
 " https://github.com/Lokaltog/vim-easymotion
 NeoBundle 'Lokaltog/vim-easymotion'
+
+" Vim Php-CS-Fixer
+" https://github.com/stephpy/vim-php-cs-fixer
+NeoBundle 'stephpy/vim-php-cs-fixer'
 
 call neobundle#end()
 
@@ -479,60 +475,60 @@ let g:javascript_enable_domhtmlcss = 1
 "" NeoCompleteCache Settings
 
 " use neocomplcache at startup
-let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_enable_at_startup = 1
 
-" use smartcase
-let g:neocomplcache_enable_smart_case = 1
+" " use smartcase
+" let g:neocomplcache_enable_smart_case = 1
 
-" set minimum syntax keyboard length
-let g:neocomplcache_min_syntax_length = 3
+" " set minimum syntax keyboard length
+" let g:neocomplcache_min_syntax_length = 3
 
-" highlight first canidate
-let g:neocomplcache_enable_auto_select = 1
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+" " highlight first canidate
+" let g:neocomplcache_enable_auto_select = 1
+" inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 
-" neocomplcache dictonary
-let g:neocomplcache_dictionary_filetype_lists = {
-			\ 'default' : '',
-			\ 'vimshell' : $HOME.'/.vimshell_hist',
-			\ 'scheme' : $HOME.'/.gosh_completions'
-			\ }
+" " neocomplcache dictonary
+" let g:neocomplcache_dictionary_filetype_lists = {
+" 			\ 'default' : '',
+" 			\ 'vimshell' : $HOME.'/.vimshell_hist',
+" 			\ 'scheme' : $HOME.'/.gosh_completions'
+" 			\ }
 
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+" inoremap <expr><C-g>     neocomplcache#undo_completion()
+" inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-	return neocomplcache#smart_close_popup() . "\<CR>"
-	" For no inserting <CR> key.
-	"return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-endfunction
+" " Recommended key-mappings.
+" " <CR>: close popup and save indent.
+" " inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function()
+" 	return neocomplcache#smart_close_popup() . "\<CR>"
+" 	" For no inserting <CR> key.
+" 	"return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+" endfunction
 
-" <TAB>: completion
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" " <TAB>: completion
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-" <C-h>, <BS> close popup and delete backward char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+" " <C-h>, <BS> close popup and delete backward char.
+" inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-y>  neocomplcache#close_popup()
+" inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+" " Enable omni completion.
+" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 
-" Enable heavy omni completion.
-if !exists('g:neocomplcache_force_omni_patterns')
-	let g:neocomplcache_force_omni_patterns = {}
-endif
-let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+" " Enable heavy omni completion.
+" if !exists('g:neocomplcache_force_omni_patterns')
+" 	let g:neocomplcache_force_omni_patterns = {}
+" endif
+" let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 
 "" Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
@@ -560,3 +556,9 @@ let g:EasyMotion_smartcase = 1
 " Use Easy Motion for searches
 map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
+
+" Vim Php-CS-fixer
+let g:php_cs_fixer_level = 'all'
+let g:php_cs_fixer_config = 'default'
+let g:php_cs_fixer_php_path = '/usr/local/bin/php'
+let g:php_cs_fixer_enable_default_mapping = 1
