@@ -50,6 +50,18 @@ Buffers are Vim's term for a "block of text stored in memory".
 - `:bd` - close buffer
 - `:bd!` - close buffer without saving
 
+Moving buffers around
+
+- `CTRL-W r|R` - rotate windows downwards/rigthwards, R does the opposite
+- `CTRL-W K|J` - move the current window to be at the very top/bottom
+- `CTRL-W L` - move the current window to be at the far right
+- `CTRL-W T` - move the cucrent window to a new tab page
+
+Window resizing
+
+- `CTRL-W =` - Make all windows equally high and wide.
+- `CTRL-W |` - set current window to wide as possible
+
 ## Code Folding
 
 - `zi` - switch folding on and off
@@ -473,3 +485,4 @@ A window is a viewport on to a buffer.
 - [A Vim Primer](http://danielmiessler.com/study/vim/)
 - [Vim for (PHP) Programmers](http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation?next_slideshow=1)
 - [OF Vim and Vigor](http://of-vim-and-vigor.blogspot.com/)
+- [Learn VimScript the hard way](http://learnvimscriptthehardway.stevelosh.com/)

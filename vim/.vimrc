@@ -110,6 +110,10 @@ NeoBundle 'Lokaltog/vim-easymotion'
 " https://github.com/stephpy/vim-php-cs-fixer
 NeoBundle 'stephpy/vim-php-cs-fixer'
 
+" LiquidSoap Syntax
+" https://github.com/mcfiredrill/vim-liquidsoap
+NeoBundle 'mcfiredrill/vim-liquidsoap'
+
 call neobundle#end()
 
 " Required:
@@ -386,7 +390,8 @@ cmap w!! %!sudo tee > /dev/null %
 "" ctrlp.vim
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$\|node_modules\|DS_Store\|git'
+" let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
 let g:ctrlp_use_caching = 1
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
