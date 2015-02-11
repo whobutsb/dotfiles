@@ -98,8 +98,10 @@ Search through the tags
 
 	:tag /pattern // :tag /some_cool_class
 
-- `CTRL-]` - jump to the definition 
+- `CTRL-]` - jump to the definition remapped to: `CTRL-f`
 - `CTRL-T` - jump back to where you were before
+- `CTRL-F` - opens new vertical buffer
+
 
 ## EasyMotion
 

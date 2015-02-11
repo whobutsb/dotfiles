@@ -49,7 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 ANTIGEN=$HOME/dotfiles/zsh/antigen
 
 source $ANTIGEN/antigen.zsh
-# antigen-use oh-my-zsh
+#antigen use oh-my-zsh
 antigen bundle $HOME/dotfiles/zsh/custom/plugins/virtualbox 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle sublime
@@ -62,6 +62,8 @@ antigen bundle pass
 
 #Source Private Files
 source $HOME/.private_aliases
+
+[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 
 ## Vim Mapping in ZSH
 # http://dougblack.io/words/zsh-vi-mode.html

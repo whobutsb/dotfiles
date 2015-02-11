@@ -1,0 +1,53 @@
+#!/bin/bash
+
+TMUX=$(type -p tmux) || { echo "This script requires tmux"; exit 1; }
+
+SESSION="$TMUX-tail-f-$$"
+
+LAYOUT=even-vertical
+while getopts ":UHvht" opt; do
+	case $opt in
+    	v) LAYOUT=even-vertical;;
+		h) LAYOUT=even-horizontal;;
+		t) LAYOUT=tiled;;
+		U) echo "Selfupdating..."
+TMPFILE=$(mktemp) || { echo "Can't create temp file"; exit 1; }
+curl -o "$TMPFILE" -sL https://raw.githubusercontent.com/mapio/tmux-tail-f/master/tmux-tail-f
+exec bash <(echo "cp '$TMPFILE' '$0'")
+;;
+		H) cat <<EOF
+Usage: tmux-tail-f [OPTION]... [FILE]...
+Tails the FILEs in a tmux window, one per pane; hitting `^C` in
+any one of the panes will terminate all the tail commands and
+kill the tmux session.
+
+Optional arguments:
+  -v     use the 'even-vertical' layout (default).
+  -h     use the 'even-horizontal' layout.
+  -t     use the 'tiled' layout.
+  -H     print this help.
+  -U     update this script to the latest version.
+EOF
+exit
+;;
+		*) echo "tmux: invalid option -- '$OPTARG', use -H for help" >&2; exit 1;;
+	esac
+done
+shift $(( OPTIND - 1 ))
+[[ "$1" == "--" ]] && shift
+
+function at_exit() {
+	$TMUX kill-session -t "$SESION" >/dev/null 2>&1
+}
+trap at_exit EXIT
+
+$TMUX -q new-session -d -s "$SESSION"
+for FILE in "$@"; do
+	$TMUX -q split-window -t "$SESSION" "tail -f '$FILE'"
+	$TMUX -q select-layout -t "$SESSION" tiled
+done
+$TMUX -q kill-pane -t "${SESSION}.0"
+$TMUX -q select-pane -t "${SESSION}.0"
+$TMUX -q select-layout -t "$SESSION" "$LAYOUT"
+$TMUX -q set-window-option -t "$SESSION" synchronize-panes on
+$TMUX -q attach -t "$SESSION" >/dev/null 2>&1

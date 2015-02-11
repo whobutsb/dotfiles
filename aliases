@@ -7,10 +7,6 @@ alias mv='mv -i'
 # Google Websearch
 alias goog="google"
 
-## SSH/SCP
-alias go="ssh"
-alias get="scp"
-
 ##   lr:  Full Recursive Directory Listing
 #   #   ------------------------------------------
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
@@ -24,8 +20,8 @@ alias tlog="tail -f /var/log/syslog"
 alias fs="stat -f \"%z bytes\""
 
 # S3CMD Configurations
-alias s3cc='s3cmd -c ~/.s3cfg-customchannels'
-alias s3sb='s3cmd -c ~/.s3cfg-personal'
+alias s3cc='s4cmd.py -p ~/.s3cfg-customchannels'
+alias s3sb='s4cmd.py -p ~/.s3cfg-personal'
 
 # Reload the Source
 alias reload_source="source ~/.zshrc && echo 'Source Reloaded'"
@@ -57,11 +53,11 @@ alias nginx.restart='nginx.stop && nginx.start'
 alias nginx.config='st /usr/local/etc/nginx'
 
 # PHP-FPM 
-alias php-fpm.start="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
+alias php-fpm.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist"
 
-alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
+alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist"
 alias php-fpm.restart='php-fpm.stop && php-fpm.start'
-alias php-fpm.config='st /usr/local/etc/php/5.5'
+alias php-fpm.config='st /usr/local/etc/php/5.6'
 
 # NGINX 
 alias nginx.logs.error='tail -250f /usr/local/etc/nginx/logs/error.log'
@@ -90,4 +86,5 @@ if [ "$(uname -s)" = "Darwin" ]; then
 fi
 
 # Git
+alias vagrant.init='wget https://raw.githubusercontent.com/fideloper/Vaprobash/master/Vagrantfile'
 

@@ -20,6 +20,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rking/ag.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'xsbeats/vim-blade'
 
 " Colors
 Plugin 'tomasr/molokai'
@@ -58,17 +60,18 @@ set vb			        " dont beep at me
 set cursorline		    " highlight current line
 set scrolloff=3		    " start scrolling when i'm 3 lines from top/bottom
 set history=1000	    " remember commands and search history
-set backspace=2		    " backspace over indent, eol, and insert
+set backspace=indent,eol,start		    " backspace over indent, eol, and insert
 set binary		        " don't add empty newlines at the end of files
 set noeol
 
 set number		        " show line numbers
-set nowrap		        " turn off linewrap
+set wrap		        " turn on linewrap
 " set list		        " show invisible chars
-set tabstop=4		    " 2 spaces
-set shiftwidth=0	    " 2 spaces
-set softtabstop=4	    " 2 spaces
-set expandtab		    " expand tabs to spaces
+set tabstop=4		    " 4 spaces
+set shiftwidth=4	    " indent by 4 spaces when using >>, <<, ==, etc
+set softtabstop=0	    " indent 4 spaces when pressing <TAB>
+set expandtab		    " use softtabstop spaces instead of tab characters for indentation 
+set modelines=0
 
 set hlsearch            " highlight my search
 set incsearch           " incremental search
@@ -80,9 +83,16 @@ set smartcase           " unless I use an uppercase character
 syntax on                   " syntax highlighting
 syntax sync minlines=256    " makes big files slow
 set synmaxcol=2048          " alos long lines are slow
-set autoindent              " try to indent my suff
-set smartindent             " be smart about indenting
+set autoindent              " keep indentation from previous line
+set copyindent
+set smartindent             " automatically insert indentation in some cases
+set cindent                 " like smart indent, but stricter, and more customisable 
 set formatoptions=tcqr      " smart comments
+
+if has ("autocmd")
+    " File type detection. indent based on filetype. Recommended.
+    filetype plugin indent on
+endif
 
 " no backup or swap files
 set nobackup
@@ -114,7 +124,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " NERDTree configuration
 let NERDTreeChDirMode=2
 let NERDTreeHijackNetrw=1
-let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', '\.DS_Store']
+let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', '\.DS_Store', '\.git$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
@@ -137,6 +147,8 @@ let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore
 let g:ctrlp_use_caching = 1
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>b :CtrlPBuffer<CR>
+noremap <leader>g :CtrlPTag<CR>
+noremap <leader>r :CtrlPBufTag<CR>
 let g:ctrlp_map = ',e'
 let g:ctrlp_open_new_file = 'r'
 
@@ -298,3 +310,16 @@ vmap > >gv
 
 "" Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
+
+" hit ,f to find the definition of the current class
+" generate tags: ctags -f tags --languages=PHP -R
+nnoremap <silent> ,f <C-]>
+
+" use ,F to jump to tag in a vertical split
+nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
+
+" Set the 80th column
+if(exists('+colorcolumn'))
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=235
+endif
