@@ -9,7 +9,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " Other plugins
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
@@ -21,7 +20,9 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rking/ag.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'xsbeats/vim-blade'
+Plugin 'fatih/vim-go'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'junegunn/vim-peekaboo'
 
 " Colors
 Plugin 'tomasr/molokai'
@@ -69,7 +70,7 @@ set wrap		        " turn on linewrap
 " set list		        " show invisible chars
 set tabstop=4		    " 4 spaces
 set shiftwidth=4	    " indent by 4 spaces when using >>, <<, ==, etc
-set softtabstop=0	    " indent 4 spaces when pressing <TAB>
+set softtabstop=4	    " indent 4 spaces when pressing <TAB>
 set expandtab		    " use softtabstop spaces instead of tab characters for indentation 
 set modelines=0
 
@@ -142,6 +143,7 @@ noremap <F3> :NERDTreeToggle<CR>
 "" ctrlp.vim
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
+set wildignore+=*/vendor/**
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$\|node_modules\|DS_Store\|git'
 let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
 let g:ctrlp_use_caching = 1
@@ -256,6 +258,9 @@ nnoremap Q <nop>
 " remap : to ;, make life easier using commands
 nnoremap ; :
 nnoremap : ;
+
+" start an external command with a bang
+nnoremap ! :!
 
 " remap ESC to jk
 inoremap jk <ESC>

@@ -37,6 +37,25 @@ Example, search for something in a certain file type
 
 -[Using Grep and its alternatives for source code and fuzzy searches](https://coelhorjc.wordpress.com/2014/12/15/using-grep-and-its-alternatives-for-source-code-ackaggit-grepcgrepsgrepjqxgrep-and-fuzzy-searches-agreptre/)
 
+## Alt Key
+
+All the characters you get when you go through a-z
+
+å ∫ ç ∂ ´ ƒ © ˙ ˆ ∆ ˚ ¬ µ ˜ ø π œ ® ß † ¨ √ ∑ ≈ \ Ω
+
+On mac remap the alt key 
+
+    nnoremap ª :m .+1<CR>==
+    nnoremap º :m .-2<CR>==
+
+    inoremap ª <Esc>:m .+1<CR>==gi
+    inoremap º <Esc>:m .-2<CR>==gi
+
+    vnoremap ª :m '>+1<CR>gv=gv
+    vnoremap º :m '<-2<CR>gv=gv
+ 
+[Stack Overflow: Can I map Alt key in Vim?](http://stackoverflow.com/questions/7501092/can-i-map-alt-key-in-vim)
+
 ## Buffers
 
 Buffers are Vim's term for a "block of text stored in memory".
@@ -70,6 +89,7 @@ Window resizing
 - `zR` - open all folds
 - `zM` - close all folds
 - `zv` - expand folds to reveal cursor
+- `zf` - define a fold, use with a visual selection 
 
 ### Navigating
 
@@ -387,6 +407,7 @@ Two types of vim verbs.  Some of them act on a single character, the others act 
 - `f.` - go to next occurrence of `.` on the current line
 - `F.` - go to the previous occurrence of `.` on the current line
 - `^` - go to beginning of the line
+- `g;` - jump back to the last edit 
 
 #### Words
 

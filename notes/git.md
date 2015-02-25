@@ -41,6 +41,9 @@ Automatically run composer after checking out
 	# .git/hooks/post-checkout
 	composer install > /dev/null &
 
+## Git Flow 
+
+[Effective Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 
 
 [ThoughtBot - Use Git Hooks to Automate Necessary but annoying tasks](http://robots.thoughtbot.com/use-git-hooks-to-automate-annoying-tasks)

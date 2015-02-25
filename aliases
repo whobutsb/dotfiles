@@ -10,7 +10,7 @@ alias goog="google"
 ##   lr:  Full Recursive Directory Listing
 #   #   ------------------------------------------
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
-alias l="ls -AlFh"
+alias l="ls -AFh"
 alias la="ls -Al"
 alias lh="ls -Alh"
 alias ll="ls -l"
@@ -85,6 +85,9 @@ if [ "$(uname -s)" = "Darwin" ]; then
     alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder"
 fi
 
-# Git
+# Vagrant 
 alias vagrant.init='wget https://raw.githubusercontent.com/fideloper/Vaprobash/master/Vagrantfile'
 
+# Git
+alias gt='git tag'
+alias gs='git stash'

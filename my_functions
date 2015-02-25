@@ -4,7 +4,7 @@
 __git_files () { 
     _wanted files expl 'local files' _files  }
 
-cd() { builtin cd "$@"; la; }               # Always list directory contents upon 'cd'
+cd() { builtin cd "$@"; ls -alh; }               # Always list directory contents upon 'cd'
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
