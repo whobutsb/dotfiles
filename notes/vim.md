@@ -22,7 +22,7 @@ Matching control
 `-w/--word-regexp` - force patten to match only whole words
 `-q/--literal` - quote all metacharacters in pattern, it is treated as a literal.
 
-File selectoin 
+File selection 
 
 `--ignore-dir=DIRNAME` - ignore directory
 `--type=TYPE` - specity the types of tiles to include
@@ -277,7 +277,26 @@ _Links_
 
 ## Registers
 
-Registers are simply containers that hold text.  They can be used in the manner of a clipboard for cutting, copying, and pasting text, or they can be used to record a macro by saving a sequence of keystrokes.  
+Registers are simply containers that hold text.  They can be used in the manner 
+of a clipboard for cutting, copying, and pasking text, or they can be used to 
+record a macro by saving a sequence of keystrokes.  
+
+Saving a register user: `"<char><motion>` - ie: `"kyy` - yank the line and 
+save it to register y.  Recall and paste it with - `"kp`.
+
+You can append to a register using the capital version of the char ie - `"Kyy`.
+
+View all of the registers with - `:reg[isters]`
+
+The system clipboard register is contained in `"+`.
+
+Register `%` contains the name of the current file, and register `#` contains 
+the name of the alternate file. 
+
+- `:echo @%` - dotfiles/notes/vim.md
+
+To put the current filename after the cursor use: `"%p`
+
 
 ## Scripting
 

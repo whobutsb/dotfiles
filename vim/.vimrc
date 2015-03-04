@@ -19,10 +19,12 @@ Plugin 'tpope/vim-commentary'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rking/ag.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'fatih/vim-go'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/vim-peekaboo'
+Plugin 'valloric/MatchTagAlways'
 
 " Colors
 Plugin 'tomasr/molokai'
@@ -33,7 +35,6 @@ Plugin 'vim-scripts/xoria256.vim'
 "" https://github.com/msanders/snipmate.vim
 "" http://www.bestofvim.com/plugin/snipmate/
 Plugin 'msanders/snipmate.vim'
-
 
 call vundle#end()		    " required
 filetype plugin indent on	" required	
@@ -328,3 +329,12 @@ if(exists('+colorcolumn'))
     set colorcolumn=80
     highlight ColorColumn ctermbg=235
 endif
+
+" Match tags always filetypes
+let g:mta_filetypes = {
+    \ 'html': 1,
+    \ 'xhtml': 1, 
+    \ 'xml': 1, 
+    \ 'jinja': 1, 
+    \ 'blade': 1
+\}
