@@ -338,3 +338,6 @@ let g:mta_filetypes = {
     \ 'jinja': 1, 
     \ 'blade': 1
 \}
+
+" remap emmet leader to <C-Y>
+let g:user_emmet_leader_key='<C-J>'
