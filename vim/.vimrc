@@ -16,7 +16,6 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Shougo/neocomplete'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rking/ag.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'fatih/vim-go'
@@ -90,6 +89,9 @@ set copyindent
 set smartindent             " automatically insert indentation in some cases
 set cindent                 " like smart indent, but stricter, and more customisable 
 set formatoptions=tcqr      " smart comments
+"
+" reload .vimrc whenever it is saved
+au BufWritePost .vimrc so $MYVIMRC 
 
 if has ("autocmd")
     " File type detection. indent based on filetype. Recommended.
@@ -102,7 +104,7 @@ set nowritebackup
 set noswapfile
 
 " Color Scheme
-set background=dark
+set background=light
 " colorscheme molokai
 " colorscheme solarized
 colorscheme xoria256
@@ -115,7 +117,9 @@ if has("unix")
 endif
 
 " Airline Settings
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\ %{fugitive#statusline()}
+" removed the fugitive status line
+" set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\ %{fugitive#statusline()}
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)}
 
 let g:airline_theme = 'powerlineish'
 let g:airline_enable_branch = 1
@@ -146,7 +150,7 @@ set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 set wildignore+=*/vendor/**
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$\|node_modules\|DS_Store\|git'
-let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
+" let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
 let g:ctrlp_use_caching = 1
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 noremap <leader>b :CtrlPBuffer<CR>

@@ -118,7 +118,7 @@ Search through the tags
 
 	:tag /pattern // :tag /some_cool_class
 
-- `CTRL-]` - jump to the definition remapped to: `CTRL-f`
+- `CTRL-]` - jump to the method definition 
 - `CTRL-T` - jump back to where you were before
 - `CTRL-F` - opens new vertical buffer
 
@@ -157,6 +157,13 @@ Open the terminal in the background
 
 - `Ctrl-Z` - open the terminal 
 - `fg` - open vim back up
+
+## Delete in insert mode
+
+- `<C-h>` - delete back one character (backspace)
+- `<C-w>` - delete back one word
+- `<C-u>` - delete back to start of line
+- `<C-k>` - delete forward to end of line
 
 ## Filetypes
 
@@ -222,6 +229,7 @@ Removing a key map
 ### Links
 
 - (Mapping Keys in Vim - Wikia)[http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial]
+- (What to do when a Vim keymap doesn't work)[http://raddevon.com/articles/debugging-vim-keymaps]
 
 ## Marks
 
