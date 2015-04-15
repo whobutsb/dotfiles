@@ -260,6 +260,10 @@ Removing a key map
 
 After previewing the file the vim buffer will disappear.  Need to use `:redraw!` to fix the screen. Fixed in my config with appending the command .vimrc :D.
 
+## Statusline 
+
+- [Customizing the status line](http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html)
+
 _Links_
 
 - [plasticboy/vim-markdown](https://github.com/plasticboy/vim-markdown)
@@ -493,6 +497,13 @@ Disable spell check
 High selection of parameters in a function and run 
 
 	:sort
+
+### Tabs
+
+Changing tabs on the fly 
+
+	:set ts=2 sts=2 noet
+	:retab!
 
 ### Repeating
 

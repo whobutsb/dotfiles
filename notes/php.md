@@ -2,6 +2,12 @@
 
 Ideas, notes, and tutorials on php. 
 
+## php.ini
+
+### Articles 
+
+- [dZone - Understanding the php.ini](http://php.dzone.com/articles/understanding-phpini)
+
 ## Profiling 
 
 ### [BlackFire](http://blackfire.io) 

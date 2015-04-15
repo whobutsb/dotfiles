@@ -8,6 +8,11 @@ Used for writing applications for the desktop.
 - [Node-Webkit](https://github.com/rogerwang/node-webkit)
 
 
+Plugins 
+
+Promises Q Library 
+https://github.com/kriskowal/q
+
 
 
 ### Links

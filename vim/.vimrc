@@ -24,6 +24,7 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'valloric/MatchTagAlways'
+Plugin 'avakhov/vim-yaml'
 
 " Colors
 Plugin 'tomasr/molokai'
@@ -274,6 +275,9 @@ inoremap jk <ESC>
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
+" Close All Buffers
+noremap <Leader>Q :1,$bd!<cr>
+
 " Moving in splits
 nnoremap <C-J> <C-W><C-J>    " CTRL+j move down a split
 nnoremap <C-K> <C-W><C-K>    " CTRL+k move up a split
@@ -345,3 +349,33 @@ let g:mta_filetypes = {
 
 " remap emmet leader to <C-Y>
 let g:user_emmet_leader_key='<C-J>'
+
+" Vim Yaml Indenting
+
+if exists("b:did_indent")
+    finish
+endif
+"runtime! indent/ruby.vim
+""unlet! b:did_indent
+let b:did_indent = 1
+
+setlocal autoindent sw=2 et
+setlocal indentexpr=GetYamlIndent()
+setlocal indentkeys=o,O,*<Return>,!^F
+
+function! GetYamlIndent()
+    let lnum = v:lnum - 1
+    if lnum == 0
+        return 0
+    endif
+    let line = substitute(getline(lnum),'\s\+$','','')
+    let indent = indent(lnum)
+    let increase = indent + &sw
+    if line =~ ':$'
+        return increase
+    else
+        return indent
+    endif
+endfunction
+
+" vim:set sw=2:
