@@ -1,0 +1,7 @@
+# Stripe
+
+Updating Metadata 
+
+    curl https://api.stripe.com/v1/customers/[customer_id] \ 
+        -u [secret-api-key] \
+        -d "metadata[account.name]=Account Name"

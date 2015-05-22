@@ -323,11 +323,11 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>960 693 924 485 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-5 12 1918 1046 0 0 1920 1058 </string>
+	<string>1 28 1918 1148 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1 471 1207 587 0 0 1920 1058 </string>
+	<string>1 8 1918 1046 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>2 465 1207 587 0 0 1920 1058 </string>
+	<string>-1918 -94 955 1148 -1920 -120 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>-1918 427 1207 587 -1920 -120 1920 1178 </string>
 	<key>New Bookmarks</key>
@@ -1144,7 +1144,7 @@
 	<key>RightOption</key>
 	<integer>3</integer>
 	<key>SUAutomaticallyUpdate</key>
-	<true/>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
@@ -1152,9 +1152,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-03-18T11:11:20Z</date>
-	<key>SUSkippedVersion</key>
-	<string>1.0.0.20140518</string>
+	<date>2015-05-08T08:02:40Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1198,7 +1196,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>Lucida Grande</string>
+	<string>.Lucida Grande UI</string>
 	<key>WindowNumber</key>
 	<true/>
 	<key>WindowStyle</key>
@@ -1210,6 +1208,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20141103</string>
+	<string>2.0.0.20150412</string>
 </dict>
 </plist>

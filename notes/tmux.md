@@ -88,3 +88,4 @@ Shortcuts
 - [Hawk Host Blog Tmux Part 1](http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/)
 - [Hawk Host Blog Tmux Part 2](http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2/)j
 - [Making the clipboard work between iTerm2, tmux, vim, and OSX](http://evertpot.com/osx-tmux-vim-copy-paste-clipboard/)
+- [10 Killer TMUX Tips](http://www.sitepoint.com/10-killer-tmux-tips/)

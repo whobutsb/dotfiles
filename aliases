@@ -14,25 +14,21 @@ alias l="ls -AFh"
 alias la="ls -Al"
 alias lh="ls -Alh"
 alias ll="ls -l"
-alias tlog="tail -f /var/log/syslog"
 
 # File size
 alias fs="stat -f \"%z bytes\""
-
-# S3CMD Configurations
-alias s3cc='s4cmd.py -p ~/.s3cfg-customchannels'
-alias s3sb='s4cmd.py -p ~/.s3cfg-personal'
 
 # Reload the Source
 alias reload_source="source ~/.zshrc && echo 'Source Reloaded'"
 
 # ZSH
-alias zshconfig="subl ~/.zshrc"
-alias ohmyzsh="subl ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Random Aliases
 # Star Wars...just because
 alias star_wars="telnet towel.blinkenlights.nl"
+alias nyan="telnet nyancat.dakko.us"
 alias speedtest="wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip"
 
 ## Networking
@@ -50,7 +46,7 @@ alias maestro_log="scp ccremix:/srv/www/maestro.customchannels.net/app/storage/l
 alias nginx.start='sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
 alias nginx.stop='sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
 alias nginx.restart='nginx.stop && nginx.start'
-alias nginx.config='st /usr/local/etc/nginx'
+alias nginx.config='vim /usr/local/etc/nginx'
 
 # PHP-FPM 
 alias php-fpm.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist"
@@ -76,8 +72,12 @@ alias mysql.dir="cd /usr/local/Cellar/mysql/5.6.16"
 if [ "$(uname -s)" = "Darwin" ]; then 
  	
  	alias chrome="open -a google\ chrome"
-        alias firefox="/Applications/FireFox.app/Contents/MacOS/firefox-bin --ProfileManager"
+    alias firefox="/Applications/FireFox.app/Contents/MacOS/firefox-bin --ProfileManager"
 	alias f="open -a Finder"
+
+    # opens a file in preview mode
+	alias preview="qlmanage -p"
+	
 	# alias yo="open -a Yojimbo"
 
   	# Show and hide files in Finder
@@ -96,4 +96,8 @@ alias gs='git stash'
 alias ta='tmux attach -t'
 alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
+
+# S3CMD Configurations
+alias s3cc='s3cmd -c ~/.s3cfg-customchannels'
+alias s3sb='s3cmd -c ~/.s3cfg-personal'
 

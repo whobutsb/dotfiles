@@ -39,9 +39,17 @@ To define a user, if running locally like on vagrant, then run
     - `-m` - module
     - `-a` - argument flag for the module
 
+### Getting facts on a host
+
+    ansible [host-group || all] -m setup --tree /tmp/facts -i /path/to/inventory (optional filter: -a 'filter=ansible_*')
+
 ### Running playbooks
 
-    ansible-playbook -s <playbook.yml>
+    ansible-playbook -i /path/to/inventory playbook.yml
+
+Running a playbook with vault contents
+
+  ansible-playbook -i /inventory/file /playbook/file.yml --ask-vault-pass
 
 running locally
 
@@ -59,8 +67,68 @@ running locally
       handlers: 
       - name: Start Nginx
         service: name=nginx state=started
-    
-    
 
+### Encrypting a file with ansible-vault
+
+    ansible-vault encrypt /path/to/file
+
+
+## Modules
+
+#### lineinfile
+
+#  - name: create a complete empty file
+#    command: /usr/bin/touch /test/test.conf
+
+- name: create a new file with lineinfile
+  lineinfile: dest=/test/test.conf 
+  regexp='^' line=''
+  state=present
+  create=True
+
+- name: add a string to the new file
+  lineinfile: dest=/test/test.conf
+  regexp='^'
+  line='Hello, World!'
+  state=present
+
+- name: add a multiline string to the file and delete the string from before
+  # Be aware, with the given regex the string will be added everytime the playbook runs 
+  lineinfile: dest=/test/test.conf 
+  regexp='^'
+  line='#This is a comment\n#Another comment\n#Another comment, again\n#Again a comment\n#The last comment'
+  state=present
+
+- name: add a single line, in this case the same as the comment but uncommented
+  lineinfile: dest=/test/test.conf 
+  regexp='^Another'
+  insertafter='^#Another'
+  line='Another comment, no longer a comment'
+  state=present
+
+- name: remove the line '#Again a comment'
+  lineinfile: dest=/test/test.conf 
+  regexp='^#Again'
+  state=absent
+
+- name: add a new string at the beginning of the file
+  lineinfile: dest=/test/test.conf
+  regexp='^This'
+  insertbefore=BOF
+  line='This is no longer a comment'
+
+- name: add a new string before the match
+  lineinfile: dest=/test/test.conf 
+  regexp='^Another'
+  insertbefore='^#Another'
+  line='Another comment, no longer'
+
+- name: add a new string at the end of the file
+  lineinfile: dest=/test/test.conf 
+  regexp=''
+  insertafter=EOF
+  line='The latest entry'
+   
 ## Links
 - [Servers for Hackers - Ansible Tutorial](https://serversforhackers.com/an-ansible-tutorial)
+- [A Practical Introduction to Ansible](https://github.com/afroisalreadyinu/practical-ansible-intro)
