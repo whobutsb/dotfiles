@@ -246,7 +246,7 @@
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
-	<true/>
+	<false/>
 	<key>DimOnlyText</key>
 	<false/>
 	<key>DisableFullscreenTransparency</key>
@@ -321,13 +321,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1076 240 445 270 0 0 1920 1178 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>960 693 924 485 0 0 1920 1178 </string>
+	<string>-960 573 924 485 -1920 -120 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 28 1918 1148 0 0 1920 1178 </string>
+	<string>1 6 1918 1051 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1 8 1918 1046 0 0 1920 1058 </string>
+	<string>0 4 960 587 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>-1918 -94 955 1148 -1920 -120 1920 1178 </string>
+	<string>-958 -113 955 1165 -1920 -120 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>-1918 427 1207 587 -1920 -120 1920 1178 </string>
 	<key>New Bookmarks</key>
@@ -1152,7 +1152,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-08T08:02:40Z</date>
+	<date>2015-05-31T07:51:12Z</date>
+	<key>SUSkippedVersion</key>
+	<string>2.1.1</string>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1208,6 +1210,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20150412</string>
+	<string>2.1</string>
 </dict>
 </plist>

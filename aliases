@@ -89,7 +89,7 @@ fi
 alias vagrant.init='wget https://raw.githubusercontent.com/fideloper/Vaprobash/master/Vagrantfile'
 
 # Git
-alias gt='git tag'
+alias gt='git tag -ln'
 alias gs='git stash'
 
 # TMUX

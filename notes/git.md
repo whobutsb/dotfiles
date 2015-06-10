@@ -54,3 +54,4 @@ __Links__
 - [A Hackers Guide to Git](https://wildlyinaccurate.com/a-hackers-guide-to-git)
 - [Git Workshop](https://github.com/NeuralSandwich/git-workshop/blob/master/readme.md)
 - [Pro Git](http://git-scm.com/book/en/v2)
+- [How to undo (almost) anything with Git](https://github.com/blog/2019-how-to-undo-almost-anything-with-git)

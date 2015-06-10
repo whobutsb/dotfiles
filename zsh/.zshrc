@@ -60,6 +60,7 @@ antigen bundle vagrant
 antigen bundle web-search
 antigen bundle vi-mode
 antigen bundle pass
+antigen bundle depressiveRobot/stash-aware
 
 #Source Private Files
 source $HOME/.private_aliases

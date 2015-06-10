@@ -26,6 +26,7 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin 'valloric/MatchTagAlways'
 Plugin 'avakhov/vim-yaml'
 Plugin '2072/PHP-Indenting-for-VIm'
+Plugin 'fmoralesc/vim-pad'
 
 " Colors
 Plugin 'tomasr/molokai'
