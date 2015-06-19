@@ -245,6 +245,16 @@ __Links__
 - `localhost:3306` - Within the remote server, waht address adn port to forward traffic to. Since the MySQL server is on the remote server, we're tunneling to the remote servers "localhost" on port 3306, which MySQL is listening to. 
 - `username@localhost` - The SSH username and host to connect to
 
+## Standard IO and Pipes
+
+https://miteshshah.github.io/linux/basics/standard-io-and-pipes/
+
+* `command < file`                Send file as a Input to the command.
+* `command > file`        Redirect STDOUT of command to file.
+* `command >> file`       Append STDOUT of command to file.
+* `command 2> file`       Redirect STDERR of command to file.
+* `command 2>> file`              Append STDERR of command to file.
+
 ___
 
 **Remote Port Forwarding**
