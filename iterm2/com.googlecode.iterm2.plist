@@ -27,7 +27,7 @@
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
-	<false/>
+	<true/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Solarized Dark</key>
@@ -321,13 +321,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1076 240 445 270 0 0 1920 1178 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>-960 573 924 485 -1920 -120 1920 1178 </string>
+	<string>-960 464 605 485 -1920 -229 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 6 1918 1051 0 0 1920 1058 </string>
+	<string>962 3 955 1051 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 4 960 587 0 0 1920 1178 </string>
+	<string>70 304 1207 609 0 0 1920 1058 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>-958 -113 955 1165 -1920 -120 1920 1178 </string>
+	<string>-1919 -113 1918 1165 -1920 -120 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>-1918 427 1207 587 -1920 -120 1920 1178 </string>
 	<key>New Bookmarks</key>
@@ -1152,7 +1152,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-31T07:51:12Z</date>
+	<date>2015-06-18T18:50:44Z</date>
 	<key>SUSkippedVersion</key>
 	<string>2.1.1</string>
 	<key>SavePasteHistory</key>
