@@ -15,7 +15,6 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="dst"
 ZSH_THEME="tjkirch"
 
-HOMEBREW_GITHUB_API_TOKEN=e3bbd17e29b10dd3fa0ffdb8803338d6d4d82691
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
