@@ -42,6 +42,12 @@ alias local_ip="ipconfig getifaddr en0; ipconfig getifaddr en1"
 alias art="php artisan"
 alias maestro_log="scp ccremix:/srv/www/maestro.customchannels.net/app/storage/logs/laravel.log ~/Desktop; open ~/Desktop/laravel.log"
 
+# Syncthing
+alias syncthing.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
+alias syncthing.stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
+alias syncthing.restart="syncthing.stop && syncthing.start"
+alias syncthing.browser="open http://127.0.0.1:8081"
+
 # Nginx Commands
 alias nginx.start='sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
 alias nginx.stop='sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
@@ -72,7 +78,8 @@ alias mysql.dir="cd /usr/local/Cellar/mysql/5.6.16"
 if [ "$(uname -s)" = "Darwin" ]; then 
  	
  	alias chrome="open -a google\ chrome"
-    alias firefox="/Applications/FireFox.app/Contents/MacOS/firefox-bin --ProfileManager"
+    alias firefox="/opt/homebrew-cask/Caskroom/firefox/38.0.5/Firefox.app/Contents/MacOS/firefox-bin -profilemanager"
+
 	alias f="open -a Finder"
 
     # opens a file in preview mode
