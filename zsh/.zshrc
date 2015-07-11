@@ -15,7 +15,6 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="dst"
 ZSH_THEME="tjkirch"
 
-
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
 
@@ -62,10 +61,12 @@ antigen bundle vi-mode
 antigen bundle pass
 antigen bundle depressiveRobot/stash-aware
 antigen bundle pip
+antigen bundle vagrant
 
-#Source Private Files
+# Source Private Files
 source $HOME/.private_aliases
 
+# Autojump
 [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
 
 ## Vim Mapping in ZSH
@@ -75,6 +76,8 @@ source $HOME/.private_aliases
 # bindkey -v
 # # Kill lag when switch from normal to visual modes
 export KEYTIMEOUT=1
+
+bindkey '^R' history-incremental-search-backward
 
 # allow homebrew to take over for php
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
