@@ -34,7 +34,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(pass taskwarrior colored-man)
+plugins=(pass taskwarrior colored-man keybase)
 
 # Files to Source
 source $ZSH/oh-my-zsh.sh
@@ -61,6 +61,7 @@ antigen bundle web-search
 antigen bundle vi-mode
 antigen bundle pass
 antigen bundle depressiveRobot/stash-aware
+antigen bundle pip
 
 #Source Private Files
 source $HOME/.private_aliases
@@ -74,3 +75,9 @@ source $HOME/.private_aliases
 # bindkey -v
 # # Kill lag when switch from normal to visual modes
 export KEYTIMEOUT=1
+
+# allow homebrew to take over for php
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+
+# pip should only run if there is a virutalenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true

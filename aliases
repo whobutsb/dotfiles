@@ -11,8 +11,7 @@ alias goog="google"
 #   #   ------------------------------------------
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
 alias l="ls -AFh"
-alias la="ls -Al"
-alias lh="ls -Alh"
+alias la="ls -Alh"
 alias ll="ls -l"
 
 # File size
@@ -73,6 +72,8 @@ alias ices.config="st /usr/local/share/ices"
 # MySQL
 alias mysql.config="st /usr/local/Cellar/mysql/5.6.16"
 alias mysql.dir="cd /usr/local/Cellar/mysql/5.6.16"
+
+alias maestro.db.dev="mysql -h maestro.dev -u root -p"
 
 # OSX Functions
 if [ "$(uname -s)" = "Darwin" ]; then 

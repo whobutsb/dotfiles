@@ -32,6 +32,7 @@ Plugin 'fmoralesc/vim-pad'
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/xoria256.vim'
+Plugin 'Wutzara/vim-materialtheme'
 
 "" Snippets
 "" https://github.com/msanders/snipmate.vim
@@ -69,6 +70,7 @@ set binary		        " don't add empty newlines at the end of files
 set noeol
 
 set number		        " show line numbers
+set relativenumber      " use relative numbers
 set wrap		        " turn on linewrap
 " set list		        " show invisible chars
 set tabstop=4		    " 4 spaces
@@ -259,7 +261,7 @@ let g:syntastic_aggregate_errors = 1
 " Mappings
 
 " get ride of Ex mode, its dumb and i don't use it
-nnoremap Q <nop>
+nnoremap Q <nop> 
 
 " remap : to ;, make life easier using commands
 nnoremap ; :
@@ -276,7 +278,7 @@ noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
 " Close All Buffers
-noremap <Leader>Q :1,$bd!<cr>
+noremap <Leader>Q :1,$bd!<cr> 
 
 " Moving in splits
 nnoremap <C-J> <C-W><C-J>    " CTRL+j move down a split
