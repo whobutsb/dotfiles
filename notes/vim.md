@@ -309,7 +309,6 @@ the name of the alternate file.
 
 To put the current filename after the cursor use: `"%p`
 
-
 ## Scripting
 
 __Links__
@@ -332,12 +331,17 @@ Reload a snippet on the fly with: `:call ReloadAllSnippets()`
 
 Tim Pope's Vim Surround [Vim-Surround](https://github.com/tpope/vim-surround) plugin.
 
+```
   Old text                  Command     New text ~
   "Hello *world!"           ds"         Hello world!
   [123+4*56]/2              cs])        (123+456)/2
   "Look ma, I'm *HTML!"     cs"<q>      <q>Look ma, I'm HTML!</q>
   if *x>3 {                 ysW(        if ( x>3 ) {
   my $str = *whee!;         vllllS'     my $str = 'whee!';
+
+```
+
+To add elements are a word use `ysiw"`. 
 
 ## Tabs
 
