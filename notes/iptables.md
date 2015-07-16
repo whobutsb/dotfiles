@@ -15,3 +15,9 @@ Specifying a IP Range
 `-m iprange --src-range IP-IP -j ACTION`
 
     sudo iptables -A INPUT -p tcp --dport [port] -m iprange --src-range [ip-address]-[ip-address] -j [ACCEPT/DENY]
+
+Delete IPTable Rule number 
+
+```
+sudo iptables -D INPUT [number]
+```

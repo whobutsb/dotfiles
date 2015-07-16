@@ -257,6 +257,16 @@ https://miteshshah.github.io/linux/basics/standard-io-and-pipes/
 
 ___
 
+
+## RSync
+
+**Resuming a Partial Sync** 
+
+This works well for resuming a broken pipe during SCP.
+
+```
+rsync --partial --progress --rsh=ssh local_file user@host:remote_file
+
 **Remote Port Forwarding**
 
 Remote Port Forwarding is good if you need to share your local computer with others who are outside of your network. 
