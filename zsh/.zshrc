@@ -73,7 +73,7 @@ source $HOME/.private_aliases
 # http://dougblack.io/words/zsh-vi-mode.html
 # https://github.com/hchbaw/opp.zsh
 # Vi mode
-# bindkey -v
+bindkey -v
 # # Kill lag when switch from normal to visual modes
 export KEYTIMEOUT=1
 
@@ -84,3 +84,6 @@ export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # pip should only run if there is a virutalenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
+
+# History Time Format
+export HISTTIMEFORMAT="%T %d-%b-%Y "
