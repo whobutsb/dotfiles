@@ -255,8 +255,23 @@ https://miteshshah.github.io/linux/basics/standard-io-and-pipes/
 * `command 2> file`       Redirect STDERR of command to file.
 * `command 2>> file`              Append STDERR of command to file.
 
-___
 
+## Run Commands in the Background 
+
+`nohup` allows you to run command/process or shell script that can continue running
+in the background after you log out from a shell.
+
+```
+nohup command-name &
+```
+
+To change the output file name use
+
+```
+nohup command-name > out.txt &
+```
+
+Use `jobs -l` to list all jobs.
 
 ## RSync
 
