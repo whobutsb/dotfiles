@@ -11,7 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Shougo/neocomplete'
 Plugin 'scrooloose/syntastic'
@@ -23,7 +23,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/vim-peekaboo'
-Plugin 'valloric/MatchTagAlways'
+" Plugin 'valloric/MatchTagAlways'
 Plugin 'avakhov/vim-yaml'
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'fmoralesc/vim-pad'
@@ -257,6 +257,10 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
+
+let g:syntastic_html_tidy_ignore_errors = [
+    \ '<html> proprietary attribute "class"'
+    \ ]
 
 " Mappings
 

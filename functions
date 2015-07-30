@@ -22,3 +22,8 @@ git_page(){
 function fname(){
     find . -iname "*$@*"
 }
+
+ds(){
+  echo "Disk Space Utilization For $HOSTNAME"
+  df -h
+}

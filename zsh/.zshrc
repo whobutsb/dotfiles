@@ -38,7 +38,7 @@ plugins=(pass taskwarrior colored-man keybase)
 # Files to Source
 source $ZSH/oh-my-zsh.sh
 
-for file in ~/dotfiles/{exports,aliases,my_functions}; do
+for file in ~/dotfiles/{exports,aliases,functions}; do
     [ -r "$file" ] && . "$file"
 done
 unset file
@@ -73,7 +73,7 @@ source $HOME/.private_aliases
 # http://dougblack.io/words/zsh-vi-mode.html
 # https://github.com/hchbaw/opp.zsh
 # Vi mode
-bindkey -v
+# bindkey -v
 # # Kill lag when switch from normal to visual modes
 export KEYTIMEOUT=1
 
