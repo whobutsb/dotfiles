@@ -1,6 +1,9 @@
-set nocompatible	" be iMproved, required
-filetype off		  " required by vundle
+" vim: set foldmethod=marker foldenable foldlevel=0 nospell:
 
+set nocompatible        " be iMproved, required
+filetype off            " required by vundle
+
+" Plugins {{{
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -34,76 +37,66 @@ Plugin 'mxw/vim-jsx'
 Plugin 'tomasr/molokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-scripts/xoria256.vim'
-Plugin 'Wutzara/vim-materialtheme'
 
 "" Snippets
 "" https://github.com/msanders/snipmate.vim
 "" http://www.bestofvim.com/plugin/snipmate/
 Plugin 'msanders/snipmate.vim'
 
-call vundle#end()		    " required
-filetype plugin indent on	" required	
+call vundle#end()               " required
+filetype plugin indent on       " required
 
-" Disable background color erase so that color schemes
-" work properly when Vim is used inside tmux
-if &term =~ '256color'
-	set t_ut=
-endif
+" }}}
 
-" Basic Options
+" Options {{{
 let mapleader=','
-set t_Co=256 		    " all the colors
-set title		        " change the terminal title
-set encoding=utf-8	    " show utf8 chars
-set showcmd		        " count highlighted
-set ruler		        " show where i'am in the command area
-set showmode		    " show the current mode we are in
-set laststatus=2	    " always show the status line
-set mouse=a		        " use the mouse
-
-set modelines=0		    " dont read first/last lines of file for settings
-set hidden		        " stash unwritten files in buffer
-set vb			        " dont beep at me
-set cursorline		    " highlight current line
-set scrolloff=3		    " start scrolling when i'm 3 lines from top/bottom
-set history=1000	    " remember commands and search history
-set backspace=indent,eol,start		    " backspace over indent, eol, and insert
-set binary		        " don't add empty newlines at the end of files
-set noeol
-
-set number		        " show line numbers
-set relativenumber      " use relative numbers
-set wrap		        " turn on linewrap
-" set list		        " show invisible chars
-set tabstop=4		    " 4 spaces
-set shiftwidth=4	    " indent by 4 spaces when using >>, <<, ==, etc
-set softtabstop=4	    " indent 4 spaces when pressing <TAB>
-set expandtab		    " use softtabstop spaces instead of tab characters for indentation 
+set t_Co=256                    " all the colors
+set title                       " change the terminal title
+set encoding=utf-8              " show utf8 chars
+set showcmd                     " count highlighted
+set ruler                       " show where i'am in the command area
+set showmode                    " show the current mode we are in
+set laststatus=2                " always show the status line
+set mouse=a                     " use the mouse
+set modelines=0                 " dont read first/last lines of file for settings
+set hidden                      " stash unwritten files in buffer
+set vb                          " dont beep at me
+set cursorline                  " highlight current line
+set scrolloff=3                 " start scrolling when i'm 3 lines from top/bottom
+set history=1000                " remember commands and search history
+set backspace=indent,eol,start  " backspace over indent, eol, and insert
+set number                      " show line numbers
+set relativenumber              " use relative numbers
+set wrap                        " turn on linewrap
+set tabstop=4                   " 4 spaces
+set shiftwidth=4                " indent by 4 spaces when using >>, <<, ==, etc
+set softtabstop=4               " indent 4 spaces when pressing <TAB>
+set expandtab                   " use softtabstop spaces instead of tab characters for indentation 
 set modelines=0
 
-set hlsearch            " highlight my search
-set incsearch           " incremental search
-set wrapscan            " set the search scan to wrap around the file
+set hlsearch                    " highlight my search
+set incsearch                   " incremental search
+set wrapscan                    " set the search scan to wrap around the file
 
-set ignorecase          " when searching
-set smartcase           " unless I use an uppercase character
+set ignorecase                  " when searching
+set smartcase                   " unless I use an uppercase character
 
-syntax on                   " syntax highlighting
-syntax sync minlines=256    " makes big files slow
-set synmaxcol=2048          " alos long lines are slow
-set autoindent              " keep indentation from previous line
+syntax on                       " syntax highlighting
+syntax sync minlines=256        " makes big files slow
+set autoindent                  " keep indentation from previous line
 set copyindent
-set smartindent             " automatically insert indentation in some cases
-set cindent                 " like smart indent, but stricter, and more customisable 
-set formatoptions=tcqr      " smart comments
-"
-" reload .vimrc whenever it is saved
-au BufWritePost .vimrc so $MYVIMRC 
+set smartindent                 " automatically insert indentation in some cases
+set cindent                     " like smart indent, but stricter, and more customisable 
+set formatoptions=tcqr          " smart comments
 
-if has ("autocmd")
-    " File type detection. indent based on filetype. Recommended.
-    filetype plugin indent on
-endif
+" Hidden Characters
+set list                        " show hidden characters
+set listchars+=eol:¬
+set listchars+=extends:❯
+set listchars+=precedes:❮
+set listchars+=trail:⋅
+set listchars+=nbsp:⋅
+set listchars+=tab:\|\
 
 " no backup or swap files
 set nobackup
@@ -116,6 +109,31 @@ set background=light
 " colorscheme solarized
 colorscheme xoria256
 
+" sutff to ignore
+set wildignore+=*.swp,*.pyc,*.bak,*.class,*.orig,.DS_Store
+set wildignore+=.git,.hg,.bzr,.svn
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.svg
+set wildignore+=build/*,tmp/*,vendor/cache/*,bin/*
+set wildignore+=.sass-cache/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+
+" }}}
+
+" Functions {{{
+"
+" Disable background color erase so that color schemes
+" work properly when Vim is used inside tmux
+if &term =~ '256color'
+    set t_ut=
+endif
+
+" reload .vimrc whenever it is saved
+au BufWritePost .vimrc so $MYVIMRC 
+if has ("autocmd")
+    " File type detection. indent based on filetype. Recommended.
+    filetype plugin indent on
+endif
+
 if has("unix")
     let s:uname = system("uname")
     if s:uname == "Darwin\n"
@@ -123,7 +141,17 @@ if has("unix")
     endif
 endif
 
-" Airline Settings
+" Set the 80th column
+if(exists('+colorcolumn'))
+    set colorcolumn=80
+    highlight ColorColumn ctermbg=235
+endif
+
+" }}}
+
+" Plugin Options {{{
+
+" Airline {{{
 " removed the fugitive status line
 " set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\ %{fugitive#statusline()}
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)}
@@ -132,8 +160,9 @@ let g:airline_theme = 'powerlineish'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+" }}}
 
-" NERDTree configuration
+" NERDTree {{{
 let NERDTreeChDirMode=2
 let NERDTreeHijackNetrw=1
 let NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', '\.DS_Store', '\.git$']
@@ -143,15 +172,12 @@ let NERDTreeShowHidden=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 30
-
 " Add <leader> t to open NerdTree
 nnoremap <leader>t :NERDTreeToggle<cr>
-"
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-nnoremap <silent> <F2> :NERDTreeFind<CR>
-noremap <F3> :NERDTreeToggle<CR>
 
-"" ctrlp.vim
+" }}}
+
+" CTRLP {{{
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 set wildignore+=*/vendor/**
@@ -164,23 +190,26 @@ noremap <leader>g :CtrlPTag<CR>
 noremap <leader>r :CtrlPBufTag<CR>
 let g:ctrlp_map = ',e'
 let g:ctrlp_open_new_file = 'r'
+" }}}
 
-" if silver surfer plugin is installed use 
+" Silver Searcher (Ag) {{{
 " this to search with CtrlP, much faster
 if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden --ignore-dir ".git" --stats -g  ""'
     let g:ctrlp_use_caching=0
 endif
+" }}}
 
-" EasyMotion Configuration
+" EasyMotion {{{
 let g:EasyMotion_leader_key = '<Space>'
 let g:EasyMotion_smartcase = 1
 
 " Easy Motion Search
 map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
+" }}}
 
-" NeoComplete Settings
+" NeoComplete {{{
 if v:version >= 704 && has("lua")
     let g:acp_enableAtStartup = 0
     " Use neocomplete.
@@ -228,7 +257,7 @@ if v:version >= 704 && has("lua")
     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
     " <C-h>, <BS>: close popup and delete backword char.
     inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+    " inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
     inoremap <expr><C-y>  neocomplete#close_popup()
     inoremap <expr><C-e>  neocomplete#cancel_popup()
     " Close popup by <Space>.
@@ -250,8 +279,9 @@ if v:version >= 704 && has("lua")
     let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
     let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 endif
+" }}}
 
-" Syntastic Settings
+" Syntastic {{{
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
@@ -264,8 +294,61 @@ let g:syntastic_html_tidy_ignore_errors = [
     \ '<html> proprietary attribute "class"',
     \ 'trimming empty <i>'
     \ ]
+" }}}
 
-" Mappings
+" Match Tag Always  {{{
+let g:mta_filetypes = {
+    \ 'html': 1,
+    \ 'xhtml': 1, 
+    \ 'xml': 1, 
+    \ 'jinja': 1, 
+    \ 'blade': 1
+\}
+" }}}
+
+" Emmet {{{
+" remap emmet leader to <C-Y>
+let g:user_emmet_leader_key='<C-J>'
+
+" }}}
+
+" Yaml Indenting {{{
+
+if exists("b:did_indent")
+    finish
+endif
+"runtime! indent/ruby.vim
+""unlet! b:did_indent
+let b:did_indent = 1
+
+setlocal autoindent sw=2 et
+setlocal indentexpr=GetYamlIndent()
+setlocal indentkeys=o,O,*<Return>,!^F
+
+function! GetYamlIndent()
+    let lnum = v:lnum - 1
+    if lnum == 0
+        return 0
+    endif
+    let line = substitute(getline(lnum),'\s\+$','','')
+    let indent = indent(lnum)
+    let increase = indent + &sw
+    if line =~ ':$'
+        return increase
+    else
+        return indent
+    endif
+endfunction
+" }}}
+
+" vim-jsx {{{
+let g:jsx_ext_required = 0
+
+" }}}
+
+" }}}
+
+" Mappings {{{
 
 " get ride of Ex mode, its dumb and i don't use it
 nnoremap Q <nop> 
@@ -341,53 +424,4 @@ nnoremap <silent> ,f <C-]>
 " use ,F to jump to tag in a vertical split
 nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
 
-" Set the 80th column
-if(exists('+colorcolumn'))
-    set colorcolumn=80
-    highlight ColorColumn ctermbg=235
-endif
-
-" Match tags always filetypes
-let g:mta_filetypes = {
-    \ 'html': 1,
-    \ 'xhtml': 1, 
-    \ 'xml': 1, 
-    \ 'jinja': 1, 
-    \ 'blade': 1
-\}
-
-" remap emmet leader to <C-Y>
-let g:user_emmet_leader_key='<C-J>'
-
-" Vim Yaml Indenting
-
-if exists("b:did_indent")
-    finish
-endif
-"runtime! indent/ruby.vim
-""unlet! b:did_indent
-let b:did_indent = 1
-
-setlocal autoindent sw=2 et
-setlocal indentexpr=GetYamlIndent()
-setlocal indentkeys=o,O,*<Return>,!^F
-
-function! GetYamlIndent()
-    let lnum = v:lnum - 1
-    if lnum == 0
-        return 0
-    endif
-    let line = substitute(getline(lnum),'\s\+$','','')
-    let indent = indent(lnum)
-    let increase = indent + &sw
-    if line =~ ':$'
-        return increase
-    else
-        return indent
-    endif
-endfunction
-
-" vim-jsx
-let g:jsx_ext_required = 0
-
-" vim:set sw=2:
+" }}}
