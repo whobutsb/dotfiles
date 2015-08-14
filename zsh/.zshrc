@@ -83,7 +83,7 @@ bindkey '^R' history-incremental-search-backward
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # pip should only run if there is a virutalenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
+# export PIP_REQUIRE_VIRTUALENV=true
 
 # History Time Format
 export HISTTIMEFORMAT="%T %d-%b-%Y "

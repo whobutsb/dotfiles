@@ -60,6 +60,8 @@ alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php
 alias php-fpm.restart='php-fpm.stop && php-fpm.start'
 alias php-fpm.config='st /usr/local/etc/php/5.6'
 
+alias php.cli="psysh"
+
 # NGINX 
 alias nginx.logs.error='tail -250f /usr/local/etc/nginx/logs/error.log'
 alias nginx.logs.access='tail -250f /usr/local/etc/nginx/logs/access.log'

@@ -27,6 +27,8 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin 'avakhov/vim-yaml'
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'fmoralesc/vim-pad'
+Plugin 'junegunn/rainbow_parentheses.vim'
+Plugin 'mxw/vim-jsx'
 
 " Colors
 Plugin 'tomasr/molokai'
@@ -259,7 +261,8 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_html_tidy_ignore_errors = [
-    \ '<html> proprietary attribute "class"'
+    \ '<html> proprietary attribute "class"',
+    \ 'trimming empty <i>'
     \ ]
 
 " Mappings
@@ -383,5 +386,8 @@ function! GetYamlIndent()
         return indent
     endif
 endfunction
+
+" vim-jsx
+let g:jsx_ext_required = 0
 
 " vim:set sw=2:
