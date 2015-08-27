@@ -281,6 +281,7 @@ This works well for resuming a broken pipe during SCP.
 
 ```
 rsync --partial --progress --rsh=ssh local_file user@host:remote_file
+```
 
 **Remote Port Forwarding**
 
@@ -306,7 +307,24 @@ We want our friends to see our website, which simply says "Hi!".  Let's use a re
 
 If our remote server's IP address was `123.123.123.123`, then our friends can access our website at `123.123.123.123:9000`, which will forward to our lcoal site at `localhost:8001`. 
 
-*Links*
+## Removing Old Kernels
+
+Get the current kernel version
+
+    uname -r
+
+Get the list of the installed kernels
+
+    dpkg --list | grep linux-image
+
+Remove the kernels
+
+    sudo apt-get purge linux-image-x.x.x.x-generic
+
+- [How to Remove Old Kernels from Ubuntu 13.04, 13.10](http://ubuntuhandbook.org/index.php/2013/08/remove-old-kernels-from-ubuntu-13-04-13-10/)
+
+
+###Links
 
 - [SSH Kung-Fu](http://blog.tjll.net/ssh-kung-fu/)
 - [Servers For Hackers - SSH Tricks](http://serversforhackers.com/editions/2014/07/01/ssh-tricks/)

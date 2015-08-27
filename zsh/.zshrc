@@ -3,7 +3,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return 
+[ -z "$PS1" ] && return
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -45,12 +45,12 @@ unset file
 
 COMPLETION_WAITING_DOTS="true"
 
-# Antigen 
+# Antigen
 ANTIGEN=$HOME/dotfiles/zsh/antigen
 
 source $ANTIGEN/antigen.zsh
 #antigen use oh-my-zsh
-antigen bundle $HOME/dotfiles/zsh/custom/plugins/virtualbox 
+antigen bundle $HOME/dotfiles/zsh/custom/plugins/virtualbox
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle sublime
 antigen bundle git

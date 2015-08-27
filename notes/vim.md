@@ -5,24 +5,25 @@ Notes and thoughts on the dark arts of Vim.
 ## Abbreviations
 
 Write them on the fly!
-
-	:ab temlpate template
+```
+:ab temlpate template
+```
 
 every time temlpate is spelled it will automatically be fixed
 
 
 ## Ag (The Silver Searcher)
 
-	:Ag [options] {pattern} [directory | file]
+:Ag [options] {pattern} [directory | file]
 
 `--help` - Get help
 
-Matching control 
-	
+Matching control
+
 `-w/--word-regexp` - force patten to match only whole words
 `-q/--literal` - quote all metacharacters in pattern, it is treated as a literal.
 
-File selection 
+File selection
 
 `--ignore-dir=DIRNAME` - ignore directory
 `--type=TYPE` - specity the types of tiles to include
@@ -31,9 +32,9 @@ File selection
 
 Example, search for something in a certain file type
 
-	:Ag --css ".widget"
+:Ag --css ".widget"
 
-### Links 
+### Links
 
 -[Using Grep and its alternatives for source code and fuzzy searches](https://coelhorjc.wordpress.com/2014/12/15/using-grep-and-its-alternatives-for-source-code-ackaggit-grepcgrepsgrepjqxgrep-and-fuzzy-searches-agreptre/)
 
@@ -43,17 +44,17 @@ All the characters you get when you go through a-z
 
 å ∫ ç ∂ ´ ƒ © ˙ ˆ ∆ ˚ ¬ µ ˜ ø π œ ® ß † ¨ √ ∑ ≈ \ Ω
 
-On mac remap the alt key 
+On mac remap the alt key
 
-    nnoremap ª :m .+1<CR>==
-    nnoremap º :m .-2<CR>==
+nnoremap ª :m .+1<CR>==
+nnoremap º :m .-2<CR>==
 
-    inoremap ª <Esc>:m .+1<CR>==gi
-    inoremap º <Esc>:m .-2<CR>==gi
+inoremap ª <Esc>:m .+1<CR>==gi
+inoremap º <Esc>:m .-2<CR>==gi
 
-    vnoremap ª :m '>+1<CR>gv=gv
-    vnoremap º :m '<-2<CR>gv=gv
- 
+vnoremap ª :m '>+1<CR>gv=gv
+vnoremap º :m '<-2<CR>gv=gv
+
 [Stack Overflow: Can I map Alt key in Vim?](http://stackoverflow.com/questions/7501092/can-i-map-alt-key-in-vim)
 
 ## Buffers
@@ -61,9 +62,9 @@ On mac remap the alt key
 Buffers are Vim's term for a "block of text stored in memory".
 
 - `:e <filename>` - opens a new buffer with the contents of the file
-- `:w <filename>` - save a buffer to a new location 
+- `:w <filename>` - save a buffer to a new location
 - `:ls` - lists the open buffers and buffer numbers
-- `:b <buffer-number>` - switch to a specific buffer 
+- `:b <buffer-number>` - switch to a specific buffer
 - `:bn` - next buffer
 - `:bp` - previous buffer
 - `:bd` - close buffer
@@ -89,73 +90,73 @@ Window resizing
 - `zR` - open all folds
 - `zM` - close all folds
 - `zv` - expand folds to reveal cursor
-- `zf` - define a fold, use with a visual selection 
+- `zf` - define a fold, use with a visual selection
 
 ### Navigating
 
 - `zj` - move down to the top of next fold
 - `zk` - move up to bottom of previous fold
 
-- `zf{motion}` - fold an area based on a motion. 
+- `zf{motion}` - fold an area based on a motion.
 
 If you get "Cannot create flow with the current foldmethod" then change the
-fold method type. 
+fold method type.
 
-	:set foldmethod=manual
-	:help fold-methods
+:set foldmethod=manual
+:help fold-methods
 
 ## CTags
 
 Generating the CTags. Navigate to the project parent directory
 
-	ctags -f php.tags --languages=PHP -R
+ctags -f php.tags --languages=PHP -R
 
-Tell Vim to use the tag file: 
+Tell Vim to use the tag file:
 
-	:set tags+=~/path/to/php.tags
+:set tags+=~/path/to/php.tags
 
 Search through the tags
 
-	:tag /pattern // :tag /some_cool_class
+:tag /pattern // :tag /some_cool_class
 
-- `CTRL-]` - jump to the method definition 
+- `CTRL-]` - jump to the method definition
 - `CTRL-T` - jump back to where you were before
 - `CTRL-F` - opens new vertical buffer
 
 
 ## EasyMotion
 
-    Default Mapping      | Details
-    ---------------------|----------------------------------------------
-    <Leader>f{char}      | Find {char} to the right.
-    <Leader>F{char}      | Find {char} to the left.
-    <Leader>t{char}      | Till before the {char} to the right.
-    <Leader>T{char}      | Till after the {char} to the left.
-    <Leader>w            | Beginning of word forward.
-    <Leader>W            | Beginning of WORD forward.
-    <Leader>b            | Beginning of word backward.
-    <Leader>B            | Beginning of WORD backward.
-    <Leader>e            | End of word forward.
-    <Leader>E            | End of WORD forward.
-    <Leader>ge           | End of word backward..
-    <Leader>gE           | End of WORD backward..
-    <Leader>j            | Line downward.
-    <Leader>k            | Line upward.
-    <Leader>n            | Jump to latest "/" or "?" forward.
-    <Leader>N            | Jump to latest "/" or "?" backward.
-    <Leader>s            | Find(Search) {char} forward and backward.
-                         |
+Default Mapping      | Details
+---------------------|----------------------------------------------
+<Leader>f{char}      | Find {char} to the right.
+<Leader>F{char}      | Find {char} to the left.
+<Leader>t{char}      | Till before the {char} to the right.
+<Leader>T{char}      | Till after the {char} to the left.
+<Leader>w            | Beginning of word forward.
+<Leader>W            | Beginning of WORD forward.
+<Leader>b            | Beginning of word backward.
+<Leader>B            | Beginning of WORD backward.
+<Leader>e            | End of word forward.
+<Leader>E            | End of WORD forward.
+<Leader>ge           | End of word backward..
+<Leader>gE           | End of WORD backward..
+<Leader>j            | Line downward.
+<Leader>k            | Line upward.
+<Leader>n            | Jump to latest "/" or "?" forward.
+<Leader>N            | Jump to latest "/" or "?" backward.
+<Leader>s            | Find(Search) {char} forward and backward.
+|
 ## External Commands !
 
-Adding a dot in front of the command dumps the output on to the window. 
+Adding a dot in front of the command dumps the output on to the window.
 
-	:.! ls 
+:.! ls
 
-	:.! date " dumps the current date
+:.! date " dumps the current date
 
-Open the terminal in the background 
+Open the terminal in the background
 
-- `Ctrl-Z` - open the terminal 
+- `Ctrl-Z` - open the terminal
 - `fg` - open vim back up
 
 ## Delete in insert mode
@@ -169,13 +170,13 @@ Open the terminal in the background
 
 Set the filetype for a file
 
-	:set filetype=php
-	"" or
-	:set ft=php
+:set filetype=php
+"" or
+:set ft=php
 
-Set multiple file types with: 
+Set multiple file types with:
 
-	:set ft=html.php
+:set ft=html.php
 
 this activates teh snippets for both HTML and PHP for the current file.
 
@@ -183,11 +184,11 @@ this activates teh snippets for both HTML and PHP for the current file.
 
 Whole file find and replace, red -> green
 
-	:%s/red/green/g
+:%s/red/green/g
 
 Visual selection find and replace
 
-	:'<,'>s/red/green/g
+:'<,'>s/red/green/g
 
 
 ## Help in VimDoc
@@ -198,7 +199,7 @@ Visual selection find and replace
 - `i_` - for insert mode (`:help i_CTRL-[`)
 - `v_` - for visual mode (`:help v_CTRL-]`)
 
-## Key Commands 
+## Key Commands
 
 - `<ESC>` - Escape Key
 - `<C-G>` - CTRL-G
@@ -213,19 +214,19 @@ Visual selection find and replace
 
 Get a list of the current keys mappings
 
-    :map 
-    :map!
-	:nmap - Display normal mode maps
-	:imap - Display insert mode maps
-	:vmap - Display visual and select mode maps
+:map
+:map!
+:nmap - Display normal mode maps
+:imap - Display insert mode maps
+:vmap - Display visual and select mode maps
 
 - `:verbose map <key>` - determine the script or plugin that defines a map for a key sequence
 
 Removing a key map
 
-	:unmap <key>
-	:unmap! <key>
-	
+:unmap <key>
+:unmap! <key>
+
 ### Links
 
 - (Mapping Keys in Vim - Wikia)[http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial]
@@ -233,8 +234,8 @@ Removing a key map
 
 ## Marks
 
-- `m{a-zA-Z}` - Set Mark {a-zA-Z} at cursor position. 
-- `` `{a-zA-Z} `` - Move to mark 
+- `m{a-zA-Z}` - Set Mark {a-zA-Z} at cursor position.
+- `` `{a-zA-Z} `` - Move to mark
 - `:marks ` - List all the current marks (not a motion command)
 - `,m` - lists the marks
 - `m,` - place next available mark
@@ -242,25 +243,25 @@ Removing a key map
 - `m-` - Delete all marks from teh current line
 - `m<Space>` - delete all marks from the current buffer
 - `'?` - open location list and display local marks
-- `]'` - jump to next mark 
+- `]'` - jump to next mark
 - `['` - jump to previous mark
 
 ## Markdown Options
 
 - `]]` - go to next header
 - `[[` - go to previous header
-- `][` - go to next sibling header 
-- `[]` - go to previous sibling header 
+- `][` - go to next sibling header
+- `[]` - go to previous sibling header
 - `]c` - go to current header
 - `]u` - got to parent header
-- `:Toc` - create a vertical split of table of contents 
-- `:Toch` - create a horizontal split of the TOC 
+- `:Toc` - create a vertical split of table of contents
+- `:Toch` - create a horizontal split of the TOC
 - `:Toct` - create a new tab with TOC
 - `,p` - preview the markdown file in the browser
 
 After previewing the file the vim buffer will disappear.  Need to use `:redraw!` to fix the screen. Fixed in my config with appending the command .vimrc :D.
 
-## Statusline 
+## Statusline
 
 - [Customizing the status line](http://got-ravings.blogspot.com/2008/08/vim-pr0n-making-statuslines-that-own.html)
 
@@ -273,10 +274,10 @@ _Links_
 - `Ctrl+b` - page up
 - `Ctrl+f` - page down
 - `Ctrl+u` - move up half a screen
-- `Ctrl+d` - move down half a screen 
-- `H` - move to the top of the screen 
-- `M` - move to the middle of the screen 
-- `L` - move to the bottom of the screen 
+- `Ctrl+d` - move down half a screen
+- `H` - move to the top of the screen
+- `M` - move to the middle of the screen
+- `L` - move to the bottom of the screen
 - `gg` - go to the top of the file
 - `G` - go to the bottom of the file
 - `zz` - move the current line to the middle of the screen
@@ -289,11 +290,11 @@ _Links_
 
 ## Registers
 
-Registers are simply containers that hold text.  They can be used in the manner 
-of a clipboard for cutting, copying, and pasking text, or they can be used to 
-record a macro by saving a sequence of keystrokes.  
+Registers are simply containers that hold text.  They can be used in the manner
+of a clipboard for cutting, copying, and pasking text, or they can be used to
+record a macro by saving a sequence of keystrokes.
 
-Saving a register user: `"<char><motion>` - ie: `"kyy` - yank the line and 
+Saving a register user: `"<char><motion>` - ie: `"kyy` - yank the line and
 save it to register y.  Recall and paste it with - `"kp`.
 
 You can append to a register using the capital version of the char ie - `"Kyy`.
@@ -302,8 +303,8 @@ View all of the registers with - `:reg[isters]`
 
 The system clipboard register is contained in `"+`.
 
-Register `%` contains the name of the current file, and register `#` contains 
-the name of the alternate file. 
+Register `%` contains the name of the current file, and register `#` contains
+the name of the alternate file.
 
 - `:echo @%` - dotfiles/notes/vim.md
 
@@ -319,8 +320,8 @@ __Links__
 
 Using the plugin [snipmate](https://github.com/msanders/snipmate.vim).  More
 info here:
-[http://www.bestofvim.com/plugin/snipmate/](http://www.bestofvim.com/plugin/snipmate/)
-Help file can be found at `:h snipMate.txt`.
+  [http://www.bestofvim.com/plugin/snipmate/](http://www.bestofvim.com/plugin/snipmate/)
+  Help file can be found at `:h snipMate.txt`.
 
 Snippets can be defined in two places: `snippets/<filetype>/<trigger>.snippet`
 or `snippets/<filetype>.snippets`
@@ -332,16 +333,16 @@ Reload a snippet on the fly with: `:call ReloadAllSnippets()`
 Tim Pope's Vim Surround [Vim-Surround](https://github.com/tpope/vim-surround) plugin.
 
 ```
-  Old text                  Command     New text ~
-  "Hello *world!"           ds"         Hello world!
-  [123+4*56]/2              cs])        (123+456)/2
-  "Look ma, I'm *HTML!"     cs"<q>      <q>Look ma, I'm HTML!</q>
-  if *x>3 {                 ysW(        if ( x>3 ) {
-  my $str = *whee!;         vllllS'     my $str = 'whee!';
+Old text                  Command     New text ~
+"Hello *world!"           ds"         Hello world!
+[123+4*56]/2              cs])        (123+456)/2
+"Look ma, I'm *HTML!"     cs"<q>      <q>Look ma, I'm HTML!</q>
+if *x>3 {                 ysW(        if ( x>3 ) {
+my $str = *whee!;         vllllS'     my $str = 'whee!';
 
 ```
 
-To add elements are a word use `ysiw"`. 
+To add elements are a word use `ysiw"`.
 
 ## Tabs
 
@@ -360,34 +361,34 @@ __Links__
 
 - `ctrl+w q` - close split
 
-Create a vertical split using `:vsp` and horizontal `:sp`. 
+Create a vertical split using `:vsp` and horizontal `:sp`.
 
-    :vsp ~/.vimrc
+:vsp ~/.vimrc
 
-You can specify the new split height by prefixing with a number: 
+You can specify the new split height by prefixing with a number:
 
-    :10sp ~/.zshrc
+:10sp ~/.zshrc
 
 Split two vertically split windows to horizontally split
 
-	ctrl-W K 
+ctrl-W K
 
 Horizontally to vertically
 
-	ctrl-W H
+ctrl-W H
 
 __Split Navigation__
 
 Remapping for moving around the buffers
 
-    nnoremap <C-J> <C-W><C-J>    " CTRL+j move down a split
-    nnoremap <C-K> <C-W><C-K>    " CTRL+k move up a split
-    nnoremap <C-L> <C-W><C-L>    " CTRL+l move right a split
-    nnoremap <C-H> <C-W><C-H>    " CTRL-h move left a split
+nnoremap <C-J> <C-W><C-J>    " CTRL+j move down a split
+nnoremap <C-K> <C-W><C-K>    " CTRL+k move up a split
+nnoremap <C-L> <C-W><C-L>    " CTRL+l move right a split
+nnoremap <C-H> <C-W><C-H>    " CTRL-h move left a split
 
 ### Jumplist
 
-Allows you to jump back and forth in where you were in the file.  - `Ctrl+o` - allows you to jump back to your last jump location 
+Allows you to jump back and forth in where you were in the file.  - `Ctrl+o` - allows you to jump back to your last jump location
 - `Ctrl+i` - jump forward to the next location
 
 ## Tabularize
@@ -396,20 +397,20 @@ Helps with aligning text in Vim. https://github.com/godlygeek/tabular
 
 Align a row of text with equals signs
 
-	" highlight selection with visual mode
-	" eg: 
-	" one = 1
-	" two = 2
-	" three = 3
-	:Tab[ularize] /=
+" highlight selection with visual mode
+" eg:
+  " one = 1
+  " two = 2
+  " three = 3
+  :Tab[ularize] /=
 
-More Info: 
+More Info:
 
 [Vimcasts - aligning text with tabular](http://vimcasts.org/episodes/aligning-text-with-tabular-vim/)
 
 ## Vim Verbs
 
-Two types of vim verbs.  Some of them act on a single character, the others act on a motion or text object. 
+Two types of vim verbs.  Some of them act on a single character, the others act on a motion or text object.
 
 ### Operators
 
@@ -425,7 +426,7 @@ Two types of vim verbs.  Some of them act on a single character, the others act 
 
 ### Multi-character verbs
 
-- `d` - Delete text specified by motion 
+- `d` - Delete text specified by motion
 - `c` - delete text specified by motion and go into insert mode
 - `y` - copy text specified by motion
 
@@ -442,7 +443,7 @@ Two types of vim verbs.  Some of them act on a single character, the others act 
 - `f.` - go to next occurrence of `.` on the current line
 - `F.` - go to the previous occurrence of `.` on the current line
 - `^` - go to beginning of the line
-- `g;` - jump back to the last edit 
+- `g;` - jump back to the last edit
 
 #### Words
 
@@ -468,7 +469,7 @@ Two types of vim verbs.  Some of them act on a single character, the others act 
 
 - `d$` - delete to the end of the line
 - `cf)` - change though the next closing parentheses
-- `yG` - copy everything through the end of the file 
+- `yG` - copy everything through the end of the file
 - `cit` - change inside a tag
 
 __Links__
@@ -484,11 +485,11 @@ __Links__
 
 Set the spell check in the `~/.vimrc`
 
-    set spell spelllang=en_us
+set spell spelllang=en_us
 
-Disable spell check 
+Disable spell check
 
-	set spell!
+set spell!
 
 - `]s` - go to next misspelled word
 - `[s` - go to last misspelled word
@@ -498,16 +499,16 @@ Disable spell check
 
 ### Sorting
 
-High selection of parameters in a function and run 
+High selection of parameters in a function and run
 
-	:sort
+:sort
 
 ### Tabs
 
-Changing tabs on the fly 
+Changing tabs on the fly
 
-	:set ts=2 sts=2 noet
-	:retab!
+:set ts=2 sts=2 noet
+:retab!
 
 ### Repeating
 
@@ -543,7 +544,22 @@ A window is a viewport on to a buffer.
 - `[N]<C-w>|` - set active window width to [N] columns
 - `<C-w>T` - Move the current window into its own tab
 
-## Links 
+## Fixing Indentations and Spaces
+
+To fix indentations on the page, go to the top of the page use equals and then
+go to the bottom of the page
+
+```
+gg=G
+```
+
+Fix trailing spaces with this regex:
+
+```
+:%s/\s\+$//
+```
+
+## Links
 
 - [A Byte of Vim](http://files.swaroopch.com/vim/byte_of_vim_v051.pdf)
 - [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)

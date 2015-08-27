@@ -1,10 +1,10 @@
 [user]
-	name = Steve Barbera
-	email = me@stevebarbera.com
+    name = Steve Barbera
+    email = me@stevebarbera.com
 [push]
-	default = simple
+    default = simple
 [core]
-	excludesfile = /Users/stevebarbera/.gitignore_global
+    excludesfile = /Users/stevebarbera/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -12,22 +12,21 @@
 	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [mergetool]
-	keepBackup = true
-	
+    keepBackup = true
 [color]
-	ui = true
+    ui = true
 
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 
 [alias]
-	d = difftool
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	grep = grep --break --heading --line-number
+    d = difftool
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    grep = grep --break --heading --line-number
     # open in tabs all files currently working on in git repo
     edit = "!vim `git ls-files -m` -p"
 
 [difftool]
-	prompt = false
+    prompt = false
 [grep]
-	lineNumber = true
+    lineNumber = true

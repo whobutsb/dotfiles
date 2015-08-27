@@ -1,4 +1,4 @@
-" vim: set foldmethod=marker foldenable foldlevel=0 nospell:
+"vim: set fdm=marker foldenable foldlevel=0 nospell
 
 set nocompatible        " be iMproved, required
 filetype off            " required by vundle
@@ -12,7 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Other plugins
 Plugin 'tpope/vim-surround'
-Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
@@ -21,17 +21,18 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary'
 Plugin 'rking/ag.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'fatih/vim-go'
-Plugin 'sheerun/vim-polyglot'
 Plugin 'suan/vim-instant-markdown'
-Plugin 'tpope/vim-markdown'
 Plugin 'junegunn/vim-peekaboo'
-" Plugin 'valloric/MatchTagAlways'
-Plugin 'avakhov/vim-yaml'
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'fmoralesc/vim-pad'
 Plugin 'junegunn/rainbow_parentheses.vim'
+Plugin 'ap/vim-buftabline'
+
+" Languages
 Plugin 'mxw/vim-jsx'
+Plugin 'tpope/vim-markdown'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'avakhov/vim-yaml'
 
 " Colors
 Plugin 'tomasr/molokai'
@@ -56,9 +57,10 @@ set encoding=utf-8              " show utf8 chars
 set showcmd                     " count highlighted
 set ruler                       " show where i'am in the command area
 set showmode                    " show the current mode we are in
+set modeline
+set modelines=5
 set laststatus=2                " always show the status line
 set mouse=a                     " use the mouse
-set modelines=0                 " dont read first/last lines of file for settings
 set hidden                      " stash unwritten files in buffer
 set vb                          " dont beep at me
 set cursorline                  " highlight current line
@@ -71,8 +73,7 @@ set wrap                        " turn on linewrap
 set tabstop=4                   " 4 spaces
 set shiftwidth=4                " indent by 4 spaces when using >>, <<, ==, etc
 set softtabstop=4               " indent 4 spaces when pressing <TAB>
-set expandtab                   " use softtabstop spaces instead of tab characters for indentation 
-set modelines=0
+set expandtab                   " use softtabstop spaces instead of tab characters for indentation
 
 set hlsearch                    " highlight my search
 set incsearch                   " incremental search
@@ -86,7 +87,7 @@ syntax sync minlines=256        " makes big files slow
 set autoindent                  " keep indentation from previous line
 set copyindent
 set smartindent                 " automatically insert indentation in some cases
-set cindent                     " like smart indent, but stricter, and more customisable 
+set cindent                     " like smart indent, but stricter, and more customisable
 set formatoptions=tcqr          " smart comments
 
 " Hidden Characters
@@ -104,7 +105,7 @@ set nowritebackup
 set noswapfile
 
 " Color Scheme
-set background=light
+set background=dark
 " colorscheme molokai
 " colorscheme solarized
 colorscheme xoria256
@@ -128,7 +129,7 @@ if &term =~ '256color'
 endif
 
 " reload .vimrc whenever it is saved
-au BufWritePost .vimrc so $MYVIMRC 
+au BufWritePost .vimrc so $MYVIMRC
 if has ("autocmd")
     " File type detection. indent based on filetype. Recommended.
     filetype plugin indent on
@@ -151,15 +152,11 @@ endif
 
 " Plugin Options {{{
 
-" Airline {{{
-" removed the fugitive status line
-" set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\ %{fugitive#statusline()}
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)}
-
-let g:airline_theme = 'powerlineish'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+" Lightline {{{
+let g:lightline = {
+    \ 'colorscheme': 'wombat',
+    \ }
+"
 " }}}
 
 " NERDTree {{{
@@ -226,7 +223,7 @@ if v:version >= 704 && has("lua")
     " https://github.com/JessicaKMcIntosh/TagmaBufMgr/issues/8
      au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
      set completeopt=menuone,menu,longest
-     
+
      " define dictionary
      let g:neocomplete#sources#dictionary#dictionaries = {
            \ 'default' : '',
@@ -299,9 +296,9 @@ let g:syntastic_html_tidy_ignore_errors = [
 " Match Tag Always  {{{
 let g:mta_filetypes = {
     \ 'html': 1,
-    \ 'xhtml': 1, 
-    \ 'xml': 1, 
-    \ 'jinja': 1, 
+    \ 'xhtml': 1,
+    \ 'xml': 1,
+    \ 'jinja': 1,
     \ 'blade': 1
 \}
 " }}}
@@ -350,8 +347,11 @@ let g:jsx_ext_required = 0
 
 " Mappings {{{
 
+" panic button
+nnoremap <f9> mzggg?G`z
+
 " get ride of Ex mode, its dumb and i don't use it
-nnoremap Q <nop> 
+nnoremap Q <nop>
 
 " remap : to ;, make life easier using commands
 nnoremap ; :
@@ -368,7 +368,7 @@ noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
 " Close All Buffers
-noremap <Leader>Q :1,$bd!<cr> 
+noremap <Leader>Q :1,$bd!<cr>
 
 " Moving in splits
 nnoremap <C-J> <C-W><C-J>    " CTRL+j move down a split
@@ -403,6 +403,7 @@ noremap <Leader>s :w<CR>
 
 " Force saving files that require root permission
 cmap w!! %!sudo tee > /dev/null %
+cmap trailing %s/\s\+$//
 
 if has('macunix')
     " pbcopy for OSX copy/paste

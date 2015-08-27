@@ -21,8 +21,8 @@ alias fs="stat -f \"%z bytes\""
 alias reload_source="source ~/.zshrc && echo 'Source Reloaded'"
 
 # Vim -> NeoVim
-alias vim="/usr/local/bin/nvim"
-alias vi="/usr/lcoal/bin/nvim"
+# alias vim="/usr/local/bin/nvim"
+# alias vi="/usr/lcoal/bin/nvim"
 
 # ZSH
 alias zshconfig="vim ~/.zshrc"
