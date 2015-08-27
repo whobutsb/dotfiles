@@ -83,18 +83,18 @@ alias maestro.db.dev="mysql -h maestro.dev -u root -p"
 
 # OSX Functions
 if [ "$(uname -s)" = "Darwin" ]; then 
- 	
- 	alias chrome="open -a google\ chrome"
+
+    alias chrome="open -a google\ chrome"
     alias firefox="/opt/homebrew-cask/Caskroom/firefox/38.0.5/Firefox.app/Contents/MacOS/firefox-bin -profilemanager"
 
-	alias f="open -a Finder"
+    alias f="open -a Finder"
 
     # opens a file in preview mode
-	alias preview="qlmanage -p"
-	
-	# alias yo="open -a Yojimbo"
+    alias preview="qlmanage -p"
 
-  	# Show and hide files in Finder
+    # alias yo="open -a Yojimbo"
+
+    # Show and hide files in Finder
     alias showhidden="defaults write com.apple.Finder AppleShowAllFiles YES; killall -HUP Finder"
     alias hidehidden="defaults write com.apple.Finder AppleShowAllFiles NO; killall -HUP Finder"
 fi
