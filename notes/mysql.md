@@ -86,3 +86,20 @@ things to know:
 MySQL Replication Last_Error: Duplicate Key Entry
 
     stop slave; set global mysql_slave_skip_counter = 1; start slave; -- repeat :)
+
+## Tools
+
+### [MyCLI](http://mycli.net/)
+
+Mycli is a command line interface for MySQL, MariaDB, and Percona with 
+auto-completion and syntax highlighting.
+
+#### Install
+
+    $ pip install mycli
+
+    $ brew install mycli
+
+## Links
+
+-[ Using Explain to Write Better MySQL Queries ]( http://www.sitepoint.com/using-explain-to-write-better-mysql-queries/ )

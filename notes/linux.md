@@ -211,6 +211,10 @@ Check to see if the host and port can be connected to.
 
 	nc -vz <hostname> -w 1 <port>
 
+Using a static IP address 
+
+[Set a Static IP on Ubuntu](https://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu_
+
 ## System
 
 ### Security & Setup
@@ -242,8 +246,16 @@ __Links__
 
 - `-L` - Setup the local port forwarding
 - `3306` - The local port to forward
-- `localhost:3306` - Within the remote server, waht address adn port to forward traffic to. Since the MySQL server is on the remote server, we're tunneling to the remote servers "localhost" on port 3306, which MySQL is listening to. 
+- `localhost:3306` - Within the remote server, what address and port to forward traffic to. Since the MySQL server is on the remote server, we're tunneling to the remote servers "localhost" on port 3306, which MySQL is listening to. 
 - `username@localhost` - The SSH username and host to connect to
+
+**Proxying in with another SSH host**
+
+    Host name
+      Hostname [ip_address | hostname]
+      User username
+      Port port
+      ProxyCommand ssh -a -W %h:%p other_host
 
 ## Standard IO and Pipes
 

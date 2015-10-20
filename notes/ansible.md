@@ -133,3 +133,4 @@ running locally
 - [Servers for Hackers - Ansible Tutorial](https://serversforhackers.com/an-ansible-tutorial)
 - [A Practical Introduction to Ansible](https://github.com/afroisalreadyinu/practical-ansible-intro)
 - [Ansible 101](https://medium.com/@denot/ansible-101-d6dc9f86df0a)
+- [10 Best Practices for Ansible](http://www.theodo.fr/blog/2015/10/best-practices-to-build-great-ansible-playbooks/)
