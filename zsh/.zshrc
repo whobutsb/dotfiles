@@ -1,6 +1,7 @@
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export VISUAL=vim
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -78,6 +79,7 @@ source $HOME/.private_aliases
 export KEYTIMEOUT=1
 
 bindkey '^R' history-incremental-search-backward
+bindkey -M vicmd v edit-command-line
 
 # allow homebrew to take over for php
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"

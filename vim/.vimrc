@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Other plugins
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -29,7 +30,6 @@ Plugin 'junegunn/rainbow_parentheses.vim'
 Plugin 'ap/vim-buftabline'
 
 " Languages
-Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-markdown'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'avakhov/vim-yaml'
@@ -338,10 +338,6 @@ function! GetYamlIndent()
 endfunction
 " }}}
 
-" vim-jsx {{{
-let g:jsx_ext_required = 0
-
-" }}}
 
 " }}}
 
@@ -403,7 +399,7 @@ noremap <Leader>s :w<CR>
 
 " Force saving files that require root permission
 cmap w!! %!sudo tee > /dev/null %
-cmap trailing %s/\s\+$//
+cmap tra %s/\s\+$//
 
 if has('macunix')
     " pbcopy for OSX copy/paste
