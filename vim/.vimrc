@@ -1,4 +1,4 @@
-"vim: set fdm=marker foldenable foldlevel=0 nospell
+" vim: set fdm=marker foldenable foldlevel=0 nospell
 
 set nocompatible        " be iMproved, required
 filetype off            " required by vundle
@@ -13,7 +13,6 @@ Plugin 'gmarik/Vundle.vim'
 " Other plugins
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
-Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
@@ -27,7 +26,7 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'fmoralesc/vim-pad'
 Plugin 'junegunn/rainbow_parentheses.vim'
-Plugin 'ap/vim-buftabline'
+Plugin 'bling/vim-airline'
 
 " Languages
 Plugin 'tpope/vim-markdown'
@@ -152,11 +151,10 @@ endif
 
 " Plugin Options {{{
 
-" Lightline {{{
-let g:lightline = {
-    \ 'colorscheme': 'wombat',
-    \ }
-"
+" Vim Airline {{{
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 " }}}
 
 " NERDTree {{{
@@ -171,7 +169,6 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 30
 " Add <leader> t to open NerdTree
 nnoremap <leader>t :NERDTreeToggle<cr>
-
 " }}}
 
 " CTRLP {{{
@@ -337,11 +334,21 @@ function! GetYamlIndent()
     endif
 endfunction
 " }}}
+"
+" Snipmate Snippets Variables {{{
+let g:snips_author='Steve Barbera'
+let g:author='Steve Barbera'
+let g:snips_email='steve@customchannels.net'
+let g:email='steve@customchannels.net'
+" }}}
 
 
 " }}}
 
 " Mappings {{{
+
+" set folding za to space space
+nnoremap <space><space> za
 
 " panic button
 nnoremap <f9> mzggg?G`z
@@ -401,13 +408,13 @@ noremap <Leader>s :w<CR>
 cmap w!! %!sudo tee > /dev/null %
 cmap tra %s/\s\+$//
 
+" pbcopy for OSX copy/paste
 if has('macunix')
-    " pbcopy for OSX copy/paste
     vmap <C-x> :!pbcopy<CR>
     vmap <C-c> :w !pbcopy<CR><CR>
 endif
 
-"" Vmap for maintain Visual Mode after shifting > and <
+" Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv
 vmap > >gv
 

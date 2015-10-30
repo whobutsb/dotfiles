@@ -1,10 +1,10 @@
 #!/bin/sh
 
-#Helps with the slow tab completion of git repos
-__git_files () { 
+# Helps with the slow tab completion of git repos
+__git_files () {
     _wanted files expl 'local files' _files  }
 
-cd() { builtin cd "$@"; ls -alh; }               # Always list directory contents upon 'cd'
+cd() { builtin cd "$@"; ls -alh; }          # Always list directory contents upon 'cd'
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
@@ -13,11 +13,7 @@ alias .4='cd ../../../../'                  # Go back 4 directory levels
 alias .5='cd ../../../../../'               # Go back 5 directory levels
 alias .6='cd ../../../../../../'            # Go back 6 directory levels
 
-git_page(){
-    open -a /Applications/Google\ Chrome.app/ http://www.github.com/$1
-}
-
-# Searches in the current director for a file 
+# Searches in the current director for a file
 # Usage: fname steve
 function fname(){
     find . -iname "*$@*"

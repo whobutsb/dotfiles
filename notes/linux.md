@@ -1,12 +1,12 @@
 # UNIX
 
-General notes and gems of information. 
+General notes and gems of information.
 
 ## Unix Philosphy
 
 > Write programs that do one thing and do it well.
 > Write programs to work together.
-> Write Programs to handle text streams, because that is a universal interface. 
+> Write Programs to handle text streams, because that is a universal interface.
 > -- Douglas Mcllroy
 
 > "Unix is simple.  It just takes a genius to understand its simplicity."
@@ -14,13 +14,13 @@ General notes and gems of information.
 
 ## File System
 
-Everything is a file in linux. 
+Everything is a file in linux.
 
 - `/` - root of the filesystem
 - `/bin` - system binaries (programs)
-- `/boot` - boot loader 
+- `/boot` - boot loader
 - `/dev` - system devices
-- `/etc` - system configuration 
+- `/etc` - system configuration
 - `/home` - user configuration files, users can usually only write files in their home directory
 - `/lib` - shared library files used by system binaries
 - `/media` - removable media (CDs, USB drives)
@@ -33,11 +33,11 @@ Everything is a file in linux.
 - `/tmp` - temporary storage
 - `/usr` - programs, libraries, for all system users
 - `/usr/bin` - programs installed for all users by linux, ie: `/usr/bin/find`
-- `/usr/local` - sysadmins download and install things here. 
+- `/usr/local` - sysadmins download and install things here.
 - `/usr/sbin` - system binaries
 - `/var` - data that changes frequently.  usually webserver pages.
 
-**File Size** 
+**File Size**
 
 command estimates file space usage
 
@@ -45,7 +45,7 @@ command estimates file space usage
 
 Human readable flag
 
-    du -h 
+    du -h
 
 see grand total displayed.
 
@@ -69,7 +69,7 @@ convert unix date into human readable
 
 
 
-## Disk 
+## Disk
 
 See what is using Disk IO
 
@@ -93,11 +93,11 @@ Find a file naem 'cats.txt' below curent directory
 
     find . -name 'cats.txt'
 
-Find all files below current directory 
+Find all files below current directory
 
     find . -type f
 
-Find all directories below current directory 
+Find all directories below current directory
 
     find . -type d
 
@@ -131,7 +131,7 @@ All files smaller than 10KB
 
 Remove all zip files bigger than 100MB
 
-    find . -name "*.zip" -size +100M -exec rm -i "{}" \; 
+    find . -name "*.zip" -size +100M -exec rm -i "{}" \;
 
 Find and delete files older than 10 days
 
@@ -144,16 +144,16 @@ ___
 
 ### Grep
 
-Grep (g/re/p) stands for global regular-expression print. Its name is derived from a command in "ed" a UNix line-editor built in 1971. 
+Grep (g/re/p) stands for global regular-expression print. Its name is derived from a command in "ed" a UNix line-editor built in 1971.
 
-- use `i` for case insenstive search 
+- use `i` for case insenstive search
 - use `v` to negate
 - use `P` to use Perl-Compatible Regular Expressions
-- use `c` to count matches 
+- use `c` to count matches
 
 *Grep Examples*
 
-Find out if Apache is running 
+Find out if Apache is running
 
     ps aux | grep -i [apache|httpd]
 
@@ -163,7 +163,7 @@ Find out how many instances of ices are running (wc -l counts lines)
 
 Find text 'get_user' in all files below current dir with line numbers
 
-    grep -HiERn 'get_user' . 
+    grep -HiERn 'get_user' .
 
 Same as above, don't include .svn directory
 
@@ -177,15 +177,15 @@ ___
 
 ### Ack
 
-Ack searches files below the current directory recursively.  It's ideal for use with code since it automatically excludes any .svn, .git directories from its search. 
+Ack searches files below the current directory recursively.  It's ideal for use with code since it automatically excludes any .svn, .git directories from its search.
 
-Ack is not a gnu utility and therefore is not included by default on most unix-like systems. To install 
+Ack is not a gnu utility and therefore is not included by default on most unix-like systems. To install
 
-    apt-get install ack-grep || yum install ack 
+    apt-get install ack-grep || yum install ack
 
 *Ack Examples*
 
-Search for a pattern in all files reursively 
+Search for a pattern in all files reursively
 
     ack <pattern>
 
@@ -195,11 +195,11 @@ Search php files for things
 
 ## Users
 
-- `useradd <username>` - adds a new user 
+- `useradd <username>` - adds a new user
 
-**See who is logged in.** 
-        
-    who || w 
+**See who is logged in.**
+
+    who || w
 
 _Links_
 
@@ -207,11 +207,11 @@ _Links_
 
 ## Networking
 
-Check to see if the host and port can be connected to. 
+Check to see if the host and port can be connected to.
 
 	nc -vz <hostname> -w 1 <port>
 
-Using a static IP address 
+Using a static IP address
 
 [Set a Static IP on Ubuntu](https://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu_
 
@@ -246,7 +246,7 @@ __Links__
 
 - `-L` - Setup the local port forwarding
 - `3306` - The local port to forward
-- `localhost:3306` - Within the remote server, what address and port to forward traffic to. Since the MySQL server is on the remote server, we're tunneling to the remote servers "localhost" on port 3306, which MySQL is listening to. 
+- `localhost:3306` - Within the remote server, what address and port to forward traffic to. Since the MySQL server is on the remote server, we're tunneling to the remote servers "localhost" on port 3306, which MySQL is listening to.
 - `username@localhost` - The SSH username and host to connect to
 
 **Proxying in with another SSH host**
@@ -268,7 +268,7 @@ https://miteshshah.github.io/linux/basics/standard-io-and-pipes/
 * `command 2>> file`              Append STDERR of command to file.
 
 
-## Run Commands in the Background 
+## Run Commands in the Background
 
 `nohup` allows you to run command/process or shell script that can continue running
 in the background after you log out from a shell.
@@ -287,7 +287,7 @@ Use `jobs -l` to list all jobs.
 
 ## RSync
 
-**Resuming a Partial Sync** 
+**Resuming a Partial Sync**
 
 This works well for resuming a broken pipe during SCP.
 
@@ -297,27 +297,27 @@ rsync --partial --progress --rsh=ssh local_file user@host:remote_file
 
 **Remote Port Forwarding**
 
-Remote Port Forwarding is good if you need to share your local computer with others who are outside of your network. 
+Remote Port Forwarding is good if you need to share your local computer with others who are outside of your network.
 
-To do this, we need a remote server all parties can reach.  AWS or Digital Ocean will do. 
+To do this, we need a remote server all parties can reach.  AWS or Digital Ocean will do.
 
-First, let's pretend our local computer has a web server running on port `8001`: 
+First, let's pretend our local computer has a web server running on port `8001`:
 
     # On our local machine:
     $ curl localhost:8001
     Hi!
 
-We want our friends to see our website, which simply says "Hi!".  Let's use a remote server to forward the requests to our local computer: 
+We want our friends to see our website, which simply says "Hi!".  Let's use a remote server to forward the requests to our local computer:
 
     # Still on our local machine:
     ssh -R 9000:localhost:8001 username@hostname
 
  - `-R` - using remote port forwarding
  - `9000` - The remote server's port ot use (not our local server this time).
- - `localhost:8001` - The local address to foward to. Since our webserver is on localhost port `8001`, that's what we specify here. 
+ - `localhost:8001` - The local address to foward to. Since our webserver is on localhost port `8001`, that's what we specify here.
 - `username@hostname` - SSH access to the remote server
 
-If our remote server's IP address was `123.123.123.123`, then our friends can access our website at `123.123.123.123:9000`, which will forward to our lcoal site at `localhost:8001`. 
+If our remote server's IP address was `123.123.123.123`, then our friends can access our website at `123.123.123.123:9000`, which will forward to our lcoal site at `localhost:8001`.
 
 ## Removing Old Kernels
 

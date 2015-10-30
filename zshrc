@@ -1,7 +1,12 @@
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export VISUAL=vim
+# source some options
+source ${HOME}/dotfiles/zsh/checks.zsh
+source ${HOME}/dotfiles/zsh/setopt.zsh
+source ${HOME}/dotfiles/zsh/exports.zsh
+source ${HOME}/dotfiles/zsh/aliases.zsh
+source ${HOME}/dotfiles/zsh/functions.zsh
+
+# Source Private Files
+source $HOME/.private_aliases
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -19,15 +24,6 @@ ZSH_THEME="tjkirch"
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
@@ -39,7 +35,7 @@ plugins=(pass taskwarrior colored-man keybase)
 # Files to Source
 source $ZSH/oh-my-zsh.sh
 
-for file in ~/dotfiles/{exports,aliases,functions}; do
+for file in ~/dotfiles/{aliases,functions}; do
     [ -r "$file" ] && . "$file"
 done
 unset file
@@ -64,8 +60,6 @@ antigen bundle depressiveRobot/stash-aware
 antigen bundle pip
 antigen bundle vagrant
 
-# Source Private Files
-source $HOME/.private_aliases
 
 # Autojump
 [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
@@ -75,17 +69,8 @@ source $HOME/.private_aliases
 # https://github.com/hchbaw/opp.zsh
 # Vi mode
 # bindkey -v
-# # Kill lag when switch from normal to visual modes
-export KEYTIMEOUT=1
 
 bindkey '^R' history-incremental-search-backward
 bindkey -M vicmd v edit-command-line
 
-# allow homebrew to take over for php
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
-# pip should only run if there is a virutalenv currently activated
-# export PIP_REQUIRE_VIRTUALENV=true
-
-# History Time Format
-export HISTTIMEFORMAT="%T %d-%b-%Y "
