@@ -13,6 +13,13 @@ Ideas, notes, and tutorials on php.
 ### [BlackFire](http://blackfire.io) 
 Blackfire Profiler automatically instruments your code to gather data about consumed server resources like memory, CPU time, and I/O. But Blackfire Profiler is more than figures; its interactive Callgraphs make it straightforward to find bottlenecks and improve performance. Moreover, profile comparisons let you understand the impact of your changes.
 
+## Disabling Modules
+
+    $ sudo php5dismod [module]
+    $ sudo service php5-fpm restart
+
+    ex: sudo php5dismod xdebug
+
 ## Testing 
 
 ### [PHPUnit](http://phpunit.de)

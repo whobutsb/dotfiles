@@ -1,0 +1,96 @@
+snippet panel
+	<div class="panel">
+		<div class="panel-heading">
+			<div class="panel-title">${1:panel_title}</div>
+		</div>
+		<div class="panel-body">
+			${2:panel_body}	
+		</div>
+	</div>
+snippet row 
+	<div class="row">
+		${1}
+	</div>
+snippet col
+	<div class="col-${1}-${2}">
+
+	</div>
+snippet admin_temp
+	@extends('_partials.admin.template')
+
+	@section('content')
+
+		${1}
+
+	@stop
+snippet client_temp
+	@extends('_partials.client.template')
+	
+	@section('content')
+
+		${1}
+
+	@stop
+	@section('assets')
+	@append
+	@section('footer')
+	@append
+snippet modal
+	<div class="modal fade in" id="${1}" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+					<h4 class="modal-title">${2}</h4>
+				</div>
+				<div class="modal-body">
+					${3}
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					${4}	
+				</div>
+			</div>
+		</div>
+	</div>
+snippet model_button
+	<button type="button" data-toggle="modal", data-target="${1:modal_id}" class="btn btn-green btn-gradient"><i class="glyphicons glyphicons-circle_plus"></i> ${2:link_text}</a>
+snippet form_static
+	<div class="form-group">
+		{{ Form::label('${1:label}') }}
+		<p class="form-control-static text-muted">${2:value}</p>
+	</div>
+snippet form_text
+	<div class="form-group">
+		{{ Form::label('${1:label}') }}
+		{{ Form::text('${2:name}', ${3:value}, ['class' =>'form-control']) }}
+	</div>
+snippet table
+	<table class="table ${1}">
+		<thead>
+			<th></th>
+		</thead>
+		<tbody>
+
+		</tbody>
+	</table>
+snippet dd
+	<?php dd(${1}); ?>
+snippet if
+	@if(${1})
+		${2}
+	@endif
+snippet //
+	{{-- ${1} --}}
+snippet {{ 
+	{{ ${1} }}
+snippet Form::open
+	Form::open(['route' => ['${1:route}, ${2:parameters}]])
+snippet link_to_route
+	link_to_route('${1:route}', '${2:title}', [${3:parameters}], [${4:attributes}]);
+snippet foreach
+	@foreach(${1} as ${2})
+		${3}
+	@endforeach
+snippet script
+	<script src="${1}"></script> 

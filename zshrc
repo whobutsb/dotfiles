@@ -74,3 +74,5 @@ bindkey '^R' history-incremental-search-backward
 bindkey -M vicmd v edit-command-line
 
 
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
