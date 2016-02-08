@@ -32,6 +32,7 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-markdown'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'avakhov/vim-yaml'
+Plugin 'posva/vim-vue'
 
 " Colors
 Plugin 'tomasr/molokai'
@@ -427,5 +428,18 @@ nnoremap <silent> ,f <C-]>
 
 " use ,F to jump to tag in a vertical split
 nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
+
+" }}}
+
+" Autocmd Options {{{
+
+" turn on spell checking for markdown files
+  autocmd BufRead,BufNewFile *.md setlocal spell
+
+" spell check for git commits
+  autocmd FileType gitcommit setlocal spell
+
+" set folding method fo vimrc
+  autocmd BufRead, .vimrc set fdm=marker
 
 " }}}

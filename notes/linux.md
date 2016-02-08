@@ -244,6 +244,8 @@ __Links__
 
 `ssh -L 3306:localhost:3306 username@hostname`
 
+` ssh -L <local-ip>:<local-port>:<remote-ip>:<remote-port>`
+
 - `-L` - Setup the local port forwarding
 - `3306` - The local port to forward
 - `localhost:3306` - Within the remote server, what address and port to forward traffic to. Since the MySQL server is on the remote server, we're tunneling to the remote servers "localhost" on port 3306, which MySQL is listening to.
@@ -256,6 +258,8 @@ __Links__
       User username
       Port port
       ProxyCommand ssh -a -W %h:%p other_host
+
+
 
 ## Standard IO and Pipes
 

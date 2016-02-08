@@ -76,3 +76,19 @@ snippet cl
 	console.log(${1});
 snippet ce
 	console.error(${1});
+snippet ajax
+	$.ajax({
+		method: "${1:method}",
+		url: "${2:url}",
+		data: { ${3:data} },
+		cache: false,
+		async: true,
+		beforeSend: function(xhr, status){
+		},
+		error: function(xhr, status, error){
+			return console.error(xhr, status, error);
+		},
+		success: function(data, status, xhr){
+			console.log(data);
+		}
+	});

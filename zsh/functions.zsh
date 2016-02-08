@@ -23,3 +23,8 @@ ds(){
   echo "Disk Space Utilization For $HOSTNAME"
   df -h
 }
+
+convert_mp3(){
+    echo "Converting $1 to $2"
+    ffmpeg -i $1 -ac 2 -ab 320k $2
+}

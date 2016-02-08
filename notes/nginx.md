@@ -1,10 +1,17 @@
 # Nginx 
 
-*Test Nginx Configuration*
+### Test Nginx Configuration
 
 ```
 [sudo] nginx -t
 ```
+
+### Blacklisting IP Addresses
+
+    location / {
+        deny 123.123.123.0/28;
+        ...
+    }
 
 Logging Formats
 
@@ -67,6 +74,7 @@ location / {
 
 ## Links
 
+- [Mitigating DDoS Attacks with Nginx](https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/)
 - [NetTuts - Nginx Guide: Introduction](http://code.tutsplus.com/articles/nginx-guide-introduction--cms-21877)
 - [NetTuts - Nginx Guide: Essentials](http://code.tutsplus.com/articles/nginx-guide-essentials--cms-22880)
 - [Tracking Application Response Time with Nginx](https://lincolnloop.com/blog/tracking-application-response-time-nginx/)

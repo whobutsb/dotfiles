@@ -52,6 +52,7 @@ Testing private methods with PHPUnit
 - [Scaling expert and former CTO of Twitpic teaches us how to scale our web apps](
 http://scaleyourcode.com/interviews/interview/3)
 - [6 Rules of thumb to build blazing fast web server applications](http://loige.co/6-rules-of-thumb-to-build-blazing-fast-web-applications/)
+- [PROGRAMMING GUIDELINES (FOR PHP DEVELOPERS) - PART 1: REDUCING COMPLEXITY](https://www.ibuildings.nl/blog/2016/01/programming-guidelines-php-developers-part-1-reducing-complexity)
 
 _Links_
 

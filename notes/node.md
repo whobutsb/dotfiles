@@ -8,17 +8,18 @@ Used for writing applications for the desktop.
 - [Node-Webkit](https://github.com/rogerwang/node-webkit)
 
 
-Plugins 
+Plugins
 
-Promises Q Library 
+Promises Q Library
 https://github.com/kriskowal/q
 
 
 
 ### Links
 
-#### Articles 
+#### Articles
 
+- [How to create a NodeJS module](http://web24studios.com/2015/10/how-to-create-a-nodejs-module-part-1/)
 - [Unit Testing with Mocks in Node](http://vansande.org/2015/03/22/unit_testing_with_mocks_in_node_js/)
 - [Debugging in Node](http://fullstackforum.com/software/2014/08/28/debugging-in-nodejs-part-1-the-basics/)
 

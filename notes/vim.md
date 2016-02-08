@@ -9,7 +9,7 @@ Write them on the fly!
 :ab temlpate template
 ```
 
-every time temlpate is spelled it will automatically be fixed
+Every time template is spelled it will automatically be fixed
 
 
 ## Ag (The Silver Searcher)
@@ -21,7 +21,7 @@ every time temlpate is spelled it will automatically be fixed
 Matching control
 
 `-w/--word-regexp` - force patten to match only whole words
-`-q/--literal` - quote all metacharacters in pattern, it is treated as a literal.
+`-q/--literal` - quote all meta characters in pattern, it is treated as a literal.
 
 File selection
 
@@ -198,6 +198,8 @@ Visual selection find and replace
 - No prefix for normal mode commands (`:help CTRL-]`)
 - `i_` - for insert mode (`:help i_CTRL-[`)
 - `v_` - for visual mode (`:help v_CTRL-]`)
+
+- `:h slash <CTRL-d>` - returns all of the help topics containing the word 'slash'
 
 ## Key Commands
 
