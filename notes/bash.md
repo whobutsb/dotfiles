@@ -131,12 +131,9 @@ debug just a small section of code using set -x and set +x, which will pring deb
             return 0
         }
 
-/etc/hosts blocking and ideas
-
-[http://someonewhocares.org/hosts/](http://someonewhocares.org/hosts/)
-
 - [Explain Shell](http://explainshell.com)
 - [Bash monitoring tips - watch & tee](https://www.youtube.com/watch?v=8zU7Ov-uW1E)
 - [http://mywiki.wooledge.org/BashGuide](http://mywiki.wooledge.org/BashGuide)
 - [http://bash.cyberciti.biz/guide/Main_Page](http://bash.cyberciti.biz/guide/Main_Page)
-- [Defensive BASH programming](http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming)
+- [Defensive Bash programming](http://www.kfirlavi.com/blog/2012/11/14/defensive-bash-programming)
+- [The Bash Guide](http://guide.bash.academy/)

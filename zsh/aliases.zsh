@@ -104,3 +104,9 @@ alias tk='tmux kill-session -t'
 # S3CMD Configurations
 alias s3cc='s3cmd -c ~/.s3cfg-customchannels'
 alias s3sb='s3cmd -c ~/.s3cfg-personal'
+
+# use brew ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
+# run htop with sudo
+alias htop='sudo htop'

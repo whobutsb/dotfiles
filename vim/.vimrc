@@ -27,6 +27,10 @@ Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'fmoralesc/vim-pad'
 Plugin 'junegunn/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
+Plugin 'Shougo/neosnippet'
+
+" vim table mode - https://github.com/dhruvasagar/vim-table-mode
+Plugin 'dhruvasagar/vim-table-mode'
 
 " Languages
 Plugin 'tpope/vim-markdown'
@@ -204,6 +208,16 @@ map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 " }}}
 
+" NeoSnippet {{{
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate.vim/snippets'
+
+" }}}
+
 " NeoComplete {{{
 if v:version >= 704 && has("lua")
     let g:acp_enableAtStartup = 0
@@ -372,7 +386,7 @@ noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
 " Close All Buffers
-noremap <Leader>Q :1,$bd!<cr>
+noremap <Leader>Q :bufdo bd<cr>
 
 " Moving in splits
 nnoremap <C-J> <C-W><C-J>    " CTRL+j move down a split
@@ -428,6 +442,9 @@ nnoremap <silent> ,f <C-]>
 
 " use ,F to jump to tag in a vertical split
 nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
+
+" global find and replace
+noremap S :%s//g<LEFT><LEFT>
 
 " }}}
 
