@@ -1,6 +1,7 @@
 [user]
     name = Steve Barbera
     email = me@stevebarbera.com
+	signingkey = 8CA47713
 [push]
     default = simple
 [core]

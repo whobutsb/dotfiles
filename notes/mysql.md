@@ -103,3 +103,4 @@ auto-completion and syntax highlighting.
 ## Links
 
 -[ Using Explain to Write Better MySQL Queries ]( http://www.sitepoint.com/using-explain-to-write-better-mysql-queries/ )
+-[MySQL Network Security](https://serversforhackers.com/mysql-network-security)

@@ -92,3 +92,12 @@ snippet ajax
 			console.log(data);
 		}
 	});
+snippet fetch
+	// url (required), options (optional)
+	fetch('${1:url}', {
+		method: 'get'
+	}).then(function(response) {
+		${2}
+	}).catch(function(err) {
+		console.error(err);
+	});

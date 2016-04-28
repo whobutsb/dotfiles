@@ -5,8 +5,15 @@ source ${HOME}/dotfiles/zsh/exports.zsh
 source ${HOME}/dotfiles/zsh/aliases.zsh
 source ${HOME}/dotfiles/zsh/functions.zsh
 
+# aws auto complettion
+# source /usr/local/bin/aws_zsh_completer.sh
+
 # Source Private Files
 source $HOME/.private_aliases
+
+# Load Completions
+# https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org
+# fpath($HOME/dotfiles/zsh/completions/_curl, $fpath)
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -30,7 +37,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(pass taskwarrior colored-man keybase)
+plugins=(pass taskwarrior colored-man keybase aws)
 
 # Files to Source
 source $ZSH/oh-my-zsh.sh
@@ -69,7 +76,6 @@ antigen bundle vagrant
 # https://github.com/hchbaw/opp.zsh
 # Vi mode
 # bindkey -v
-
 bindkey '^R' history-incremental-search-backward
 bindkey -M vicmd v edit-command-line
 

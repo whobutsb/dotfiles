@@ -34,6 +34,42 @@ Use computed values to watch for changes of different values and run expressions
     });
     </script>
 
+## Iteration
+
+    <template>
+        <div id="app">
+            <div v-for="plan in plans">
+                <plan :plan="plan"></plan> 
+            </div>
+        </div>
+    </template>
+
+    <template id="plan-template">
+    <div>
+      <span>{{ plan.name }}</span>
+      <span>{{ plan.price }} /month</span>
+    </div>
+    </template>
+
+    <script>
+    new Vue({
+      el: '#app',
+      components: {
+        plan: {
+          template: '#plan-template',
+          props: ['plan']
+        }
+      },
+      data: {
+        plans: [
+            { name: 'enterprise', price: 100 },
+            { name: 'pro', price: 50 },
+            { name: 'personal', price: 10 },
+            { name: 'free', price: 0 }
+          ]
+      }
+    });
+    </script>
 
 ## Writing Vue Directives
 

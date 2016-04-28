@@ -24,7 +24,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'junegunn/vim-peekaboo'
 Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'fmoralesc/vim-pad'
 Plugin 'junegunn/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/neosnippet'
@@ -36,7 +35,15 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'tpope/vim-markdown'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'avakhov/vim-yaml'
-Plugin 'posva/vim-vue'
+Plugin 'StanAngeloff/php.vim'
+
+" https://github.com/chrisbra/csv.vim
+Plugin 'chrisbra/csv.vim'
+" Plugin 'arnaud-lb/vim-php-namespace'
+
+" JSX Specific
+Plugin 'mxw/vim-jsx'
+Plugin 'yannickcr/eslint-plugin-react'
 
 " Colors
 Plugin 'tomasr/molokai'
@@ -213,6 +220,8 @@ omap / <Plug>(easymotion-tn)
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
 
+let g:neosnippet#disable_runtime_snippets = { "_": 1, }
+
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate.vim/snippets'
 
@@ -299,6 +308,10 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 
+" let g:syntastic_javascript_checkers = ['eslint'];
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+
 let g:syntastic_html_tidy_ignore_errors = [
     \ '<html> proprietary attribute "class"',
     \ 'trimming empty <i>'
@@ -357,6 +370,13 @@ let g:snips_email='steve@customchannels.net'
 let g:email='steve@customchannels.net'
 " }}}
 
+" vim-jsx {{{
+" https://github.com/mxw/vim-jsx
+
+" Allow jsx in normal JS files
+let g:jsx_ext_required = 0
+
+" }}}
 
 " }}}
 
@@ -458,5 +478,11 @@ noremap S :%s//g<LEFT><LEFT>
 
 " set folding method fo vimrc
   autocmd BufRead, .vimrc set fdm=marker
+
+" }}}
+
+" Vim Plugins to Test {{{
+
+" https://github.com/wellle/targets.vim
 
 " }}}

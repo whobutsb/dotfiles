@@ -443,6 +443,7 @@ units in the process section with `e`.
 
 ### Links
 
-- [4 open source tools for linux system monitoring](http://unix.stackexchange.com/questions/105908/how-to-display-meminfo-in-megabytes-in-top)
+- [4 open source tools for linux system monitoring](https://opensource.com/life/16/2/open-source-tools-system-monitoring)
 - [How to change meminfo in top](http://unix.stackexchange.com/questions/105908/how-to-display-meminfo-in-megabytes-in-top)
+- [Linux Performance Analysis in 60k Milliseconds](http://techblog.netflix.com/2015/11/linux-performance-analysis-in-60s.html)
 

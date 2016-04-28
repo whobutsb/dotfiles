@@ -3,7 +3,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export VISUAL=vim
 export EDITOR=vim
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin:/usr/local/aws/bin
 
 # Kill lag when switch from normal to visual modes
 export KEYTIMEOUT=1

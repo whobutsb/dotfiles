@@ -110,3 +110,6 @@ alias ctags="`brew --prefix`/bin/ctags"
 
 # run htop with sudo
 alias htop='sudo htop'
+
+# sshd commands
+alias ssh.restart="sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist && sudo launchctl load /System/Library/LaunchDaemons/ssh.plist"

@@ -1,5 +1,9 @@
 # [Ansible](https://ansibleworks.com)
 
+## Generating Password for the User Module
+
+    openssl passwd -salt <salt> -1 <plaintext-password>
+
 ### Installing Ansible
 
 Install apt-get repo, update, and download ansible.
