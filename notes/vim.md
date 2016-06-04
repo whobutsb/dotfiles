@@ -14,25 +14,25 @@ Every time template is spelled it will automatically be fixed
 
 ## Ag (The Silver Searcher)
 
-:Ag [options] {pattern} [directory | file]
+    :Ag [options] {pattern} [directory | file]
 
 `--help` - Get help
 
 Matching control
 
-`-w/--word-regexp` - force patten to match only whole words
-`-q/--literal` - quote all meta characters in pattern, it is treated as a literal.
+- `-w/--word-regexp` - force patten to match only whole words
+- `-q/--literal` - quote all meta characters in pattern, it is treated as a literal.
 
 File selection
 
-`--ignore-dir=DIRNAME` - ignore directory
-`--type=TYPE` - specity the types of tiles to include
-`--type-set=[NAME]=.[ext],.[another-ext]` - add types
-`--help-type` - list types
+- `--ignore-dir=DIRNAME` - ignore directory
+- `--type=TYPE` - specity the types of tiles to include
+- `--type-set=[NAME]=.[ext],.[another-ext]` - add types
+- `--help-type` - list types
 
 Example, search for something in a certain file type
 
-:Ag --css ".widget"
+    :Ag --css ".widget"
 
 ### Links
 
@@ -46,14 +46,14 @@ All the characters you get when you go through a-z
 
 On mac remap the alt key
 
-nnoremap ª :m .+1<CR>==
-nnoremap º :m .-2<CR>==
+    nnoremap ª :m .+1<CR>==
+    nnoremap º :m .-2<CR>==
 
-inoremap ª <Esc>:m .+1<CR>==gi
-inoremap º <Esc>:m .-2<CR>==gi
+    inoremap ª <Esc>:m .+1<CR>==gi
+    inoremap º <Esc>:m .-2<CR>==gi
 
-vnoremap ª :m '>+1<CR>gv=gv
-vnoremap º :m '<-2<CR>gv=gv
+    vnoremap ª :m '>+1<CR>gv=gv
+    vnoremap º :m '<-2<CR>gv=gv
 
 [Stack Overflow: Can I map Alt key in Vim?](http://stackoverflow.com/questions/7501092/can-i-map-alt-key-in-vim)
 
@@ -92,7 +92,7 @@ Window resizing
 - `zv` - expand folds to reveal cursor
 - `zf` - define a fold, use with a visual selection
 
-### Navigating
+## Navigating
 
 - `zj` - move down to the top of next fold
 - `zk` - move up to bottom of previous fold
@@ -109,15 +109,15 @@ fold method type.
 
 Generating the CTags. Navigate to the project parent directory
 
-ctags -f php.tags --languages=PHP -R
+    ctags -f php.tags --languages=PHP -R
 
 Tell Vim to use the tag file:
 
-:set tags+=~/path/to/php.tags
+    :set tags+=~/path/to/php.tags
 
 Search through the tags
 
-:tag /pattern // :tag /some_cool_class
+    :tag /pattern // :tag /some_cool_class
 
 - `CTRL-]` - jump to the method definition
 - `CTRL-T` - jump back to where you were before
@@ -150,9 +150,9 @@ Default Mapping      | Details
 
 Adding a dot in front of the command dumps the output on to the window.
 
-:.! ls
+    :.! ls
 
-:.! date " dumps the current date
+    :.! date " dumps the current date
 
 Open the terminal in the background
 
@@ -170,13 +170,13 @@ Open the terminal in the background
 
 Set the filetype for a file
 
-:set filetype=php
-"" or
-:set ft=php
+    :set filetype=php
+    "" or
+    :set ft=php
 
 Set multiple file types with:
 
-:set ft=html.php
+    :set ft=html.php
 
 this activates teh snippets for both HTML and PHP for the current file.
 
@@ -184,11 +184,11 @@ this activates teh snippets for both HTML and PHP for the current file.
 
 Whole file find and replace, red -> green
 
-:%s/red/green/g
+    :%s/red/green/g
 
 Visual selection find and replace
 
-:'<,'>s/red/green/g
+    :'<,'>s/red/green/g
 
 
 ## Help in VimDoc
@@ -216,23 +216,23 @@ Visual selection find and replace
 
 Get a list of the current keys mappings
 
-:map
-:map!
-:nmap - Display normal mode maps
-:imap - Display insert mode maps
-:vmap - Display visual and select mode maps
+    :map
+    :map!
+    :nmap - Display normal mode maps
+    :imap - Display insert mode maps
+    :vmap - Display visual and select mode maps
 
 - `:verbose map <key>` - determine the script or plugin that defines a map for a key sequence
 
 Removing a key map
 
-:unmap <key>
-:unmap! <key>
+    :unmap <key>
+    :unmap! <key>
 
 ### Links
 
-- (Mapping Keys in Vim - Wikia)[http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial]
-- (What to do when a Vim keymap doesn't work)[http://raddevon.com/articles/debugging-vim-keymaps]
+- [ Mapping Keys in Vim - Wikia ]( http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial )
+- [ What to do when a Vim keymap doesn't work ]( http://raddevon.com/articles/debugging-vim-keymaps )
 
 ## Marks
 
@@ -312,12 +312,6 @@ the name of the alternate file.
 
 To put the current filename after the cursor use: `"%p`
 
-## Scripting
-
-__Links__
-
-- [Scripting the Vim Editor, Part 1: Variables, values, and expressions](http://www.ibm.com/developerworks/library/l-vim-script-1/)
-
 ## Snippets
 
 Using the plugin [snipmate](https://github.com/msanders/snipmate.vim).  More
@@ -329,6 +323,12 @@ Snippets can be defined in two places: `snippets/<filetype>/<trigger>.snippet`
 or `snippets/<filetype>.snippets`
 
 Reload a snippet on the fly with: `:call ReloadAllSnippets()`
+
+## Scripting
+
+__Links__
+
+- [Scripting the Vim Editor, Part 1: Variables, values, and expressions](http://www.ibm.com/developerworks/library/l-vim-script-1/)
 
 ## Surround
 
@@ -359,36 +359,36 @@ __Links__
 
 - [Using tab pages - Vim Wiki](http://vim.wikia.com/wiki/Using_tab_pages)
 
-*Splits*
+## Splits
 
 - `ctrl+w q` - close split
 
 Create a vertical split using `:vsp` and horizontal `:sp`.
 
-:vsp ~/.vimrc
+    :vsp ~/.vimrc
 
 You can specify the new split height by prefixing with a number:
 
-:10sp ~/.zshrc
+    :10sp ~/.zshrc
 
 Split two vertically split windows to horizontally split
 
-ctrl-W K
+    ctrl-W K
 
 Horizontally to vertically
 
-ctrl-W H
+    ctrl-W H
 
-__Split Navigation__
+## Split Navigation
 
 Remapping for moving around the buffers
 
-nnoremap <C-J> <C-W><C-J>    " CTRL+j move down a split
-nnoremap <C-K> <C-W><C-K>    " CTRL+k move up a split
-nnoremap <C-L> <C-W><C-L>    " CTRL+l move right a split
-nnoremap <C-H> <C-W><C-H>    " CTRL-h move left a split
+    nnoremap <C-J> <C-W><C-J>    " CTRL+j move down a split
+    nnoremap <C-K> <C-W><C-K>    " CTRL+k move up a split
+    nnoremap <C-L> <C-W><C-L>    " CTRL+l move right a split
+    nnoremap <C-H> <C-W><C-H>    " CTRL-h move left a split
 
-### Jumplist
+## Jumplist
 
 Allows you to jump back and forth in where you were in the file.  - `Ctrl+o` - allows you to jump back to your last jump location
 - `Ctrl+i` - jump forward to the next location
@@ -447,27 +447,27 @@ Two types of vim verbs.  Some of them act on a single character, the others act 
 - `^` - go to beginning of the line
 - `g;` - jump back to the last edit
 
-#### Words
+### Words
 
--`aw` - a word (includes surrounding white space)
+- `aw` - a word (includes surrounding white space)
 - `iw` - inner word (does not include surrounding white space)
 
-#### Sentences
+### Sentences
 
 - `as` - a sentence
 - `is` inner sentence
 
-#### Paragraphs
+### Paragraphs
 
 - `ap` - a paragraph
 - `ip` - inner paragraph
 
-#### Tags
+### Tags
 
 - `at` - a tag block
 - `it` - inner tag block
 
-#### Power
+### Power
 
 - `d$` - delete to the end of the line
 - `cf)` - change though the next closing parentheses
@@ -478,12 +478,12 @@ __Links__
 
 - [Vim Text Objects: The Definitive Guide](http://blog.carbonfive.com/2011/10/17/vim-text-objects-the-definitive-guide/)
 
-### Undo and Redo
+## Undo and Redo
 
 - `u` - undo your last action
 - `CTRL+r` - redo last action
 
-### Spell Check
+## Spell Check
 
 Set the spell check in the `~/.vimrc`
 
@@ -493,26 +493,27 @@ Disable spell check
 
 set spell!
 
+- `g=` - get spelling suggestion
 - `]s` - go to next misspelled word
 - `[s` - go to last misspelled word
 - `z=` - get some suggestions on the word
 - `zg` - mark the misspelled word as correct
 - `zw` - mark a good word as misspeleed
 
-### Sorting
+## Sorting
 
 High selection of parameters in a function and run
 
-:sort
+    :sort
 
-### Tabs
+## Tabs
 
 Changing tabs on the fly
 
-:set ts=2 sts=2 noet
-:retab!
+    :set ts=2 sts=2 noet
+    :retab!
 
-### Repeating
+## Repeating
 
 - `.` - repeat the last normal mode command
 - `n` - repeat the last search - `;` - repeat the last character-wise search
@@ -526,7 +527,7 @@ Changing tabs on the fly
 - `V` - enter visual mode line wise
 - `CTRL-V` - enter visual mode block wise
 
-_tip_: `o` switches cursor to the other corner. huge!
+**tip**: `o` switches cursor to the other corner. huge!
 
 - `I<text><Esc>` - insert text before block on every line
 
@@ -561,7 +562,7 @@ Fix trailing spaces with this regex:
 :%s/\s\+$//
 ```
 
-## Links
+## Vim Links
 
 - [A Byte of Vim](http://files.swaroopch.com/vim/byte_of_vim_v051.pdf)
 - [Learning Vim in 2014](http://benmccormick.org/2014/07/02/learning-vim-in-2014-vim-as-language/)
