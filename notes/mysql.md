@@ -1,5 +1,6 @@
 # MySQL
 
+## `.my.cnf`
 Add a `.my.cnf` file to the home directory to be able to autoload mysql 
 Sample format: 
 
@@ -12,11 +13,11 @@ Sample format:
     default-character-set=utf8
     prompt=\\u@\\h [\\d]>\\_
 
-Watch the process list
+## Watch the process list
 
     watch 'mysql -e "show proesslist;"'
 
-Add User to db
+## Add User to db
 
     GRANT USAGE ON *.* TO '<user>'@'%' IDENTIFIED BY '<password>'; 
 
@@ -99,6 +100,12 @@ auto-completion and syntax highlighting.
     $ pip install mycli
 
     $ brew install mycli
+
+## RDS
+
+### Tips
+
+- The value of the `ReadIOPS` should be small stable. 
 
 ## Links
 
