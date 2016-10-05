@@ -18,6 +18,3 @@ export HISTTIMEFORMAT="%T %d-%b-%Y "
 # export PIP_REQUIRE_VIRTUALENV=true
 
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
-
-# export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
-# export PATH="/usr/local/Cellar/php55/5.5.12/bin:$PATH"

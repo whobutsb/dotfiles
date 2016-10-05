@@ -27,6 +27,10 @@ Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'junegunn/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
 Plugin 'Shougo/neosnippet'
+" vim-markdown-folding
+" https://github.com/nelstrom/vim-markdown-folding
+Plugin 'nelstrom/vim-markdown-folding'
+Plugin 'majutsushi/tagbar'
 
 " vim table mode - https://github.com/dhruvasagar/vim-table-mode
 Plugin 'dhruvasagar/vim-table-mode'
@@ -46,9 +50,11 @@ Plugin 'mxw/vim-jsx'
 Plugin 'yannickcr/eslint-plugin-react'
 
 " Colors
-Plugin 'tomasr/molokai'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-scripts/xoria256.vim'
+" Plugin 'tomasr/molokai'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'vim-scripts/xoria256.vim'
+Plugin 'jacoborus/tender'
+" Plugin 'sjl/badwolf'
 
 "" Snippets
 "" https://github.com/msanders/snipmate.vim
@@ -81,6 +87,8 @@ set backspace=indent,eol,start  " backspace over indent, eol, and insert
 set number                      " show line numbers
 set relativenumber              " use relative numbers
 set wrap                        " turn on linewrap
+" Always 4 spaces never tabs.  Hitting tab creates for spaces
+
 set tabstop=4                   " 4 spaces
 set shiftwidth=4                " indent by 4 spaces when using >>, <<, ==, etc
 set softtabstop=4               " indent 4 spaces when pressing <TAB>
@@ -119,7 +127,8 @@ set noswapfile
 set background=dark
 " colorscheme molokai
 " colorscheme solarized
-colorscheme xoria256
+" colorscheme xoria256
+colorscheme tender
 
 " sutff to ignore
 set wildignore+=*.swp,*.pyc,*.bak,*.class,*.orig,.DS_Store
@@ -375,6 +384,13 @@ let g:email='steve@customchannels.net'
 
 " Allow jsx in normal JS files
 let g:jsx_ext_required = 0
+
+" }}}
+
+" tagbar {{{
+" https://github.com/majutsushi/tagbar
+
+nmap <F8> :TagbarToggle<CR>
 
 " }}}
 

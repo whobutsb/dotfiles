@@ -1,113 +1,60 @@
-snippet cs
-	var cx = React.addons.classSet;
 snippet cdm
-	componentDidMount: function() {
+	componentDidMount() {
 		${1}
-	},
+	}
 snippet cdup
-	componentDidUpdate: function(prevProps, prevState) {
+	componentDidUpdate(prevProps, prevState) {
 		${1}
-	},
+	}
 snippet cwm
-	componentWillMount: function() {
+	componentWillMount() {
 		${1}
-	},
+	}
 snippet cwr
-	componentWillReceiveProps: function(nextProps) {
+	componentWillReceiveProps(nextProps) {
 		${1}
-	},
+	}
 snippet cwun
-	componentWillUnmount: function() {
+	componentWillUnmount() {
 		${1}
-	},
+	}
 snippet cwu
-	componentWillUpdate: function(nextProps, nextState) {
+	componentWillUpdate(nextProps, nextState) {
 		${1}
-	},
-snippet cx
-	cx({
-		${1}: ${2}
-	});
+	}
 snippet fup
 	forceUpdate(${1:callback});
-snippet gdp
-	getDefaultProps: function() {
-		return {
-			${1}
-		};
-	},
-snippet gis
-	getInitialState: function() {
-		return {
-			${1}: ${2}
-		};
-	},
-snippet ism
-	isMounted()
 snippet jsx
-	/**
-	 * @jsx React.DOM
-	 */
+	import React, { Component, PropTypes } from 'react';
 
-	var React = require('react');
-
-	var ${1:ClassName} = React.createClass({
-
-		render: function() {
-			return (
-				${0:<div />}
+	class ${0:ClassName} extends Component {
+		render(){
+			return(
+				<div>${1}</div>
 			);
 		}
-
-	});
-
-	module.exports = $1;
+	}
+	
+	export default ${0:ClassName};
 snippet pt
 	propTypes: {
 		${1}: React.PropTypes.${2:string}
-	},
-snippet rcc
-	var ${1:ClassName} = React.createClass({
-
-		render: function() {
-			return (
-				${0:<div />}
-			);
-		}
-
-	});
+	}
 snippet ren
-	render: function() {
+	render() {
 		return (
 			${1:<div />}
 		);
 	}
 snippet sst
-	this.setState({
+	this.state({
 		${1}: ${2}
 	});
 snippet scu
-	shouldComponentUpdate: function(nextProps, nextState) {
+	shouldComponentUpdate(nextProps, nextState) {
 		${1}
-	},
+	}
 snippet props
 	this.props.${1}
 snippet state
 	this.state.${1}
-snippet trp
-	transferPropsTo(${1});
-snippet class
-	var ${1:} = React.createClass({
-		render: function() {
-			return (
-				<div>
-					${2}
-				</div>
-			);
-		}
-	});
-	React.render(<$1 />, document.body);
-snippet gsf
-	getStateFromFlux: function(){
-		return this.getFlux().store("${1:StoreName}"").${2:methodName};
-	},

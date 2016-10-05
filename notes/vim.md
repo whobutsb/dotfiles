@@ -92,7 +92,7 @@ Window resizing
 - `zv` - expand folds to reveal cursor
 - `zf` - define a fold, use with a visual selection
 
-## Navigating
+### Code Folding Navigation
 
 - `zj` - move down to the top of next fold
 - `zk` - move up to bottom of previous fold
@@ -330,6 +330,25 @@ __Links__
 
 - [Scripting the Vim Editor, Part 1: Variables, values, and expressions](http://www.ibm.com/developerworks/library/l-vim-script-1/)
 
+## Macros
+
+Record a macro by starting with `q`, choosing a macro letter `[a-z]`.  
+Replay the macro with `@[a-z]`.
+
+Running macros on a set of lines
+
+`:norm @a` - Run the macro from the ex command line.
+`:% norm @a` - Run macro on the whole buffer
+`:10,20 norm @a` - Run macro on lines 10 and 20.
+`:'<,'> norm @a` - Run macro on visual selection
+`:g/vim/ norm @a` - Run macro on lines containing pattern 'vim'
+
+Saving a vim macro
+
+In your .vimrc:
+    let @a='03wdei^R=2012-^R"^M^[0j'
+
+
 ## Surround
 
 Tim Pope's Vim Surround [Vim-Surround](https://github.com/tpope/vim-surround) plugin.
@@ -442,9 +461,13 @@ Two types of vim verbs.  Some of them act on a single character, the others act 
 - `)` - move forward one sentence
 - `}` - move forward one paragraph
 - `G` - go to end of file
+- `A` - begin insert at end of line
+- `I` - begin insert at beginning of line
+- `o` - create new line and insert
 - `f.` - go to next occurrence of `.` on the current line
 - `F.` - go to the previous occurrence of `.` on the current line
 - `^` - go to beginning of the line
+- ```` - jump back to the last edit
 - `g;` - jump back to the last edit
 
 ### Words
@@ -513,6 +536,9 @@ Changing tabs on the fly
     :set ts=2 sts=2 noet
     :retab!
 
+## Search
+
+Search for a word under the cursor using `*` or `#`
 ## Repeating
 
 - `.` - repeat the last normal mode command
@@ -570,3 +596,5 @@ Fix trailing spaces with this regex:
 - [Vim for (PHP) Programmers](http://www.slideshare.net/ZendCon/vim-for-php-programmers-presentation?next_slideshow=1)
 - [OF Vim and Vigor](http://of-vim-and-vigor.blogspot.com/)
 - [Learn VimScript the hard way](http://learnvimscriptthehardway.stevelosh.com/)
+- [Vim Anti-Patterns](https://sanctum.geek.nz/arabesque/vim-anti-patterns/)
+

@@ -43,12 +43,6 @@ alias local_ip="ipconfig getifaddr en0; ipconfig getifaddr en1"
 # Laravel
 alias art="php artisan"
 
-# Syncthing
-alias syncthing.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
-alias syncthing.stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.syncthing.plist"
-alias syncthing.restart="syncthing.stop && syncthing.start"
-alias syncthing.browser="open http://127.0.0.1:8082"
-
 # Nginx Commands
 alias nginx.start='sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
 alias nginx.stop='sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
@@ -74,7 +68,7 @@ alias nginx.logs.default-ssl.access='tail -250f /usr/local/etc/nginx/logs/defaul
 if [ "$(uname -s)" = "Darwin" ]; then
 
     alias chrome="open -a google\ chrome"
-    alias firefox="/opt/homebrew-cask/Caskroom/firefox/38.0.5/Firefox.app/Contents/MacOS/firefox-bin -profilemanager"
+    alias firefox="/usr/local/Caskroom/firefox/38.0.5/Firefox.app/Contents/MacOS/firefox-bin -profilemanager"
 
     alias f="open -a Finder"
 
@@ -113,3 +107,6 @@ alias htop='sudo htop'
 
 # sshd commands
 alias ssh.restart="sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist && sudo launchctl load /System/Library/LaunchDaemons/ssh.plist"
+
+# return the current price of bitcoin
+alias btc="curl -s http://api.coindesk.com/v1/bpi/currentprice.json | python -c 'import json, sys; print json.load(sys.stdin)[\"bpi\"][\"USD\"][\"rate\"]'"
