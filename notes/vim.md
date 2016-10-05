@@ -337,11 +337,11 @@ Replay the macro with `@[a-z]`.
 
 Running macros on a set of lines
 
-`:norm @a` - Run the macro from the ex command line.
-`:% norm @a` - Run macro on the whole buffer
-`:10,20 norm @a` - Run macro on lines 10 and 20.
-`:'<,'> norm @a` - Run macro on visual selection
-`:g/vim/ norm @a` - Run macro on lines containing pattern 'vim'
+- `:norm @a` - Run the macro from the ex command line.
+- `:% norm @a` - Run macro on the whole buffer
+- `:10,20 norm @a` - Run macro on lines 10 and 20.
+- `:'<,'> norm @a` - Run macro on visual selection
+- `:g/vim/ norm @a` - Run macro on lines containing pattern 'vim'
 
 Saving a vim macro
 
