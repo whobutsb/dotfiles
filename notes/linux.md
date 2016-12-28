@@ -135,6 +135,10 @@ Find and delete files older than 10 days
 - `-mtime +10` - older than 10 days
 - `-type f` - only files
 
+### Articles
+
+[Find Files in Linux, Using the Commmand Line](https://www.linode.com/docs/tools-reference/tools/find-files-in-linux-using-the-command-line)
+
 ## Grep
 
 Grep (g/re/p) stands for global regular-expression print. Its name is derived from a command in "ed" a UNix line-editor built in 1971.
