@@ -36,6 +36,13 @@ To define a user, if running locally like on vagrant, then run
     - `-k` - ask for a password rather than ssh key (vagrant)
     - `-u vagrant` - login to the server using user vagrant
 
+### Debugging a command
+
+    - debug: var=playbook_dir
+
+    - debug: var=item
+      with_items: ec2.instances
+
 ### Running arbitary commands
 
     ansible all -s -m shell -a 'apt-get install nginx'
