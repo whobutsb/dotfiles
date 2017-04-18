@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# https://chodounsky.net/2017/01/20/automate-your-macos-development-machine-setup/
+
 # home = File.expand_path '~'
 dotfiles_path = File.expand_path '~/dotfiles'
 
@@ -20,7 +22,7 @@ end
 
 # brew cask packages
 cask_packages = ['alfred', 'appdelete', 'beatport-pro', 'bettertouchtool',
-                 'caffeine', 'cyberduck', 'dropbox', 'firefox', 'google-chrome',
+                 'caffeine', 'cyberduck', 'dropbox', 'dnscrypt', 'firefox', 'google-chrome',
                  'gpgtools', 'iterm2', 'menumeters', 'multibit', 'qlmarkdown',
                  'sequel-pro', 'slack', 'sourcetree', 'spectacle', 'steam',
                  'submlime-text', 'the-unarchiver', 'transmission', 'vagrant',
@@ -38,6 +40,16 @@ dotfiles = ['taskrc','zshrc']
 dotfiles.each do |file|
     target = File.join(home, ".#{file}")
     `ln -sf "#{File.join dotfiles_path, file}" "#{target}"`
+end
+
+dropbox_path = File.expand_path '~/Dropbox'
+
+# dropbox files to symlink
+dropbox_dirs = ['.aws', '.private_aliases', '.ssh', '.task']
+
+dropbox_dirs.each do |file|
+    target = File.join(home, "#{file}")
+    `ln -sf "#{File.join dropbox_path, file}" "#{target}"`
 end
 
 # Move the Snippets files into the correct directory

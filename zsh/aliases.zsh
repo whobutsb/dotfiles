@@ -22,6 +22,8 @@ alias reload_source="source ~/.zshrc && echo 'Source Reloaded'"
 # Vim -> NeoVim
 # alias vim="/usr/local/bin/nvim"
 # alias vi="/usr/local/bin/nvim"
+alias vim="/usr/local/Cellar/vim/8.0.0134/bin/vim"
+alias vi="/usr/local/Cellar/vim/8.0.0134/bin/vim"
 
 # ZSH
 alias zshconfig="vim ~/.zshrc"
@@ -43,6 +45,9 @@ alias local_ip="ipconfig getifaddr en0; ipconfig getifaddr en1"
 # Laravel
 alias art="php artisan"
 
+# Codeception
+alias codecept="vendor/bin/codecept"
+
 # Nginx Commands
 alias nginx.start='sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
 alias nginx.stop='sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
@@ -52,7 +57,7 @@ alias nginx.config='vim /usr/local/etc/nginx'
 # PHP-FPM
 alias php-fpm.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist"
 alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist"
-alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+alias php-fpm.resttrt='php-fpm.stop && php-fpm.start'
 alias php-fpm.config='st /usr/local/etc/php/5.6'
 
 # PHP Interactive Shell
@@ -88,6 +93,7 @@ alias vagrant.init='wget https://raw.githubusercontent.com/fideloper/Vaprobash/m
 # Git
 alias gt='git tag -ln'
 alias gs='git stash'
+alias git.repo=GithubRepo
 
 # TMUX
 alias ta='tmux attach -t'
@@ -101,6 +107,7 @@ alias s3sb='s3cmd -c ~/.s3cfg-personal'
 
 # use brew ctags
 alias ctags="`brew --prefix`/bin/ctags"
+alias ctags.php="ctags -f tags --languages=PHP -R --append -V"
 
 # run htop with sudo
 alias htop='sudo htop'
@@ -110,3 +117,5 @@ alias ssh.restart="sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
 
 # return the current price of bitcoin
 alias btc="curl -s http://api.coindesk.com/v1/bpi/currentprice.json | python -c 'import json, sys; print json.load(sys.stdin)[\"bpi\"][\"USD\"][\"rate\"]'"
+
+alias units="/usr/local/bin/gunits"
