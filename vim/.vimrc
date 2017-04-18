@@ -87,6 +87,7 @@ set backspace=indent,eol,start  " backspace over indent, eol, and insert
 set number                      " show line numbers
 set relativenumber              " use relative numbers
 set wrap                        " turn on linewrap
+set clipboard=unnamed           " set the clipboard to the system clipboard
 " Always 4 spaces never tabs.  Hitting tab creates for spaces
 
 set tabstop=4                   " 4 spaces
@@ -387,13 +388,18 @@ let g:jsx_ext_required = 0
 
 " }}}
 
+" vim-commentary {{{
+" https://github.com/tpope/vim-commentary
+autocmd FileType blade setlocal commentstring={{--%s--}}
+
+" }}}
+
 " tagbar {{{
 " https://github.com/majutsushi/tagbar
 
 nmap <F8> :TagbarToggle<CR>
 
 " }}}
-
 " }}}
 
 " Mappings {{{

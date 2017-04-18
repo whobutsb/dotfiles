@@ -1,16 +1,16 @@
 [user]
-    name = Steve Barbera
-    email = me@stevebarbera.com
+	name = Steve Barbera
+	email = me@stevebarbera.com
 	signingkey = 8CA47713
 [push]
     default = simple
 [core]
-    excludesfile = /Users/stevebarbera/.gitignore_global
+	excludesfile = /Users/stevebarbera/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /usr/local/Caskroom/sourcetree/2.0.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [mergetool]
     keepBackup = true
@@ -26,8 +26,13 @@
     grep = grep --break --heading --line-number
     # open in tabs all files currently working on in git repo
     edit = "!vim `git ls-files -m` -p"
+  scrum = log --since='1 day ago' --oneline
 
 [difftool]
     prompt = false
 [grep]
     lineNumber = true
+; [commit]
+; 	template = 
+[commit]
+	template = /Users/stevebarbera/.stCommitMsg

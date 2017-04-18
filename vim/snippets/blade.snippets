@@ -6,6 +6,8 @@ snippet panel
 		<div class="panel-body">
 			${2:panel_body}	
 		</div>
+		<div class="panel-footer">
+		</div>
 	</div>
 snippet row 
 	<div class="row">
@@ -15,16 +17,8 @@ snippet col
 	<div class="col-${1}-${2}">
 
 	</div>
-snippet admin_temp
-	@extends('_partials.admin.template')
-
-	@section('content')
-
-		${1}
-
-	@stop
-snippet client_temp
-	@extends('_partials.client.template')
+snippet template
+	@extends('template')
 	
 	@section('content')
 
@@ -36,7 +30,8 @@ snippet client_temp
 	@section('footer')
 	@append
 snippet modal
-	<div class="modal fade in" id="${1}" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
+	<button type="button" data-toggle="modal", data-target="#${1:modal_id}" class="btn bin-info">${2:link_text}</a>
+	<div class="modal fade in" id="${1:modal_id}" tabindex="-1" role="dialog" aria-hidden="false" style="display: none;">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -54,7 +49,7 @@ snippet modal
 		</div>
 	</div>
 snippet model_button
-	<button type="button" data-toggle="modal", data-target="${1:modal_id}" class="btn btn-green btn-gradient"><i class="glyphicons glyphicons-circle_plus"></i> ${2:link_text}</a>
+	<button type="button" data-toggle="modal", data-target="#${1:modal_id}" class="btn btn-green btn-gradient">${2:link_text}</a>
 snippet form_static
 	<div class="form-group">
 		{{ Form::label('${1:label}') }}
@@ -63,7 +58,7 @@ snippet form_static
 snippet form_text
 	<div class="form-group">
 		{{ Form::label('${1:label}') }}
-		{{ Form::text('${2:name}', ${3:value}, ['class' =>'form-control']) }}
+		{{ Form::text('${2:name}', ${3:null}, ['class' =>'form-control']) }}
 	</div>
 snippet table
 	<table class="table ${1}">
@@ -94,3 +89,9 @@ snippet foreach
 	@endforeach
 snippet script
 	<script src="${1}"></script> 
+snippet email_template
+	@extends('email/template')
+
+	@section('content')
+
+	@stop
