@@ -169,6 +169,16 @@ if(exists('+colorcolumn'))
     highlight ColorColumn ctermbg=235
 endif
 
+" Set the spaces to an arg.  usage: :SetSpaces 4
+function! SetSpaces(arg)
+    echo "settings spaces to: " . a:arg
+    execute 'set tabstop=' . a:arg
+    execute 'set shiftwidth=' . a:arg
+    execute 'set softtabstop=' . a:arg
+endfunction
+
+command! -nargs=1 SetSpaces :call SetSpaces(<f-args>)
+
 " }}}
 
 " Plugin Options {{{
