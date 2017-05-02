@@ -4,8 +4,8 @@ export LC_ALL=en_US.UTF-8
 export VISUAL=vim
 export EDITOR=vim
 
-export PATH=/usr/local/bin
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 # AWS bins
 export PATH=/usr/local/aws/bin:$PATH

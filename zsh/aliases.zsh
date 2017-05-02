@@ -22,8 +22,8 @@ alias reload_source="source ~/.zshrc && echo 'Source Reloaded'"
 # Vim -> NeoVim
 # alias vim="/usr/local/bin/nvim"
 # alias vi="/usr/local/bin/nvim"
-alias vim="/usr/local/Cellar/vim/8.0.0134/bin/vim"
-alias vi="/usr/local/Cellar/vim/8.0.0134/bin/vim"
+alias vim="/usr/local/Cellar/vim/8.0.0596/bin/vim"
+alias vi="/usr/local/Cellar/vim/8.0.0596/bin/vim"
 
 # ZSH
 alias zshconfig="vim ~/.zshrc"

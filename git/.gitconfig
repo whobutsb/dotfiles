@@ -26,7 +26,7 @@
     grep = grep --break --heading --line-number
     # open in tabs all files currently working on in git repo
     edit = "!vim `git ls-files -m` -p"
-  scrum = log --since='1 day ago' --oneline
+    scrum = log --since='1 day ago' --oneline
 
 [difftool]
     prompt = false
