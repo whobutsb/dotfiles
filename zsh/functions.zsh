@@ -19,11 +19,6 @@ function fname(){
     find . -iname "*$@*"
 }
 
-ds(){
-  echo "Disk Space Utilization For $HOSTNAME"
-  df -h
-}
-
 convert_mp3(){
     echo "Converting $1 to $2"
     ffmpeg -i $1 -ac 2 -ab 320k $2
@@ -33,7 +28,7 @@ check_port(){
     lsof -n -i:$1 | grep LISTEN
 }
 
-# Gets the BurstCreditBalance of the OTMS EFS 
+# gets the BurstCreditBalance of the OTMS EFS 
 otms.efs() {
     CREDITS=$(aws cloudwatch --profile otms --region us-east-1 \
         get-metric-statistics --namespace "AWS/EFS" \
@@ -47,6 +42,7 @@ otms.efs() {
     gunits ${CREDITS}B TB
 }
 
+# open the github repo
 function GithubRepo() {
     if [ ! -d .git ] ;
         then echo "ERROR: This isn't a git directory" && return false;
@@ -61,3 +57,16 @@ function GithubRepo() {
     fi
     open $url
 }
+
+# get the estimated billing for AWS
+function aws.billing() {
+    aws --region us-east-1 --profile steve cloudwatch get-metric-statistics \
+        --namespace "AWS/Billing" \
+        --metric-name "EstimatedCharges" \
+        --dimension "Name=Currency,Value=USD" \
+        --start-time `date -v-12H -u '+%FT%TZ'` \
+        --end-time $(date +"%Y-%m-%dT%H:%M:00") \
+        --statistic Maximum \
+        --period 60 | jq '.Datapoints[0] | .Maximum'
+}
+
