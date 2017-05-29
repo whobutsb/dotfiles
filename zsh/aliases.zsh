@@ -22,8 +22,8 @@ alias reload_source="source ~/.zshrc && echo 'Source Reloaded'"
 # Vim -> NeoVim
 # alias vim="/usr/local/bin/nvim"
 # alias vi="/usr/local/bin/nvim"
-alias vim="/usr/local/Cellar/vim/8.0.0596/bin/vim"
-alias vi="/usr/local/Cellar/vim/8.0.0596/bin/vim"
+#alias vim="/usr/local/Cellar/vim/8.0.0596/bin/vim"
+#alias vi="/usr/local/Cellar/vim/8.0.0596/bin/vim"
 
 # ZSH
 alias zshconfig="vim ~/.zshrc"
@@ -119,3 +119,6 @@ alias ssh.restart="sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
 alias btc="curl -s http://api.coindesk.com/v1/bpi/currentprice.json | python -c 'import json, sys; print json.load(sys.stdin)[\"bpi\"][\"USD\"][\"rate\"]'"
 
 alias units="/usr/local/bin/gunits"
+
+# backup music directory to S3
+alias backup.music="aws --profile steve s3 sync --storage-class STANDARD_IA ~/Music s3://stevebarbera-backup/Music/"
