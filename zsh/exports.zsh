@@ -4,8 +4,6 @@ export LC_ALL=en_US.UTF-8
 export VISUAL=vim
 export EDITOR=vim
 
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin:$PATH
-export PATH=/usr/local/bin:$PATH
 
 # AWS bins
 export PATH=/usr/local/aws/bin:$PATH
@@ -24,3 +22,7 @@ export HISTTIMEFORMAT="%T %d-%b-%Y "
 # export PIP_REQUIRE_VIRTUALENV=true
 
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
+
+export PATH=/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/sbin:$PATH
+export PATH=/usr/bin:$PATH
+export PATH=/usr/local/bin:$PATH
