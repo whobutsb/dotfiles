@@ -1,4 +1,4 @@
-# I'm dumb
+# I'm dumb, and will make mistakes
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
