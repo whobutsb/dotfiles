@@ -4,6 +4,8 @@ source ${HOME}/dotfiles/zsh/setopt.zsh
 source ${HOME}/dotfiles/zsh/exports.zsh
 source ${HOME}/dotfiles/zsh/aliases.zsh
 source ${HOME}/dotfiles/zsh/functions.zsh
+source ${HOME}/dotfiles/zsh/customchannels_functions.zsh
+
 
 # aws auto complettion
 # source /usr/local/bin/aws_zsh_completer.sh
