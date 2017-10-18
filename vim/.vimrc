@@ -14,7 +14,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Shougo/neocomplete'
 Plugin 'scrooloose/syntastic'
@@ -31,6 +30,9 @@ Plugin 'Shougo/neosnippet'
 " https://github.com/nelstrom/vim-markdown-folding
 Plugin 'nelstrom/vim-markdown-folding'
 Plugin 'majutsushi/tagbar'
+
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 
 " vim table mode - https://github.com/dhruvasagar/vim-table-mode
 Plugin 'dhruvasagar/vim-table-mode'
@@ -183,6 +185,20 @@ command! -nargs=1 SetSpaces :call SetSpaces(<f-args>)
 
 " Plugin Options {{{
 
+" FZF {{{
+" https://github.com/junegunn/fzf.vim
+
+set rtp+=/usr/local/opt/fzf
+
+" Ignore .gitignore
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+noremap <Leader>e :Files<CR>
+noremap <Leader>b :Buffers<CR> 
+noremap <Leader>r :Tags<CR>
+
+" }}}
+
 " Vim Airline {{{
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -201,21 +217,6 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 30
 " Add <leader> t to open NerdTree
 nnoremap <leader>t :NERDTreeToggle<cr>
-" }}}
-
-" CTRLP {{{
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-set wildignore+=*/vendor/**
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$\|node_modules\|DS_Store\|git'
-" let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
-let g:ctrlp_use_caching = 1
-cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-noremap <leader>b :CtrlPBuffer<CR>
-noremap <leader>g :CtrlPTag<CR>
-noremap <leader>r :CtrlPBufTag<CR>
-let g:ctrlp_map = ',e'
-let g:ctrlp_open_new_file = 'r'
 " }}}
 
 " Silver Searcher (Ag) {{{
