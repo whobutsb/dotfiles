@@ -130,8 +130,7 @@ set noswapfile
 set background=dark
 " colorscheme molokai
 " colorscheme solarized
-" colorscheme xoria256
-colorscheme tender
+ colorscheme tender
 
 " sutff to ignore
 set wildignore+=*.swp,*.pyc,*.bak,*.class,*.orig,.DS_Store
@@ -168,7 +167,7 @@ endif
 " Set the 80th column
 if(exists('+colorcolumn'))
     set colorcolumn=80
-    highlight ColorColumn ctermbg=235
+    highlight ColorColumn ctermbg=234
 endif
 
 " Set the spaces to an arg.  usage: :SetSpaces 4
@@ -194,8 +193,17 @@ set rtp+=/usr/local/opt/fzf
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 noremap <Leader>e :Files<CR>
-noremap <Leader>b :Buffers<CR> 
+noremap <Leader>b :Buffers<CR>
 noremap <Leader>r :Tags<CR>
+
+" Key bindings for splits
+let g:fzf_action = {
+  \ 'ctrl-h': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+let g:fzf_layout = { 'down': '~25%' }
 
 " }}}
 
@@ -242,6 +250,11 @@ omap / <Plug>(easymotion-tn)
 let g:neosnippet#enable_snipmate_compatibility = 1
 
 let g:neosnippet#disable_runtime_snippets = { "_": 1, }
+
+" let python use python and django snippets
+" let g:neosnippet#scope_aliases = {}
+" let g:neosnippet#scope_aliases['python'] = 'django,python'
+" let g:neosnippet#scope_aliases['htmldjango'] = 'html,htmldjango'
 
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate.vim/snippets'
@@ -353,6 +366,12 @@ let g:mta_filetypes = {
 " remap emmet leader to <C-Y>
 let g:user_emmet_leader_key='<C-J>'
 
+let g:user_emment_settings = {
+\  'javascript.jsx': {
+\     'extends': 'jsx',
+\   },
+\}
+
 " }}}
 
 " Yaml Indenting {{{
@@ -411,6 +430,11 @@ autocmd FileType blade setlocal commentstring={{--%s--}}
 nmap <F8> :TagbarToggle<CR>
 
 " }}}
+
+" Surround {{{
+
+" }}}
+
 " }}}
 
 " Mappings {{{
@@ -420,6 +444,9 @@ nnoremap <space><space> za
 
 " panic button
 nnoremap <f9> mzggg?G`z
+
+" set filetype to htmldjango -https://www.vim.org/scripts/script.php?script_id=1487
+:command DjangoHtml execute 'setfiletype htmldjango'
 
 " get ride of Ex mode, its dumb and i don't use it
 nnoremap Q <nop>
@@ -499,6 +526,47 @@ nnoremap <silent> ,F :let word=expand("<cword>")<CR>:vsp<CR>:wincmd w<cr>:exec("
 " global find and replace
 noremap S :%s//g<LEFT><LEFT>
 
+
+
+" Python Django Mapping -
+" https://code.djangoproject.com/wiki/UsingVimWithDjango#Mappings {{{
+
+let g:last_relative_dir = ''
+nnoremap \1 :call RelatedFile ("models.py")<cr>
+nnoremap \2 :call RelatedFile ("views.py")<cr>
+nnoremap \3 :call RelatedFile ("urls.py")<cr>
+nnoremap \4 :call RelatedFile ("admin.py")<cr>
+nnoremap \5 :call RelatedFile ("tests.py")<cr>
+nnoremap \6 :call RelatedFile ( "templates/" )<cr>
+nnoremap \7 :call RelatedFile ( "templatetags/" )<cr>
+nnoremap \8 :call RelatedFile ( "management/" )<cr>
+nnoremap \0 :e settings.py<cr>
+nnoremap \9 :e urls.py<cr>
+
+fun! RelatedFile(file)
+    #This is to check that the directory looks djangoish
+    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
+        exec "edit %:h/" . a:file
+        let g:last_relative_dir = expand("%:h") . '/'
+        return ''
+    endif
+    if g:last_relative_dir != ''
+        exec "edit " . g:last_relative_dir . a:file
+        return ''
+    endif
+    echo "Cant determine where relative file is : " . a:file
+    return ''
+endfun
+
+fun SetAppDir()
+    if filereadable(expand("%:h"). '/models.py') || isdirectory(expand("%:h") . "/templatetags/")
+        let g:last_relative_dir = expand("%:h") . '/'
+        return ''
+    endif
+endfun
+autocmd BufEnter *.py call SetAppDir()
+
+" }}}
 " }}}
 
 " Autocmd Options {{{
@@ -511,6 +579,15 @@ noremap S :%s//g<LEFT><LEFT>
 
 " set folding method fo vimrc
   autocmd BufRead, .vimrc set fdm=marker
+
+" python / django settings
+  autocmd FileType python set sw=4
+  autocmd FileType python set ts=4
+  autocmd FileType python set sts=4
+
+  autocmd FileType javascript set sw=2
+  autocmd FileType javascript set ts=2
+  autocmd FileType javascript set sts=2
 
 " }}}
 

@@ -70,3 +70,20 @@ function aws.billing() {
         --period 60 | jq '.Datapoints[0] | .Maximum'
 }
 
+# encode the string for a url
+urlencode() {
+  python -c 'import urllib, sys; print urllib.quote(sys.argv[1], sys.argv[2])' \
+    "$1" "$urlencode_safe"
+}
+
+# cheat sheet of programming help
+# usage: cheatsheet [programming language] "topic"
+# cheatsheet python "insert into dictionary"
+function cheatsheet(){
+  encoded=$(urlencode "${@:2}")
+  curl cht.sh/$1/${encoded}
+}
+
+_fzf_pass_completion()
+  #if PASSWORD_STORE_DIR is not set use ~/.password-store/
+  local pwdir=${PASSWORD_STORE_DIR-~/.password-store/}

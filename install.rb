@@ -9,9 +9,9 @@ dotfiles_path = File.expand_path '~/dotfiles'
 `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install`
 
 # homebrew packages
-brew_packages = ['ansible', 'autojump', 'brew-cask', 'composer', 'ffmpeg',
-                 'git-flow', 'gnupg','gnupg2', 'gpg-agent', 'keybase', 'mcrypt',
-                 'mycli', 'node', 'pass', 'php56', 'php56-mcrypt', 'pwgen', 'python',
+brew_packages = ['ansible', 'autojump', 'brew-cask', 'composer', 'daisydisk', 'ffmpeg',
+                 'git-flow', 'jq', 'gnupg','gnupg2', 'gpg-agent', 'keybase', 'mcrypt', 'fzf',
+                 'mycli', 'node', 'pass', 'pgcli', 'php70', 'php70-memcached', 'pwgen', 'python',
                  's3cmd', 'syncthing', 'task', 'the_silver_searcher', 'tmux',
                  'tree', 'vim', 'wget', 'youtube-dl', 'zsh']
 
@@ -22,8 +22,8 @@ end
 
 # brew cask packages
 cask_packages = ['alfred', 'appdelete', 'beatport-pro', 'bettertouchtool',
-                 'caffeine', 'cyberduck', 'dropbox', 'dnscrypt', 'firefox', 'google-chrome',
-                 'gpgtools', 'iterm2', 'menumeters', 'multibit', 'qlmarkdown',
+                 'caffeine', 'cyberduck', 'dropbox', 'dnscrypt', 'electrum' 'firefox', 'google-chrome',
+                 'gpgtools', 'iterm2', 'menumeters', 'qlmarkdown',
                  'sequel-pro', 'slack', 'sourcetree', 'spectacle', 'steam',
                  'submlime-text', 'the-unarchiver', 'transmission', 'vagrant',
                  'virtaulbox', 'vlc']

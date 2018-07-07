@@ -68,6 +68,7 @@ antigen bundle pass
 antigen bundle depressiveRobot/stash-aware
 antigen bundle pip
 antigen bundle vagrant
+antigen bundle django
 
 
 # Autojump
@@ -82,3 +83,13 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^x^e' edit-command-line
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# Source FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

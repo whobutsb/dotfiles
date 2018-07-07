@@ -1,4 +1,19 @@
-# Docker
+## Docker
+
+## Commands
+
+#### Show all running containers
+
+    docker ps
+
+#### Stop all containers
+
+    docker stop $(docker ps -a -q)
+
+#### Remove all containers
+
+    docker rm $($docker ps -a -q)
+
 
 ## Articles
 

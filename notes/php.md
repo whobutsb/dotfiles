@@ -107,6 +107,7 @@ Testing private methods with PHPUnit
 http://scaleyourcode.com/interviews/interview/3)
 - [6 Rules of thumb to build blazing fast web server applications](http://loige.co/6-rules-of-thumb-to-build-blazing-fast-web-applications/)
 - [PROGRAMMING GUIDELINES (FOR PHP DEVELOPERS) - PART 1: REDUCING COMPLEXITY](https://www.ibuildings.nl/blog/2016/01/programming-guidelines-php-developers-part-1-reducing-complexity)
+- [PHP Interfaces Explained](https://daylerees.com/php-interfaces-explained/)
 
 _Links_
 

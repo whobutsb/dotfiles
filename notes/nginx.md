@@ -72,6 +72,16 @@ location / {
 
 [Customizing Nginx Web Logs](http://articles.slicehost.com/2010/8/27/customizing-nginx-web-logs);
 
+### AWK commands
+
+#### Get Top 10 IP Addresses in Access log
+
+    sudo awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr | head -n 10
+
+#### Sort access by Response Codes
+
+    sudo cat /var/log/nginx/access.log | cut -d '"' -f3 | cut -d ' ' -f2 | sort | uniq -c | sort -rn
+
 ## Links
 
 - [Mitigating DDoS Attacks with Nginx](https://www.nginx.com/blog/mitigating-ddos-attacks-with-nginx-and-nginx-plus/)

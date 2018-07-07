@@ -13,7 +13,10 @@
 # Files
 data.location=~/.task
 
+# Alias
+
 # Color theme (uncomment one to use)
+include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/dark-green-256.theme
 #include /usr/local/Cellar/task/2.3.0/share/doc/task/rc/light-16.theme
 #include /usr/local/Cellar/task/2.3.0/share/doc/task/rc/light-256.theme
 #include /usr/local/Cellar/task/2.3.0/share/doc/task/rc/dark-16.theme
@@ -25,3 +28,4 @@ data.location=~/.task
 #include /usr/local/Cellar/task/2.3.0/share/doc/task/rc/dark-yellow-green.theme
 #include /usr/local/Cellar/task/2.3.0/share/doc/task/rc/dark-gray-256.theme
 
+alias.note=annotate

@@ -116,9 +116,31 @@ alias htop='sudo htop'
 alias ssh.restart="sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist && sudo launchctl load /System/Library/LaunchDaemons/ssh.plist"
 
 # return the current price of bitcoin
-alias btc="curl -s http://api.coindesk.com/v1/bpi/currentprice.json | python -c 'import json, sys; print json.load(sys.stdin)[\"bpi\"][\"USD\"][\"rate\"]'"
+alias btc="curl rate.sx"
+
+# return the recommended btc fee
+alias btc.fee="curl -s https://bitcoinfees.21.co/api/v1/fees/recommended"
+
+# return the current ethereum price
+alias eth="curl -s https://www.bitstamp.net/api/v2/ticker_hour/ethusd/ | jq '.last'"
+
+# geth client
+# run geth --fast --cache=1024 to download blockchain
+alias geth="~/Library/Application\ Support/Ethereum\ Wallet/binaries/Geth/unpacked/geth"
 
 alias units="/usr/local/bin/gunits"
 
 # backup music directory to S3
-alias backup.music="aws --profile steve s3 sync --storage-class STANDARD_IA ~/Music s3://stevebarbera-backup/Music/"
+alias backup.music="aws --profile steve s3 sync --storage-class STANDARD_IA --include '*' --exclude 'Podcasts/*' ~/Music s3://stevebarbera-backup/Music/"
+
+# backup pictures to S3
+alias backup.pictures="cd /Volumes/Carbon/Pictures && aws --profile steve s3 sync --storage-class STANDARD_IA /Volumes/Carbon/Pictures s3://stevebarbera-backup/Pictures/"
+
+# change directory to ~/Notebooks directory and open jupyter notebooks
+alias jnotebook='cd ~/Notebooks && jupyter notebook'
+
+# get the weather in boulder
+alias weather='curl wttr.in/80301'
+
+# use python3 by default
+alias python=python3

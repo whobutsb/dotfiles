@@ -1,3 +1,16 @@
+snippet react
+	import React, { Component } from 'react';
+
+	class ${1:name} extends Component {
+
+	  render() {
+		return (
+		);
+	  }
+	}
+
+	export default ${1:name};
+
 snippet cdm
 	componentDidMount() {
 		${1}
@@ -34,7 +47,7 @@ snippet jsx
 			);
 		}
 	}
-	
+
 	export default ${0:ClassName};
 snippet pt
 	propTypes: {
@@ -90,3 +103,8 @@ snippet redux
 	}
 
 	export default connect(mapStateToProps, mapDispatchToProps)(${0:ClassName});
+snippet dispatch
+	return (dispatch, getState) => {
+		let state = getState();
+		${1}
+	};

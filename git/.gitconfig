@@ -6,6 +6,7 @@
     default = simple
 [core]
 	excludesfile = /Users/stevebarbera/.gitignore_global
+	hooksPath = /Users/stevebarbera/.git/hooks
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

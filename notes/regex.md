@@ -383,7 +383,11 @@ See also: [Leftmost Longest Rule](http://www.boost.org/doc/libs/1_46_1/libs/rege
 
 <a name="resources"/>
 ##Additional Resources
+
+[Learn Regex](https://github.com/zeeshanu/learn-regex)
+
 http://regexone.com is an excellent learning tool which provides an interactive tutorial which walks through the basics of regex.    
+
 http://www.regular-expressions.info has many pages dedicated to both quickly learning regex and POSIX specific regex. This resource has also been linked throughout this document.
 
 [Back to table of contents](#top)
