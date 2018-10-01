@@ -126,13 +126,13 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Color Scheme
+" color schemes
 set background=dark
 " colorscheme molokai
 " colorscheme solarized
  colorscheme tender
 
-" sutff to ignore
+" stuff to ignore
 set wildignore+=*.swp,*.pyc,*.bak,*.class,*.orig,.DS_Store
 set wildignore+=.git,.hg,.bzr,.svn
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.svg
@@ -584,6 +584,10 @@ autocmd BufEnter *.py call SetAppDir()
   autocmd FileType python set sw=4
   autocmd FileType python set ts=4
   autocmd FileType python set sts=4
+
+  autocmd FileType php set sw=4
+  autocmd FileType php set ts=4
+  autocmd FileType php set sts=4
 
   autocmd FileType javascript set sw=2
   autocmd FileType javascript set ts=2

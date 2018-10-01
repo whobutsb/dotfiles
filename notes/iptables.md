@@ -146,6 +146,18 @@ http://www.thegeekstuff.com
     iptables -A LOGGING -m limit --limit 2/min -j LOG --log-prefix "IPTables Packet Dropped: " --log-level 7
     iptables -A LOGGING -j DROP
 
+## See how many times each rule has been hit.
+    
+    iptables -L -v -n --line-numbers
+
+## Monitor what's going on
+
+You would like to monitor what's going on with iptables in real time, like with top. Use this command to monitor the activity of iptables activity dynamically and show only the rules that are actively being traversed:
+
+    watch --interval=2 'iptables -nvL | grep -v "0    0"'
+
 ### Links
 
 - [An In-Depth Guide to iptables](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/)
+
+- [16 iptables tips and tricks for sysadmins](https://opensource.com/article/18/10/iptables-tips-and-tricks);

@@ -1,4 +1,4 @@
-# I'm dumb, and will make mistakes
+# I'm dumb, and will make mistakes, make things interactive
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -37,10 +37,10 @@ alias speedtest="wget --output-document=/dev/null http://speedtest.wdc01.softlay
 
 ## Networking
 #Get computers remote IP address
-alias remote_ip="curl ifconfig.me/ip"
+alias ip.remote="curl ifconfig.me/ip"
 
 #Get the computer internal ip address
-alias local_ip="ipconfig getifaddr en0; ipconfig getifaddr en1"
+alias ip.local="ipconfig getifaddr en0; ipconfig getifaddr en1"
 
 # Laravel
 alias art="php artisan"
@@ -58,7 +58,7 @@ alias nginx.config='vim /usr/local/etc/nginx'
 alias php-fpm.start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist"
 alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist"
 alias php-fpm.resttrt='php-fpm.stop && php-fpm.start'
-alias php-fpm.config='st /usr/local/etc/php/5.6'
+alias php-fpm.config='vim /usr/local/etc/php/5.6'
 
 # PHP Interactive Shell
 alias php.cli="psysh"
@@ -131,16 +131,24 @@ alias geth="~/Library/Application\ Support/Ethereum\ Wallet/binaries/Geth/unpack
 alias units="/usr/local/bin/gunits"
 
 # backup music directory to S3
-alias backup.music="aws --profile steve s3 sync --storage-class STANDARD_IA --include '*' --exclude 'Podcasts/*' ~/Music s3://stevebarbera-backup/Music/"
+# alias backup.music="aws --profile steve s3 sync --storage-class STANDARD_IA --include '*' --exclude 'Podcasts/*' ~/Music s3://stevebarbera-backup/Music/"
+alias backup.music='s3cmd -c ~/.s3cfg sync --progress --stats -H ~/Music/ s3://stevebarbera-backup/Music/ --no-delete-removed --storage-class STANDARD_IA --skip-existing --exclude "~/Music/iTunes/iTunes\ Media/Podcasts/*"'
 
 # backup pictures to S3
 alias backup.pictures="cd /Volumes/Carbon/Pictures && aws --profile steve s3 sync --storage-class STANDARD_IA /Volumes/Carbon/Pictures s3://stevebarbera-backup/Pictures/"
 
-# change directory to ~/Notebooks directory and open jupyter notebooks
-alias jnotebook='cd ~/Notebooks && jupyter notebook'
+# backup movies to S3
+alias backup.movies="cd /Volumes/Carbon/Movies && s3cmd -c ~/.s3cfg sync --progress --stats -H /Volumes/Carbon/Movies/ s3://stevebarbera-backup/Movies/ --no-check-md5 --skip-existing --storage-class=STANDARD_IA --no-delete-removed"
 
-# get the weather in boulder
-alias weather='curl wttr.in/80301'
+# change directory to ~/Notebooks directory and open jupyter notebooks
+alias jnotebook='jupyter notebook --notebook-dir ~/Notebooks'
+
+# runs a simplied man page
+alias help="tldr"
+
+alias cat="bat"
+alias du="ncdu --color dark -rr -x"
+alias stat="stat -x"
 
 # use python3 by default
-alias python=python3
+# alias python=python3

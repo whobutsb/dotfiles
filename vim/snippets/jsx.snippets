@@ -72,12 +72,10 @@ snippet props
 snippet state
 	this.state.${1}
 snippet redux
-	import React, { Component, PropTypes } from 'react';
+	import React, { Component } from 'react';
 	import { connect } from 'react-redux';
 	import { bindActionCreators } from 'redux';
 	import * as appActions from './actions/app-actions';
-
-	import './css/App.css';
 
 	class ${0:ClassName} extends Component {
 

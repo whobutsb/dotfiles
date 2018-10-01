@@ -101,3 +101,70 @@ snippet fetch
 	}).catch(function(err) {
 		console.error(err);
 	});
+snippet webpack
+	const path = require('path');
+	const webpack = require('webpack');
+
+	module.exports = {
+		devtool: 'source-map',
+		entry: { main: ''./path/to/entry/app.js' },
+		output: {
+			// an absolute path to the desired output directory
+			path: path.resolve(process.cwd(), 'path/to/output/directory/'),
+
+			// a filename patten for the output files
+			filename: 'bundle.js',
+		},
+		plugins: [
+			new webpack.ProvidePlugin({
+				$: 'jquery',
+				jQuery: 'jquery',
+			})
+		],
+
+		resolve: { 
+			alias: { 
+			} },
+
+		module: {
+			rules: [
+				{
+					test: /\.scss$/,
+					use: [
+							"style-loader", // creates style nodes from JS strings
+							"css-loader", // translates CSS into CommonJS
+							"sass-loader" // compiles Sass to CSS, using Node Sass by default
+					]
+				},
+				{
+					test: /\.css$/,
+					use: ['style-loader', 'css-loader']
+				},
+				{
+					test: /\.js$/,
+					exclude: /node_modules/,
+					use: [
+						{ 
+							loader: 'babel-loader',
+							options: {
+								presets: [
+									'@babel/preset-react',
+									'@babel/preset-env',
+								], 
+							}
+						},
+						{ loader: 'eslint-loader'},
+					]
+				},
+				{
+					test: /\.html$/,
+					use:[
+						{
+							loader: "html-loader",
+							options: { minimize: true }
+						}
+					]
+				}
+			]
+		}
+	};

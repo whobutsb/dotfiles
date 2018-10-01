@@ -14,6 +14,18 @@
 
     docker rm $($docker ps -a -q)
 
+#### Delete all images
+
+    docker rmi $(docker images -q)
+
+#### Run a command
+
+    docker exec [image_id|image_name] [command]
+
+or with docker-compose file:
+
+    docker-compose exec [service_name] [command]
+
 
 ## Articles
 

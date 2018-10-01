@@ -13,6 +13,18 @@ alias .4='cd ../../../../'                  # Go back 4 directory levels
 alias .5='cd ../../../../../'               # Go back 5 directory levels
 alias .6='cd ../../../../../../'            # Go back 6 directory levels
 
+# returns the weather 
+function weather(){
+    if [ $# -eq 0 ]
+      then
+        # if no argument passed get local boulder weather
+        curl wttr.in/80301
+      else
+        # get the weather in a zip or city: weather "new york"
+        curl wttr.in/$1
+    fi
+}
+
 # Searches in the current director for a file
 # Usage: fname steve
 function fname(){
@@ -68,20 +80,6 @@ function aws.billing() {
         --end-time $(date +"%Y-%m-%dT%H:%M:00") \
         --statistic Maximum \
         --period 60 | jq '.Datapoints[0] | .Maximum'
-}
-
-# encode the string for a url
-urlencode() {
-  python -c 'import urllib, sys; print urllib.quote(sys.argv[1], sys.argv[2])' \
-    "$1" "$urlencode_safe"
-}
-
-# cheat sheet of programming help
-# usage: cheatsheet [programming language] "topic"
-# cheatsheet python "insert into dictionary"
-function cheatsheet(){
-  encoded=$(urlencode "${@:2}")
-  curl cht.sh/$1/${encoded}
 }
 
 _fzf_pass_completion()

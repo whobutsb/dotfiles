@@ -22,7 +22,7 @@ end
 
 # brew cask packages
 cask_packages = ['alfred', 'appdelete', 'beatport-pro', 'bettertouchtool',
-                 'caffeine', 'cyberduck', 'dropbox', 'dnscrypt', 'electrum' 'firefox', 'google-chrome',
+                 'caffeine', 'cyberduck', 'dropbox', 'electrum' 'firefox', 'google-chrome',
                  'gpgtools', 'iterm2', 'menumeters', 'qlmarkdown',
                  'sequel-pro', 'slack', 'sourcetree', 'spectacle', 'steam',
                  'submlime-text', 'the-unarchiver', 'transmission', 'vagrant',

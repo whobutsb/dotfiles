@@ -68,6 +68,8 @@ antigen bundle pass
 antigen bundle depressiveRobot/stash-aware
 antigen bundle pip
 antigen bundle vagrant
+antigen bundle tonyseek/oh-my-zsh-virtualenv-prompt
+antigen theme tonyseek/oh-my-zsh-seeker-theme seeker
 antigen bundle django
 
 

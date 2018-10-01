@@ -48,3 +48,15 @@ __Links__
 
 - [Shortcuts to move faster on the command line](http://teohm.com/blog/2012/01/04/shortcuts-to-move-faster-in-bash-command-line/)
 - [Get faster in bash](http://is.muni.cz/www/xsiska2/2014/08/01/get-faster-in-bash.html)j
+
+## Find files containing a specifc text
+
+The xargs command comes in really handy if you want to search for files containing a specific text/string. For example, if you want to find .txt files containing text 'abc', then this can be done in the following way:
+
+`find -name "*.txt" | xargs grep "abc"`
+
+[8 Practical Examples of Linux Xargs CLI](https://www.howtoforge.com/tutorial/linux-xargs-command/)
+
+## Links
+
+- [CLI: improved](https://remysharp.com/2018/08/23/cli-improved)
