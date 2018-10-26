@@ -70,6 +70,7 @@ filetype plugin indent on       " required
 
 " Options {{{
 let mapleader=','
+set ttyfast                     " testing this for speed
 set t_Co=256                    " all the colors
 set title                       " change the terminal title
 set encoding=utf-8              " show utf8 chars
